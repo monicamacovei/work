@@ -5,7 +5,7 @@
 }
 
 .logo img {
-    height: 70px;
+    height: 60px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -25,10 +25,10 @@ header {
 
 aside {
     background: #23234e;
-    flex: 0 0 230px;
+    flex: 0 0 280px;
 }
 .logo{
-    flex: 0 0 230px;
+    flex: 0 0 280px;
     background: #1b1b3e;
     text-align: center;
 }
@@ -46,4 +46,41 @@ aside > h2 {
     color: #fff;
     font-size: 16px;
     text-transform: uppercase;
+}
+nav ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+nav ul ul {
+    padding-left: 20px;
+}
+
+nav ul li a {
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: block;
+    color: #a2a2d1;
+    text-decoration: unset;
+}
+
+nav span {
+    padding-left: 10px;
+}
+nav a.active {
+    background-color: rgba(0,0,0,0.2);
+    border-left: 5px solid #a2a2d1;
+}
+
+nav ul li a {
+    border-left: 5px solid transparent;
+    transition: border-left-color .4s ease, background-color .4s ease;
+}
+
+nav ul li a:hover {
+    border-left-color: #a2a2d1;
+    background-color: rgba(0,0,0,0.2);
 }
