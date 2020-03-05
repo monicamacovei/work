@@ -16,4 +16,34 @@ body {
 
 header {
     box-shadow: 0 4px 24px 0 rgba(103,151,255,.1), 0 12px 64px 0 rgba(103,151,255,.1);
+    background-color: #23234e;
+}
+.wrapper, header {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    background: #23234e;
+    flex: 0 0 230px;
+}
+.logo{
+    flex: 0 0 230px;
+    background: #1b1b3e;
+    text-align: center;
+}
+
+main {
+    flex-basis: 100%;
+}
+aside > h2 {
+    background-color: #29295a;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
 }
