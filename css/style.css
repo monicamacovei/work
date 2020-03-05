@@ -1,0 +1,19 @@
+.container {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo img {
+    height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    box-shadow: 0 4px 24px 0 rgba(103,151,255,.1), 0 12px 64px 0 rgba(103,151,255,.1);
+}
