@@ -48,6 +48,7 @@ aside > h2 {
     color: #fff;
     font-size: 16px;
     text-transform: uppercase;
+    font-family: 'Stardos Stencil', cursive;
 }
 nav ul {
     list-style-type: none;
@@ -131,6 +132,7 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 8px;
+    box-shadow: 0px 0px 10px -7px rgba(0,0,0,0.75);
 }
 
 .box-wrapper>i {
@@ -139,11 +141,16 @@ body {
 }
 
 .number {
-    font-size: 31px;
+    font-size: 32px;
     margin-top: 5px;
     margin-bottom: 6px;
+    font-family: 'Quicksand', cursive;
+    font-weight: 800;
+    letter-spacing: 0.08em;
 }
 
 .content {
     font-size: 16px;
+    font-family: 'Stardos Stencil', cursive;
+    letter-spacing: 0.02em;
 }
