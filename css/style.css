@@ -54,17 +54,19 @@ nav ul {
     margin-bottom: 0;
 }
 
-nav ul ul {
-    padding-left: 20px;
-}
-
 nav ul li a {
     padding-left: 20px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: block;
     color: #a2a2d1;
     text-decoration: unset;
+}
+i.fas.fa-caret-down {
+    margin-left: 20px;
+}
+nav ul ul a {
+    padding-left: 40px;
 }
 
 nav span {
@@ -83,4 +85,29 @@ nav ul li a {
 nav ul li a:hover {
     border-left-color: #a2a2d1;
     background-color: rgba(0,0,0,0.2);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    flex-flow: column;
+}
+
+.wrapper {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+.dropdown ul.hide-submenu {
+    max-height: 1px;
+}
+
+.dropdown ul:not(.hide-submenu) {
+    max-height: 500px;
+}
+
+.dropdown ul {
+    transition: max-height 1s ease;
+    overflow: hidden;
 }
