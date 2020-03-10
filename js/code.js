@@ -66,5 +66,14 @@ function dashboard_pie(masini, an) {
         Fiat: 12
         };
     dashboard_pie(masini, 2019);
+
+    masini = {
+        Dacia: 19,
+        Mercedes : 2,
+        Volvo: 7,
+        Tesla: 1,
+        Seat: 11,
+        Fiat: 7
+        };
     dashboard_pie(masini, 2018);
  };

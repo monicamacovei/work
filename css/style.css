@@ -196,7 +196,7 @@ p.menu-label {
 .procentaj-masini circle {
   fill: #ddd;
   stroke: #22224e;
-  stroke-width: 50;
+  stroke-width: 150;
   stroke-dasharray: 0 628;
   transition: stroke-dasharray .3s ease;
 }
@@ -226,6 +226,11 @@ p.menu-label {
 .masini-menu div {
     display: inline-block;
     padding: 10px 20px;
+    background: #fff;
+    border-radius: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
 }
   
 .masini-menu div.active {
@@ -258,6 +263,7 @@ p.menu-label {
 }
 .masini-menu {
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .procentaj-masini figure {
