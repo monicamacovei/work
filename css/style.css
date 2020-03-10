@@ -50,6 +50,9 @@ aside > h2 {
     text-transform: uppercase;
     font-family: 'Stardos Stencil', cursive;
 }
+section.dashboard-boxes .title {
+    margin-bottom: 50px;
+}
 nav ul {
     list-style-type: none;
     padding-left: 0;
@@ -241,8 +244,9 @@ p.menu-label {
 }
 .title:after {
     content: '';
-    height: 7px;width: 150px;background: #000;display: block;margin-left: auto;
-    margin-right: auto;margin-top: 20px;border-radius: 16px;
+    height: 7px;width: 150px;
+    background: #000;display: block;margin-left: auto;
+    margin-right: auto;margin-top: 15px;border-radius: 16px;
 }
 
 .procentaj-masini .title {
