@@ -35,7 +35,7 @@ aside {
 
 main {
     flex-basis: 100%;
-    padding-top: 50px
+    padding-top: 20px
 
 }
 aside > h2 {
@@ -204,23 +204,50 @@ p.menu-label {
   border-radius: 50%;
   display: block;
 }
-.procentaj-masini figcaption {font-family: 'Quicksand';text-transform: uppercase;font-weight: 800;font-size: 24px;margin-bottom: 29px;}
+.procentaj-masini figcaption {
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+    margin-bottom: 29px;
+    text-align: center;
+}
 
 .procentaj-masini {
     padding-top: 40px;
 }
 .masini-menu div:last-of-type {
     margin-right: 0;
-  }
-  .masini-menu div {
+}
+.masini-menu div {
     display: inline-block;
     padding: 10px 20px;
 }
   
-  .masini-menu div.active {
+.masini-menu div.active {
     background-color: #22224e;
     color: white;
   }
+.procentaj-masini .two-columns {
+    display: flex;
+    flex-direction: row;
+}
+.title{
+    font-family: 'Quicksand';
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+    text-align: center;
+}
+.title:after {
+    content: '';
+    height: 7px;width: 150px;background: #000;display: block;margin-left: auto;
+    margin-right: auto;margin-top: 20px;border-radius: 16px;
+}
+
+.procentaj-masini .title {
+    margin-bottom: 40px;
+}
 
 /*end -- dashboard procentaj masini*/
 @media screen and (max-width:980px){
