@@ -173,19 +173,54 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    display:none;
 }
 p.menu-label {
     color: #fff;
-    margin-right: 12px;
     text-transform: uppercase;
     font-family: 'Quicksand';
     font-weight: 800;
     letter-spacing: 0.05em;
+    margin-bottom: 5px;
+    margin-top: -3px;
+    position: relative;
+    right: 10px;
 }
 
-@media screen and (min-width:980px){
+@media screen and (max-width:980px){
     .mobile_menu{
-        display:none;
+        display:block;
+    }
+    aside>h2 {
+        display: none;
+    }
+    
+    aside nav {
+        position: fixed;
+        right: 0;
+        background: #22224e;
+    }
+    aside nav a {
+        padding-right: 60px;
+    }
+    aside nav {
+        display: none;
+        height: calc(100vh - 100px);
+        overflow: scroll;
+    }
+    
+    aside nav.show-menu {
+        display: block;
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+    
+    .wrapper aside {
+        flex: 0;
+    }
+    aside nav a {
+        font-size: 21px;
     }
 }
 /*end mobile menu icon*/
