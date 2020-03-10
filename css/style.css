@@ -35,7 +35,8 @@ aside {
 
 main {
     flex-basis: 100%;
-    padding-top: 20px
+    padding-top: 50px;
+    padding-bottom:50px;
 
 }
 aside > h2 {
@@ -251,6 +252,23 @@ p.menu-label {
 
 .procentaj-masini .title {
     margin-bottom: 40px;
+}
+.procentaj-masini .title:after{
+    display: none;
+}
+.masini-menu {
+    margin-bottom: 25px;
+}
+
+.procentaj-masini figure {
+    background: #efeff5;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px -7px rgba(0,0,0,0.75);
+    border-top: 11px solid #21214e;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
 }
 
 /*end -- dashboard procentaj masini*/
