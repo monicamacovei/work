@@ -44,7 +44,7 @@ function dashboard_pie(masini, an) {
  /* end --- codul pentru pie 2018*/
 
  window.onload = function(){ 
-    var parent_menu = document.querySelector(".dropdown");
+    var parent_menu = document.querySelector(".dropdown>a");
     parent_menu.onclick = function(e){
         e.preventDefault();
         var menu = document.querySelector('.dropdown ul');

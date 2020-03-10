@@ -17,6 +17,7 @@ body {
 header {
     box-shadow: 0 4px 24px 0 rgba(103,151,255,.1), 0 12px 64px 0 rgba(103,151,255,.1);
     background-color: #23234e;
+    z-index:9;
 }
 .wrapper, header {
     display: flex;
@@ -287,7 +288,7 @@ p.menu-label {
     }
     
     aside nav {
-        position: fixed;
+        position: absolute;
         right: 0;
         background: #22224e;
     }
@@ -296,8 +297,6 @@ p.menu-label {
     }
     aside nav {
         display: none;
-        height: calc(100vh - 100px);
-        overflow: scroll;
     }
     
     aside nav.show-menu {
@@ -309,9 +308,31 @@ p.menu-label {
     
     .wrapper aside {
         flex: 0;
+        z-index:9;
     }
     aside nav a {
         font-size: 21px;
     }
+    .three-columns article {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
 }
 /*end mobile menu icon*/
+@media screen and (max-width:780px){
+    .procentaj-masini .two-columns {
+        flex-direction: column;
+    }
+    .three-columns article {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width:580px){
+    .three-columns {
+        flex-direction: column;
+    } 
+    .three-columns article{
+        margin-bottom: 30px;
+    }
+}
