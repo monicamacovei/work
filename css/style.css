@@ -186,7 +186,43 @@ p.menu-label {
     position: relative;
     right: 10px;
 }
+/*end mobile menu icon*/
 
+/*dashboard procentaj masini*/
+.procentaj-masini circle {
+  fill: #ddd;
+  stroke: #22224e;
+  stroke-width: 50;
+  stroke-dasharray: 0 628;
+  transition: stroke-dasharray .3s ease;
+}
+
+.procentaj-masini svg {
+  margin: 0 auto;
+  transform: rotate(-90deg);
+  background: #ddd;
+  border-radius: 50%;
+  display: block;
+}
+.procentaj-masini figcaption {font-family: 'Quicksand';text-transform: uppercase;font-weight: 800;font-size: 24px;margin-bottom: 29px;}
+
+.procentaj-masini {
+    padding-top: 40px;
+}
+.masini-menu div:last-of-type {
+    margin-right: 0;
+  }
+  .masini-menu div {
+    display: inline-block;
+    padding: 10px 20px;
+}
+  
+  .masini-menu div.active {
+    background-color: #22224e;
+    color: white;
+  }
+
+/*end -- dashboard procentaj masini*/
 @media screen and (max-width:980px){
     .mobile_menu{
         display:block;
