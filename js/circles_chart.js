@@ -25,12 +25,57 @@ function verificare(cerc_x,cerc_y,raze,x,y,r)
   }
   return true;
 }
+function verificare2(X,Y,R,x,y,r)
+{
+   var d=Math.sqrt((x-X)*(x-X)+(y-Y)*(y-Y));
+     if(r+d<R)
+      return true;
+    return false;
+}
 
-function loadDoc3(nume_fisier) {
+function desenare_cerc(dim, ord, i, raze, cerc_x, cerc_y,name) {
+    var ci = 255 / (ord.length - 2);
+   
+    var cr = 50 / (ord.length - 2);
+    var R = window.innerHeight * 0.4;
+    var X = window.innerWidth / 2 + 100;
+    var Y = window.innerHeight / 2 + 55;
+    var r = 0;
+    var g = 255 - ci * ord.indexOf(dim[i]);
+    var g2 = 255 - g;
+    var b = 255; var w;
+    var max = ord[ord.length - 2];
+    var Ind_max = dim.indexOf(max);
+    //var ra=20+cr*type.indexOf(count[i])/3;
+    var ra = 25 + dim[i] * 100 / max;
+    var x;
+    var y;
+    if (i != Ind_max) {
+        do {
+            x = Math.floor(Math.random() * 2 * R) + X - R;
+            y = Math.floor(Math.random() * 2 * R) + Y - R;
+        } while (!verificare2(X, Y, R, x, y, ra) || !verificare(cerc_x, cerc_y, raze, x, y, ra));
+       // ra += +cr * ord.indexOf(dim[i]);
+    }
+    else {
+        x = X; y = Y;
+         }
+    raze.push(ra);
+    cerc_x.push(x);
+    cerc_y.push(y);
+    w = 2 * ra;
+    var left = x - ra;
+    var top = y - ra;
+    return "<div class=\"cerc\"  style=\" width:" + w + "px; height:" + w + "px; top:" + top + "px; left:" + left + "px; background:radial-gradient(circle, rgba(" + r + "," + g + "," + b + ",1) 39%, rgba(51,56,57,1) 96%)\"><p class=\"txt\">" + name[i]+"</p><span class=\"title\" style=\"font-size:200%\"></span></div>";
+
+}
+function loadDoc3(nume_fisier,id) {
   var xhttp = new XMLHttpRequest();
   var cerc_x=[];
   var cerc_y=[];
   var raze=[];
+  
+
   xhttp.onreadystatechange = function() {
     if(xhttp.readyState === 4)
     {
@@ -40,12 +85,21 @@ function loadDoc3(nume_fisier) {
         lines=lines.split("\n");
         var resul = [];
         var count = [];
+        var categorii=new Map();
         for (var i = 1; i < lines.length; i++) {                 
         var currentline = lines[i].split("\";\"");
-        var j=resul.indexOf(currentline[1]);
+        if(categorii.has(currentline[2]))
+        {
+          var val_init=categorii.get(currentline[2])+parseInt(currentline[5]);
+
+          categorii.set(currentline[2],val_init);
+        }
+        else
+           categorii.set(currentline[2],parseInt(currentline[5]))
+        var j=resul.indexOf(currentline[2]);
         if(j==-1)
         {
-          resul.push( currentline[1]);
+          resul.push( currentline[2]);
           count.push(parseInt(currentline[5]));
         }
         else
@@ -53,38 +107,24 @@ function loadDoc3(nume_fisier) {
         }
         var type =count.slice();
         type.sort(function(a, b){return a - b});
-        var max=type[type.length-2];
-        
+          var max = type[type.length - 2];
+          var Ind_max = count.indexOf(max);
         var ci=255/(type.length-2);
-        var cr=90/(type.length-2);
+        var cr=50/(type.length-2);
         var creare=document.getElementById("afisaj");
+          var R = window.innerHeight *0.4;
+          var c1 = creare.clientHeight;
+          var c2 = creare.clientWidth;
+        var X=window.innerWidth/2+100;
+        var Y=window.innerHeight/2+55;
+          creare.style.backgroundColor = "grey";
         
-        var s="";
-        for (var i =0; i <resul.length-2; i++) {
-                       // type.push([resul[i],count[i]]);
-        var poz=i*60+10;
-        
-        var r=Math.floor(Math.random() * 255);
-        var g =255-ci*type.indexOf(count[i]);
-        var g2=255-g;
-        var b = 255;var w;var max;
-        var ra=15+cr*type.indexOf(count[i]);
-        
-        var x;
-        var y;
-        do
-        {
-          x=Math.floor(Math.random()*1000)+300+ra;
-          y=Math.floor(Math.random()*800)+130+ra;
-        }while(!verificare(cerc_x,cerc_y,raze,x,y,ra));
-        raze.push(ra);
-        cerc_x.push(x);
-        cerc_y.push(y);
-        w=2*ra;
-        var left=x-ra;
-        var top=y-ra;
-        s=s+"<div class=\"cerc\"  style=\" width:"+w+"px; height:"+w+"px; top:"+top+"px; left:"+left+"px; background:rgb("+r+","+g+","+b+")\"><span class=\"title\" style=\"font-size:200%\">"+resul[i]+"\n("+count[i]+")"+"</span></div>";
-        }
+          var s = "";
+          s = s + desenare_cerc(count, type, Ind_max, raze, cerc_x, cerc_y, resul);
+          for (var i = 0; i < resul.length - 2; i++) {
+              if (i != Ind_max)
+              s = s + desenare_cerc(count, type, i, raze, cerc_x, cerc_y,resul);
+          }
         
         creare.innerHTML =s;
         }
