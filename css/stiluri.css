@@ -1,3 +1,21 @@
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.cube__face {
+  position: absolute;
+  width: 75%;
+  height: 75%;
+}
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px);background-color: green; }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); background-color: yellow;}
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); background-color: red;}
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); background-color: blue;}
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); background-color: grey;}
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); background-color: black;}
 .container {
 
     max-width: 90%;
@@ -8,13 +26,30 @@
 
 }
 
-.cerc
-{
+svg{
+   
+}
+#map{
+    width: 85%;
+    height: 100%;
+    visibility: visible;
+}
+.cerc {
     border-radius: 50%;
+   
+    text-align: center;
+    align-content: center;
     position: absolute;
 }
+   .txt {
+        clear: both;
+        font-weight: bold;
+        font-size: 20px;
+        color: white;
+    }
 
 .cerc .title {
+    display: inline-block;
   visibility: hidden;
   background-color: black;
   color: #fff;
@@ -35,6 +70,11 @@
 main {
 
      width: 100%;
+     height: 100%;
+}
+main.afisaj{
+    width: 100%;
+    height: 100%;
 }
 .Marca{
      width: 300px;
@@ -65,6 +105,22 @@ main {
 .tablink:hover {
   background-color: #777;
 }
+#-right:active~ .cube{
+  transform: rotateY(-90deg); 
+}
+#-left:active~ .cube{
+  transform: rotateY(90deg); 
+}
+#-bottom:active~ .cube{
+  transform: rotateX(90deg); 
+}
+#-top:active~ .cube{
+  transform: rotatex(-90deg); 
+}
+#-back:active~ .cube{
+  transform: rotateY(180deg); 
+}
+
 main .optiuni
 {
     height: 25%;
@@ -725,3 +781,6 @@ p.menu-label {
     }
 
 }
+.bar{
+
+} 
