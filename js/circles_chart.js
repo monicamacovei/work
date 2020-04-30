@@ -40,8 +40,9 @@ function desenare_cerc(dim, ord, i, raze, cerc_x, cerc_y,name) {
     var R = window.innerHeight * 0.4;
     var X = window.innerWidth / 2 + 100;
     var Y = window.innerHeight / 2 + 55;
-    var r = 0;
+   
     var g = 255 - ci * ord.indexOf(dim[i]);
+    var r =  ci * ord.indexOf(dim[i]);
     var g2 = 255 - g;
     var b = 255; var w;
     var max = ord[ord.length - 2];
@@ -66,7 +67,9 @@ function desenare_cerc(dim, ord, i, raze, cerc_x, cerc_y,name) {
     w = 2 * ra;
     var left = x - ra;
     var top = y - ra;
-    return "<div class=\"cerc\"  style=\" width:" + w + "px; height:" + w + "px; top:" + top + "px; left:" + left + "px; background:radial-gradient(circle, rgba(" + r + "," + g + "," + b + ",1) 39%, rgba(51,56,57,1) 96%)\"><p class=\"txt\">" + name[i]+"</p><span class=\"title\" style=\"font-size:200%\"></span></div>";
+    var font = 20 + dim[i] * 100 / max;
+    var pad =  ra -font/2;
+    return "<div class=\"cerc\"  style=\" width:" + w + "px; height:" + w + "px; top:" + top + "px; left:" + left + "px; background:radial-gradient(circle, rgba(0," + g + "," + b + ",1) 39%, rgba(51,56,57,1) 96%)\"><div style=\" float: left;height:" + pad +"px;\"></div> <div class=\"txt\" style=\"font-size:" + font + "px;color:rgb(255,0," + r + ")\">" + name[i] + "</div><span class=\"title\" style=\"font-size:200%\"></span></div>";
 
 }
 function loadDoc3(nume_fisier,id) {
