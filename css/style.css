@@ -324,7 +324,7 @@ section.contact-box {
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: -90px;
-    z-index: 99;
+    z-index: 2;
     position: relative;
     background-color: #fff;
     background: #23244e;
@@ -390,6 +390,9 @@ section.contact-box a:hover {
     .three-columns article {
         margin-left: 20px;
         margin-right: 20px;
+    }
+    section.contact-box {
+        width: 80%;
     }
 }
 @media screen and (max-width:580px){
