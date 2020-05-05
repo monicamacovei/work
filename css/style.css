@@ -356,6 +356,8 @@ ul.tabs {
     padding-left: 0;
     text-align: center;
     background: linear-gradient(90deg, #e5eaf1 0%, #cdcae4 100%);
+    margin-bottom: 0;
+    height: 64px;
 }
 
 ul.tabs>li {
@@ -363,10 +365,37 @@ ul.tabs>li {
     flex-basis: calc(100% / 5);
     padding-top: 25px;
     padding-bottom: 25px;
+    height:23px;
     background: linear-gradient(90deg, transparent 70%, rgba(255, 255, 255, 0.2) 100%);
 }
-/*end tabs design*/
+article.tab-content .content {
+    padding-bottom: 30px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    position: relative;
+    border-bottom:8px solid #23234e;
+    background-color: #fff;
+    border-radius: 0 0 4px 4px;
+}
+.gray-main{
+    background-color: #efeff5;
+}
+ul.tabs>li.active {
+    height: 35px;
+    position: relative;
+    top: -9px;
+    background: #fff;
+    border-top: 8px solid #23244e;
+    border-radius: 4px 4px 0 0;
+}
 
+/*end tabs design*/
+@media screen and (max-width:1200px){
+    article.tab-content{
+        width:600px;
+    }
+}
 @media screen and (max-width:980px){
     .mobile_menu{
         display:block;
@@ -417,6 +446,10 @@ ul.tabs>li {
     }
     section.contact-box {
         width: 80%;
+    }
+
+    article.tab-content{
+        width:90%;
     }
 }
 @media screen and (max-width:580px){
