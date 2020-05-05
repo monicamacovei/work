@@ -342,6 +342,30 @@ section.contact-box a:hover {
 }
 /*end-contact us page*/
 
+/*tabs design*/
+article.tab-content {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+}
+
+ul.tabs {
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+    text-align: center;
+    background: linear-gradient(90deg, #e5eaf1 0%, #cdcae4 100%);
+}
+
+ul.tabs>li {
+    display: inline-block;
+    flex-basis: calc(100% / 5);
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: linear-gradient(90deg, transparent 70%, rgba(255, 255, 255, 0.2) 100%);
+}
+/*end tabs design*/
 
 @media screen and (max-width:980px){
     .mobile_menu{
