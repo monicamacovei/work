@@ -279,6 +279,42 @@ p.menu-label {
 }
 
 /*end -- dashboard procentaj masini*/
+
+/*contact us page*/
+.contact-us{
+    background-image:url(../img/cars.jpg);
+    position:relative;
+    padding-top:120px;
+    padding-bottom:120px;
+    background-size:cover;
+}
+.no-padding{
+    padding:0;
+}
+.dark-background {
+    content: '';
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.contact-us>*:not(.dark-background) {
+    position: relative;
+}
+
+.contact-us .title {
+    color: #fff;
+}
+
+.contact-us .title:after {
+    background-color: #fff;
+}
+/*end-contact us page*/
+
+
 @media screen and (max-width:980px){
     .mobile_menu{
         display:block;
