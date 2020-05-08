@@ -51,6 +51,7 @@ function dashboard_pie(masini, an) {
  /* end --- codul pentru pie 2018*/
 
  window.onload = function(){ 
+     /*cod meniu*/
     var parent_menu = document.querySelector(".dropdown>a");
     parent_menu.onclick = function(e){
         e.preventDefault();
@@ -64,6 +65,32 @@ function dashboard_pie(masini, an) {
         var menu = document.querySelector('aside nav');
         menu.classList.toggle('show-menu');
     }
+
+    /*end - cod meniu*/
+    /*cod tabs - an */
+    var parent_tabs = document.querySelectorAll("ul.tabs>li");
+    for(var j = 0; j< parent_tabs.length; j++) {
+        parent_tabs[j].onclick = function(e) {
+            console.log("aaa");
+            for(var i = 0; i< parent_tabs.length; i++) {
+                parent_tabs[i].classList.remove("active");
+            }
+            this.classList.add("active");
+            var active_tab = this.getAttribute('data-tab');
+
+            var tabs_content = document.querySelectorAll(".content");
+            for(var i = 0; i< tabs_content.length; i++) {
+                tabs_content[i].classList.remove("active");
+            }
+            console.log(".content." + active_tab);
+
+            var act_tab = document.querySelectorAll(".content."+active_tab);
+            for(var i = 0; i< act_tab.length; i++) {
+                act_tab[i].classList.add("active");
+            }
+        }
+    }
+    /* end - cod tabs pentru an*/
     var masini = {
         Dacia: 60,
         Mercedes : 5,
@@ -119,18 +146,6 @@ var chart = {
    * the selector is a class (".") or an id ("#"), and get the element
    * @param  {String} element - the element selector
    */
-  getElement : function(element){
-  	if(element.indexOf(".") == 0){
-  		this.element = document.getElementsByClassName("chart")[0]	
-  	} 
-  	else if(element.indexOf("#") == 0){
-  		this.element = document.getElementById("chart");
-  	}
-  	else {
-  		console.error("Please select a valid element");
-  	}
-  	
-  },
   /**
    * Create Chart
    *  - calc the max value
@@ -143,7 +158,8 @@ var chart = {
    * @param  {array} values - the values to plot on the chart
    */
   createChart : function(element, values){
-  	this.getElement(element);
+      element = element.split('.').join(""); //sterg punctul de la clasa
+      this.element = document.getElementsByClassName(element)[0];
   	this.values = values;
 
     // Do some calculations
@@ -235,4 +251,8 @@ var values = [];
 
 
 
-chart.createChart('.chart',[5,10,15,30,1,3,5,20]);  
+chart.createChart('.chart-2015',[5,10,15,30,1,3,5,20]);  
+chart.createChart('.chart-2016',[9,12,2,13,44,2,83,3]);  
+chart.createChart('.chart-2017',[15,29,3,55,20,492,33,1]);  
+chart.createChart('.chart-2018',[1,2,3,4,99,5,84,23]);  
+chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);  
