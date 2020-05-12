@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="stiluri.css">
-        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="carusel_style.css">
     </head>
-    <body >
+    <body onload="creare_diagrame()">
         <title >Categorii nationale</title>
         <header>
 
@@ -148,13 +148,17 @@
             </aside>
             
             <main id="main" >
-<div class="optiuni">
-    <button class="tablink" onclick="buton3()">2017</button>
-    <button class="tablink" onclick="buton1()">2018</button>
-  <button class="tablink" onclick="buton2()" id="defaultOpen">2019</button>
-  <button class="tablink" onclick="buton3()">2020</button>
-</div>
-<div class="afisaj" id="afisaj"></div>                
+                <div class="optiuni">
+                   <button class="tablink" onclick="openAn('2017', this,'red')">2017</button>
+                   <button class="tablink" onclick="openAn('2018',this,'blue')">2018</button>
+                   <button class="tablink" onclick="openAn('2019',this,'green')" id="defaultOpen">2019</button>
+                   <button class="tablink" onclick="buton3()">2020</button>
+                </div>
+                <div class="afisaj" id="afisaj">
+                    <div class="tabcontent" id="2017" style="display:none"></div>
+                    <div class="tabcontent" id="2018" style="display:none"></div>
+                    <div class="tabcontent" id="2019" style="display:none"></div>
+                </div>                
 
   
 
@@ -169,7 +173,7 @@
 
         </footer>
 
-<script src="circles_chart.js">
+<script src="barchar.js">
     
 </script>
     </body>
