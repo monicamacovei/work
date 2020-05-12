@@ -405,11 +405,14 @@ ul.tabs>li:not(.active):hover .hover-effect {
     bottom: 0;
 }
 
-.year {
+.year, .type {
     position: relative;
     transition: color .4s ease;
+    font-family:"Quicksand";
+    font-weight:800;
+    letter-spacing: 0.05em;
 }
-ul.tabs>li:not(.active):hover .year{
+ul.tabs>li:not(.active):hover .year, ul.tabs>li:not(.active):hover .type{
     color: #fff;
 }
 ul.tabs>li:not(.active):hover{
@@ -419,6 +422,10 @@ ul.tabs>li:not(.active):hover{
 li.active {
     cursor: default;
 }
+.chart{
+    position:relative;
+}
+
 /*end tabs design*/
 
 /*tabs line graph*/
@@ -437,6 +444,56 @@ li.active {
     display: none;
 }
 /*tabs line graph end*/
+
+/*dupa marca - tabs*/
+article.tab-content.vertical-tab {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+article.tab-content.vertical-tab .tabs {
+    display: block;
+    flex-basis: 25%;
+    background: linear-gradient(180deg, #e5eaf1 0%, #d2cfe9 100%);
+    height: unset;
+    margin-top: 0;
+    border-top: 8px solid #23244e;
+}
+
+article.tab-content.vertical-tab .tabs li {
+    display: block;
+    flex-basis: unset;
+}
+article.tab-content.vertical-tab .tabs li.active {
+    height: unset;
+    border: none;
+    border-radius: unset;
+    top:0;
+}
+
+article.tab-content.vertical-tab .content {
+    flex-basis: 72%;
+    border-radius: 0;
+    border-bottom: unset;
+    border-top: 8px solid #23244e;
+}
+ul.marca_list .chart {
+    width: 70%;
+}
+
+ul.marca_list .chart svg {
+padding-left: 40px;
+}
+.chart-year {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding-left: 40px;
+}
+
+/*end - dupa marca - tabs*/
 @media screen and (max-width:1200px){
     article.tab-content{
         width:600px;

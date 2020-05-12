@@ -158,93 +158,95 @@ var chart = {
    * @param  {array} values - the values to plot on the chart
    */
   createChart : function(element, values){
-      element = element.split('.').join(""); //sterg punctul de la clasa
-      this.element = document.getElementsByClassName(element)[0];
-  	this.values = values;
+    element = element.split('.').join(""); //sterg punctul de la clasa
+    this.element = document.getElementsByClassName(element)[0];
+    if(this.element) {
+        this.values = values;
 
-    // Do some calculations
-    this.calcMaxValue();
-    this.calcPoints();
-    this.calcMeasure();
+        // Do some calculations
+        this.calcMaxValue();
+        this.calcPoints();
+        this.calcMeasure();
+        
+        // Clear any existing
+        this.element.innerHTML = "";
+        
+        // Create the <svg>
+        this.chart = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        this.chart.setAttribute("width", "100%");
+        this.chart.setAttribute("height", "100%");
+        this.chart.setAttribute("viewBox", "0 0 " + chart.width + " " + chart.height);
+
+        // Create the <polygon>
+        this.polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
+        this.polygon.setAttribute("points", this.points);
+        this.polygon.setAttribute("class", "line");
     
-    // Clear any existing
-    this.element.innerHTML = "";
-    
-    // Create the <svg>
-    this.chart = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    this.chart.setAttribute("width", "100%");
-    this.chart.setAttribute("height", "100%");
-    this.chart.setAttribute("viewBox", "0 0 " + chart.width + " " + chart.height);
-
-    // Create the <polygon>
-    this.polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
-    this.polygon.setAttribute("points", this.points);
-    this.polygon.setAttribute("class", "line");
-  
-    if(this.values.length > 1){
-      var measurements = document.createElement("div");
-      measurements.setAttribute("class", "chartMeasurements");
-      for(x=0; x < this.measurements.length; x++){
-        var measurement = document.createElement("div");
-        measurement.setAttribute("class", "chartMeasurement");
-        measurement.innerHTML = this.measurements[x];
-        measurements.appendChild(measurement);
-      }
+        if(this.values.length > 1){
+        var measurements = document.createElement("div");
+        measurements.setAttribute("class", "chartMeasurements");
+        for(x=0; x < this.measurements.length; x++){
+            var measurement = document.createElement("div");
+            measurement.setAttribute("class", "chartMeasurement");
+            measurement.innerHTML = this.measurements[x];
+            measurements.appendChild(measurement);
+        }
 
 
-      this.element.appendChild(measurements);
-      // Append the <svg> to the target <div>
-      this.element.appendChild(this.chart);
-      // Append the polygon to the target <svg>
-      this.chart.appendChild(this.polygon);
+        this.element.appendChild(measurements);
+        // Append the <svg> to the target <div>
+        this.element.appendChild(this.chart);
+        // Append the polygon to the target <svg>
+        this.chart.appendChild(this.polygon);
+        }
     }
   },
-  /**
-   * Calc Points
-   * Calculate all the points for the polygon
-   */
-  calcPoints : function(){
-    this.points = [];
-    if(this.values.length > 1){
-      // First point is bottom left hand side (max value is the bottom of graph)
-      var points = "0," + chart.height + " ";
-      // Loop through each value
-      for(x=0; x < this.values.length; x++){
-        // Calculate the perecentage of this value/the max value
-        var perc  = this.values[x] / this.maxValue;
-        // Steps is a percentage (100) / the total amount of values
-        var steps = 100 / ( this.values.length - 1 );
-        // Create the point, limit points to 2 decimal points, 
-        // Y co-ord is calculated by the taking the chart height, 
-        // then subtracting (chart height * the percentage of this point)
-        // Remember the & co-ord is measured from the top not the bottom like a traditional graph
-        var point = (steps * (x )).toFixed(2) + "," + (this.height - (this.height * perc)).toFixed(2) + " ";
-        // Add this point
-        points += point;
-      }
-      // Add the final point (bottom right)
-      points += "100," + this.height;
-      this.points = points;
-      
-     
+    /**
+     * Calc Points
+     * Calculate all the points for the polygon
+     */
+    calcPoints : function(){
+        this.points = [];
+        if(this.values.length > 1){
+        // First point is bottom left hand side (max value is the bottom of graph)
+        var points = "0," + chart.height + " ";
+        // Loop through each value
+        for(x=0; x < this.values.length; x++){
+            // Calculate the perecentage of this value/the max value
+            var perc  = this.values[x] / this.maxValue;
+            // Steps is a percentage (100) / the total amount of values
+            var steps = 100 / ( this.values.length - 1 );
+            // Create the point, limit points to 2 decimal points, 
+            // Y co-ord is calculated by the taking the chart height, 
+            // then subtracting (chart height * the percentage of this point)
+            // Remember the & co-ord is measured from the top not the bottom like a traditional graph
+            var point = (steps * (x )).toFixed(2) + "," + (this.height - (this.height * perc)).toFixed(2) + " ";
+            // Add this point
+            points += point;
+        }
+        // Add the final point (bottom right)
+        points += "100," + this.height;
+        this.points = points;
+        
+        
+        }
+        // output the values for display
+    },
+    /**
+     * Calculate Max Value
+     * Find the highest value in the array, and then
+     * add 10% to it so the graph doesn't touch the top of the chart
+     */
+    calcMaxValue : function(){
+        this.maxValue = 0;
+        for(x=0; x < this.values.length; x++){
+        if(this.values[x] > this.maxValue){
+            this.maxValue = this.values[x];
+        }
+        }
+        // Round up to next integer
+        this.maxValue = Math.ceil(this.maxValue);
     }
-    // output the values for display
-  },
-  /**
-   * Calculate Max Value
-   * Find the highest value in the array, and then
-   * add 10% to it so the graph doesn't touch the top of the chart
-   */
-  calcMaxValue : function(){
-    this.maxValue = 0;
-    for(x=0; x < this.values.length; x++){
-      if(this.values[x] > this.maxValue){
-        this.maxValue = this.values[x];
-      }
-    }
-    // Round up to next integer
-    this.maxValue = Math.ceil(this.maxValue);
-  }
 }
 
 var values = [];
@@ -256,3 +258,8 @@ chart.createChart('.chart-2016',[9,12,2,13,44,2,83,3]);
 chart.createChart('.chart-2017',[15,29,3,55,20,492,33,1]);  
 chart.createChart('.chart-2018',[1,2,3,4,99,5,84,23]);  
 chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);  
+chart.createChart('.chart-volvo',[320,500,900,1540,2859]);  
+
+
+
+/*pie chart pentru marca - invatat de pe https://codepen.io/dgca/pen/jwZGqv*/
