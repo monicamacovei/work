@@ -1,0 +1,132 @@
+
+.options {
+    width: 100%;
+    height:20%;
+    padding-top:0;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-content:space-around;
+    flex-wrap:wrap;
+}
+    /*sursa de inspiratie pentru butoane:https://codepen.io/comehope/pen/qYMoPo*/
+    .options button {
+            font-size: 40px;
+            font-family: sans-serif;
+            color: #23234e;
+            background-color: white;
+            border: 2px solid #23234e;
+            letter-spacing: 0.1em;
+            width: 5em;
+            height: 1.5em;
+            line-height: 1.5em;
+            position: relative;
+            overflow: hidden;
+            margin: 0.5em;
+            cursor: pointer;
+        }
+
+            .options button span {
+                color: white;
+                mix-blend-mode: difference;
+            }
+
+            .options button::before {
+                content: '';
+                position: absolute;
+                width: 1.5em;
+                height: inherit;
+                background-color: #23234e;
+                border-radius: 50%;
+                color: #23234e;
+                top: 0;
+                left: -0.75em;
+                transition: 0.5s ease-out;
+            }
+
+            .options button:focus::before {
+                transform: scale(7);
+            }
+        
+
+.afisaj {
+    margin: 0 auto;
+    padding: 3%;
+    
+}
+.tabcontent {
+    border: 2px solid #23234e;
+    background-color: aliceblue;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    padding:3%;
+    padding-left:0;
+}
+.chart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    align-content: center;
+    width: 90%;
+    height: 80%;
+    border-bottom: 2px solid #23234e;
+}
+.axa-Y {
+    height: inherit;
+    display: flex;
+    flex-direction:column;
+    border-right: 2px solid #23234e;
+    align-items:flex-end;
+    width: 7%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.lab {
+    height: 10%;
+    width:50%;
+   border-bottom: 2px solid #23234e;
+    color: #23234e;
+    font-size:150%;
+    padding-left:0;
+    padding-top:10%;
+    text-align:end;
+}
+.axa-X {
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-around;
+    align-content: center;
+    border-top: 2px solid #23234e;
+    align-self:flex-end;
+    padding-left:7%;
+    width: inherit;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.labelX {
+    
+    align-self:flex-end;
+    display: table;
+    height:100%;
+    padding-top:1%;
+
+}
+.tx {
+    transform: rotate(-45deg);
+    color: #23234e;
+    font-size: 150%;
+    display: block;
+    transform-origin: top left;
+}
+
+
+.rotation-inner {
+    padding: 50% 0;
+    height: 0;
+}
+
+
