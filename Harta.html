@@ -2,11 +2,12 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/style2.css">
         
     </head>
     <body >
-        <title >Repartizarea pe judete</title>
+        <title >Categorii nationale</title>
         <header>
 
             <div class="logo">
@@ -16,7 +17,7 @@
             </div>
 
             <div class="right-area">
-                <h1>REPARTIZAREA PE JUDETE</h1>
+                <h1>AUTOMOBILE CATEGORIZATE DUPA JUDET</h1>
                 <div class="mobile_menu">
                     
                     <p class="menu-label">Menu</p>
@@ -147,27 +148,33 @@
 
             </aside>
             
-            <main id="main" >
-<div class="optiuni">
-    <button class="tablink" onclick="buton3()">2017</button>
-    <button class="tablink" onclick="buton1()">2018</button>
-  <button class="tablink" onclick="buton2()" id="defaultOpen">2019</button>
-  <button class="tablink" onclick="buton3()">2020</button>
-</div>
-<div class="afisaj" id="afisaj"></div>                
+            <main id="main">
+                <div id="scena">
+                    <div id="years">
+                        <a href="#H2015" class="year">2015</a>
+                        <a href="#H2016" class="year">2016</a>
+                        <a href="#H2017" class="year">2017</a>
+                        <a href="#H2018" class="year">2018</a>
+                        <a href="#H2019" class="year">2019</a>
+                    </div>
+                    <div id="map"></div>
+                    <div class="slider" id="slider">
+                        <div class="scene" id="H2015"><label>2015</label></div>
+                        <div class="scene" id="H2016"><label>2016</label></div>
+                        <div class="scene" id="H2017"><label>2017</label></div>
+                        <div class="scene" id="H2018"><label>2018</label></div>
+                        <div class="scene" id="H2019"><label>2019</label></div>
 
-  <div id="map"></div>
-
-       <script src="harta.js"></script>
-        
-</div>
-<div id="dvCSV">
-</div>
+                    </div>
+                </div>
             </main>
                
         <footer>
 
+
+
         </footer>
+
 
     </body>
 </html>
