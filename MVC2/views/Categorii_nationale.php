@@ -31,40 +31,46 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">
-                            <i class="fas fa-home"></i>
+                        <a href="homepage.php">
+                            <i class="fas fa-home"></i> 
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="automobile_categorizate.html">
+                        <a href="automobile_categorizate.php">
                             <i class="far fa-chart-bar"></i>
                             <span>Automobile categorizate</span>
                             <i class="fas fa-caret-down"></i>
                         </a>
                         <ul>
                             <li>
-                                <a href="harta.html">
+                                <a href="harta.php">
                                     <i class="fas fa-globe-europe"></i>
                                     <span>Dupa judet</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="an.html">
+                                <a href="an.php">
                                     <i class="far fa-calendar-alt"></i>
                                     <span>Dupa an</span>
                                 </a>
                             </li>
                             <li>
-                                <a class="active" href="marca.html">
+                                <a href="marca.php">
                                     <i class="fas fa-tag"></i>
                                     <span>Dupa marca</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Categorii_nationale.html">
+                                <a class="active" href="Categorii_nationale.php">
                                     <i class="fas fa-truck-pickup"></i>
                                     <span>Dupa categorie nationala</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="categorie_comunitara.php">
+                                    <i class="fas fa-bus-alt"></i>
+                                    <span>Dupa categorie comunitara</span>
                                 </a>
                             </li>
                         </ul>
