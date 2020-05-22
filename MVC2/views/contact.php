@@ -16,7 +16,7 @@
     <body>
         <header>
             <div class="logo">
-                <img alt="logo" src="img/logo.png"/>
+                <img alt="logo" src="../img/logo.png"/>
             </div>
             <div class="right-area">
                 <div class="mobile_menu">

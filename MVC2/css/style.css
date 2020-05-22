@@ -241,6 +241,7 @@ p.menu-label {
 .procentaj-masini .two-columns {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .title{
     font-family: 'Quicksand';
