@@ -68,16 +68,10 @@
                                     <span>Dupa categorie nationala</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="categorie_comunitara.php">
-                                    <i class="fas fa-bus-alt"></i>
-                                    <span>Dupa categorie comunitara</span>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">
+                        <a href="contact.php">
                             <i class="fas fa-envelope-open-text"></i>
                             <span>Contact</span>
                         </a>
