@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         
         <script src="https://kit.fontawesome.com/cc9534741b.js" crossorigin="anonymous"></script>
     </head>
@@ -115,6 +115,6 @@
         <footer>
 
         </footer>
-        <script src="js/code.js"></script>
+        <script src="../js/code.js"></script>
     </body>
 </html>

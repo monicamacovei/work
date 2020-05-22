@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <title>Auto Park Web Explorer</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="css/style2.css">
+        <meta name="Author" content="Macovei Monica-Ioana">
+        <meta name="Author" content="Luca Nicoleta">
+        <meta name="Description" content="Instrument Web de vizualizare adecvata si de comparare multi-criteriala a datelor publice privind parcul auto din Romania pe ultimii 5 ani">
+        <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="../css/style2.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         
     </head>
     <body >
@@ -12,7 +19,7 @@
 
             <div class="logo">
 
-                <img alt="logo" src="logo.png"/>
+                <img alt="logo" src="../img/logo.png"/>
 
             </div>
 
@@ -116,7 +123,7 @@
 
 
         </footer>
-
-
+        <script src="../js/ColumnChart.js"></script>
+        <script src="../js/code.js"></script>
     </body>
 </html>
