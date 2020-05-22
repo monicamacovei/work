@@ -461,7 +461,9 @@ article.tab-content.vertical-tab .tabs {
     margin-top: 0;
     border-top: 8px solid #23244e;
 }
-
+.box-wrapper .content {
+    display: block;
+}
 article.tab-content.vertical-tab .tabs li {
     display: block;
     flex-basis: unset;

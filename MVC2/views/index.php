@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
         
         <script src="https://kit.fontawesome.com/cc9534741b.js" crossorigin="anonymous"></script>
     </head>
@@ -16,7 +16,7 @@
     <body>
         <header>
             <div class="logo">
-                <img alt="logo" src="img/logo.png"/>
+                <img alt="logo" src="../img/logo.png"/>
             </div>
             <div class="right-area">
                 <div class="mobile_menu">
@@ -31,7 +31,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="index.html">
+                            <a class="active" href="index.html">
                                 <i class="fas fa-home"></i> 
                                 <span>Dashboard</span>
                             </a>
@@ -56,7 +56,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="active" href="marca.html">
+                                    <a href="marca.html">
                                         <i class="fas fa-tag"></i>
                                         <span>Dupa marca</span>
                                     </a>
@@ -65,6 +65,12 @@
                                     <a href="Categorii_nationale.html">
                                         <i class="fas fa-truck-pickup"></i>
                                         <span>Dupa categorie nationala</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="categorie_comunitara.html">
+                                        <i class="fas fa-bus-alt"></i>
+                                        <span>Dupa categorie comunitara</span>
                                     </a>
                                 </li>
                             </ul>
@@ -78,70 +84,66 @@
                     </ul>
                 </nav>
             </aside>
-            <main class="gray-main">
-                <section>
-                    <h2 class="title">Detalii masini dupa marca</h2>
-                    <article class="tab-content vertical-tab">
-                        <ul class="tabs">
-                            <li data-tab="tab-1" class="active">
-                                <div class="hover-effect"></div>
-                                <div class="type">Volvo</div>
-                            </li>
-                            <li data-tab="tab-2">
-                                <div class="hover-effect"></div>
-                                <div class="type">Mercedes</div>
-                            </li>
-                            <li data-tab="tab-3">
-                                <div class="hover-effect"></div>
-                                <div class="type">Fiat</div>
-                            </li>
-                            <li data-tab="tab-4">
-                                <div class="hover-effect"></div>
-                                <div class="type">Seat</div>
-                            </li>
-                            <li data-tab="tab-5">
-                                <div class="hover-effect"></div>
-                                <div class="type">Opel</div>
-                            </li>
-                        </ul>
-                        <div class="content tab-1 active">
-                            <ul class="marca_list">
-                                <h2 class="marca_title">Marca Volvo</h2>
-                                <div class="small_title">Numar de masini pe an</div>
-                                <div class="chart-volvo chart"></div>
-                                <div class="chart-year">
-                                    <div>2015</div>
-                                    <div>2016</div>
-                                    <div>2017</div>
-                                    <div>2018</div>
-                                    <div>2019</div>
+            <main>
+                <section class="dashboard-boxes">
+                        <div class="three-columns">
+                            <article>
+                                <div class="box-wrapper">
+                                    <i class="fas fa-car-side"></i>
+                                    <div class="number">29304</div>
+                                    <div class="content">vehicule</div>
                                 </div>
-
-                                <div
-                                class='pie-chart'
-                                data-percentage='65'
-                                data-diameter='200'
-                                data-stroke-width='20'
-                                data-fill-color='#26408B'
-                                data-bg-color='#A6CFD5'
-                                ></div>
-                            </ul>
+                            </article>
+                            <article>
+                                <div class="box-wrapper">
+                                    <i class="fas fa-tags"></i>
+                                    <div class="number">128</div>
+                                    <div class="content">marci</div>
+                                </div>
+                            </article>
+                            <article>
+                                <div class="box-wrapper">
+                                    <i class="far fa-chart-bar"></i>
+                                    <div class="number">32</div>
+                                    <div class="content">categorii nationale</div>
+                                </div>
+                            </article>
                         </div>
-                        <div class="content tab-2">
-                        </div>
-                        <div class="content tab-3">
-                        </div>
-                        <div class="content tab-4">
-                        </div>
-                        <div class="content tab-5">
-                        </div>
-                    </article>
+                </section>
+                <section class="procentaj-masini">
+                    <h2 class="title">Procentajul de masini dupa marca</h2>
+                    <div class="two-columns">
+                        <article>
+                            <figure>
+                                <figcaption>
+                                    in 2019
+                                </figcaption>
+                                
+                                <div class="masini-menu-2019 masini-menu"></div>
+                                <svg width="200" height="200" class="chart">
+                                    <circle r="75" cx="100" cy="100" class="pie-2019"/>
+                                </svg>
+                            </figure>
+                        </article>
+                        <article>
+                            <figure>
+                                <figcaption>
+                                    in 2018
+                                </figcaption>
+                                
+                                <div class="masini-menu-2018 masini-menu"></div>
+                                <svg width="200" height="200" class="chart">
+                                    <circle r="75" cx="100" cy="100" class="pie-2018"/>
+                                </svg>
+                            </figure>
+                        </article>
+                    </div>
                 </section>
             </main>
         </div>
         <footer>
 
         </footer>
-        <script src="js/code.js"></script>
+        <script src="../js/code.js"></script>
     </body>
 </html>

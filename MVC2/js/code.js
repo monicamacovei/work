@@ -260,6 +260,3 @@ chart.createChart('.chart-2018',[1,2,3,4,99,5,84,23]);
 chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);  
 chart.createChart('.chart-volvo',[320,500,900,1540,2859]);  
 
-
-
-/*pie chart pentru marca - invatat de pe https://codepen.io/dgca/pen/jwZGqv*/
