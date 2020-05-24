@@ -118,6 +118,20 @@
                                 </div>
                                 <br/>
                                 <br/>
+
+                                <div>
+                                <?php
+                                if (sizeof($vehicule) == 0) {
+                                    echo 'Nu am gasit vehicule';
+                                }
+                                foreach ($vehicule as $nrVehicul) {
+                                    echo "<tr>";
+                                    echo "<td>" . $nrVehicul['nume'] . "</td>";
+                                    echo "</tr>";
+                                }
+
+                                ?>
+                                </div>
                                 <h3 class="small_title">Detalii 2015</h3>
                                 <ul class="marca-year-detail">
                                     <li>
