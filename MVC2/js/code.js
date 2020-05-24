@@ -67,7 +67,7 @@ function dashboard_pie(masini, an) {
     }
 
     /*end - cod meniu*/
-    /*cod tabs - an */
+    /*cod tabs - an 
     var parent_tabs = document.querySelectorAll("ul.tabs>li");
     for(var j = 0; j< parent_tabs.length; j++) {
         parent_tabs[j].onclick = function(e) {
