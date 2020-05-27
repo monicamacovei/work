@@ -86,16 +86,20 @@
                             <?php if(sizeof($marci) == 0) {
                                 echo 'Nu este nicio marca in baza de date';
                             }
-                            foreach($marci as $marca) {?>
-                                <li data-tab="tab-1">
-                                    <div class="hover-effect"></div>
-                                    <div class="type"><?php echo $marca; ?></div>
+                            $i=0;
+                            $host='http://' . $_SERVER['REQUEST_URI'];
+                            foreach($marci as $marca) { $i++;?>
+                                <li <?php if($marci[$_GET['marca']]==$marca){?>class="active"<?php }?> data-tab="tab-1">
+                                    <a href="<?php echo $host; ?>?marca=3">
+                                        <div class="hover-effect"></div>
+                                        <div class="type"><?php echo $marca; ?></div>
+                                    </a>
                                 </li>
                             <?php }?>
                         </ul>
                         <div class="content tab-1 active">
                             <ul class="marca_list">
-                                <h2 class="marca_title">Marca Volvo</h2>
+                                <h2 class="marca_title">Marca <?php echo $marci[$_GET['marca']];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
                                 <div class="chart-volvo chart"></div>
                                 <div class="chart-year">
