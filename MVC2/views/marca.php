@@ -87,15 +87,16 @@
                                 echo 'Nu este nicio marca in baza de date';
                             }
                             $i=0;
-                            $host='http://' . $_SERVER['REQUEST_URI'];
-                            foreach($marci as $marca) { $i++;?>
+                            $host='http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+                            $host = strstr($host, '?', true);
+                            foreach($marci as $marca) { ?>
                                 <li <?php if($marci[$_GET['marca']]==$marca){?>class="active"<?php }?> data-tab="tab-1">
-                                    <a href="<?php echo $host; ?>?marca=3">
+                                    <a href="<?php echo $host; ?>?marca=<?php echo $i;?>">
                                         <div class="hover-effect"></div>
                                         <div class="type"><?php echo $marca; ?></div>
                                     </a>
                                 </li>
-                            <?php }?>
+                            <?php $i++;}?>
                         </ul>
                         <div class="content tab-1 active">
                             <ul class="marca_list">
