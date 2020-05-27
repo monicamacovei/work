@@ -83,26 +83,15 @@
                     <h2 class="title">Detalii masini dupa marca</h2>
                     <article class="tab-content vertical-tab">
                         <ul class="tabs">
-                            <li data-tab="tab-1" class="active">
-                                <div class="hover-effect"></div>
-                                <div class="type">Volvo</div>
-                            </li>
-                            <li data-tab="tab-2">
-                                <div class="hover-effect"></div>
-                                <div class="type">Mercedes</div>
-                            </li>
-                            <li data-tab="tab-3">
-                                <div class="hover-effect"></div>
-                                <div class="type">Fiat</div>
-                            </li>
-                            <li data-tab="tab-4">
-                                <div class="hover-effect"></div>
-                                <div class="type">Seat</div>
-                            </li>
-                            <li data-tab="tab-5">
-                                <div class="hover-effect"></div>
-                                <div class="type">Opel</div>
-                            </li>
+                            <?php if(sizeof($marci) == 0) {
+                                echo 'Nu este nicio marca in baza de date';
+                            }
+                            foreach($marci as $marca) {?>
+                                <li data-tab="tab-1">
+                                    <div class="hover-effect"></div>
+                                    <div class="type"><?php echo $marca; ?></div>
+                                </li>
+                            <?php }?>
                         </ul>
                         <div class="content tab-1 active">
                             <ul class="marca_list">

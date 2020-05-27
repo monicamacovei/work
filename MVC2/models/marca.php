@@ -2,7 +2,7 @@
 
 class Marca
 {
-    public function NumarPeAn($marca, $an)
+    /*public function NumarPeAn($marca, $an)
     {
         require '../db-init.php';
         $an = 'An'.$an;
@@ -10,25 +10,25 @@ class Marca
         $rezultat = $conn->prepare($sql);
         $rezultat->execute();
         $numere = $rezultat->get_result();
-        $nrMasini = [];
         while($numar = mysqli_fetch_array($numere)) {
             $nrMasini[]=$numar;
         }
         $rezultat->close();
         return $nrMasini;
-    }
+    }*/
     public function getAll() 
     {
         require '../db-init.php';
-        $sql = 'SELECT MARCA FROM An2019';
+        $sql = 'SELECT DISTINCT MARCA FROM An2019';
         $rezultat = $conn->prepare($sql);
         $rezultat->execute();
-        $numere = $rezultat->get_result();
-        $nrMasini = [];
-        while($numar = mysqli_fetch_array($numere)) {
-            $nrMasini[]=$numar;
+        $marci = $rezultat->get_result();
+        $listaMarci = [];
+        while($marca = mysqli_fetch_array($marci)) {
+            $listaMarci[]=$marca["MARCA"];
         }
         $rezultat->close();
-        return $nrMasini;
+        return $listaMarci;
     }
 }
+?>
