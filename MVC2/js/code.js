@@ -240,9 +240,9 @@ var chart = {
     calcMaxValue : function(){
         this.maxValue = 0;
         for(x=0; x < this.values.length; x++){
-        if(this.values[x] > this.maxValue){
-            this.maxValue = this.values[x];
-        }
+            if(this.values[x] > this.maxValue){
+                this.maxValue = this.values[x];
+            }
         }
         // Round up to next integer
         this.maxValue = Math.ceil(this.maxValue);
@@ -257,6 +257,13 @@ chart.createChart('.chart-2015',[5,10,15,30,1,3,5,20]);
 chart.createChart('.chart-2016',[9,12,2,13,44,2,83,3]);  
 chart.createChart('.chart-2017',[15,29,3,55,20,492,33,1]);  
 chart.createChart('.chart-2018',[1,2,3,4,99,5,84,23]);  
-chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);  
-chart.createChart('.chart-volvo',[320,500,900,1540,2859]);  
+chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);
+
+var listaValori = [];
+var valoare = document.querySelectorAll('.values span');
+
+for (var a = 0; a < valoare.length; a++) {
+    listaValori.push(parseInt(valoare[a].innerHTML));
+}
+chart.createChart('.chart-marca',listaValori);  
 

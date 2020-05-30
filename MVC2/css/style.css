@@ -447,6 +447,9 @@ li.active {
 /*tabs line graph end*/
 
 /*dupa marca - tabs*/
+.marca_list .values{
+    display: none !important;
+}
 article.tab-content.vertical-tab {
     width: 90%;
     display: flex;

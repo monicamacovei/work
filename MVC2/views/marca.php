@@ -102,7 +102,14 @@
                             <ul class="marca_list">
                                 <h2 class="marca_title">Marca <?php echo $marci[$_GET['marca']];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
-                                <div class="chart-volvo chart"></div>
+                                <div class="values">
+                                    <span>320</span>
+                                    <span>500</span>
+                                    <span>900</span>
+                                    <span>1500</span>
+                                    <span>800</span>
+                                </div>
+                                <div class="chart-marca chart"></div>
                                 <div class="chart-year">
                                     <div>2015</div>
                                     <div>2016</div>
