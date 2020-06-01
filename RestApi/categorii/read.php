@@ -1,4 +1,5 @@
 <?php
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
  
@@ -12,32 +13,46 @@ $db = $database->getConnection();
 {
   $an =   $_GET['an'] ;
   $categorie =  $_GET['categorie'] ;
-  /*$select = "SELECT ". $categorie;
-    $
-    for($i = 1;$i<4;$i++)
+  $criterii =  $categorie;
+  $criterii_arr=array();
+  $nr_cr =2;
+    while($nr_cr <=4)
     {
-    if(isset($_GET['criteriu' . $i]))
+    if(isset($_GET['categorie' . $nr_cr]))
+      {
+       $criterii_arr['categorie' . $nr_cr] = $_GET['categorie' . $nr_cr];
+       $criterii =$criterii . "," . $criterii_arr['categorie' . $nr_cr];
 
-    }*/
+
+       $nr_cr ++;
+	  }
+      else {
+	  break;
+       }
+
+    }
+    $nr_cr--;
   //execut interogarea bazei de date
-  $query = "SELECT ". $categorie . " ,SUM(TOTAL_VEHICULE) as \"nr_total\" FROM An" . $an . " GROUP BY " . $categorie;
+  $query = "SELECT ". $criterii . " ,SUM(TOTAL_VEHICULE) as \"nr_total\" FROM An" . $an . " GROUP BY " . $criterii;
   $stmt = $db->prepare($query);
   $stmt->execute();     
   $num = $stmt->rowCount();
 
   if($num>0){
-    $contacts_arr=array("message" => "Succes","number_of_records" => $num);
-    $contacts_arr["records"]=array();
+    $records_arr=array("message" => "Succes","number_of_records" => $num);
+    $records_arr["records"]=array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $contact=array(
+        $record=array(
            $categorie => $row[$categorie],
            "nr_total" => $row["nr_total"]
         ); 
-        array_push($contacts_arr["records"], $contact);
+        for($i=2;$i<=$nr_cr;$i++)
+        $record[$criterii_arr['categorie' . $i]]=$row[$criterii_arr['categorie' . $i]];
+        array_push($records_arr["records"], $record);
     }
     http_response_code(200);
-    echo json_encode($contacts_arr);
+    echo json_encode($records_arr);
   }
   else{
     http_response_code(404);
