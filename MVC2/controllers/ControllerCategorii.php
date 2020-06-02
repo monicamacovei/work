@@ -3,15 +3,15 @@
       private $model;
       public function __construct($actiune,$parametrii)
       {
-       $this->model = new ModelCategorii();
+       $this->model = new ModelCategorii($parametrii["an"],$parametrii["categorie"]);
        if ($actiune=="selectAll")
-       $this->selectAll($parametrii["an"],$parametrii["categorie"]);
+       $this->selectAll();
 
 	  }
-      private function selectAll($an,$categorie)
+      private function selectAll()
       {
        echo "<pre>";
-       print_r($this->model->SelectAllFrom($an,$categorie));
+       print_r($this->model->SelectAllFrom());
        echo "<pre>";
 	  }
   }
