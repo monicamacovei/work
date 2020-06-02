@@ -16,13 +16,13 @@
 	 }
      public function apelApi($year,$category_name)
      {
-      define ('URL', 'http://localhost/RestApi/categorii/read.php?an=' . $year. '&categorie=' . $category_name);
+      define ('URL', 'http://localhost/proiect-TW/RestApi/categorii/read.php?an=' . $year. '&categorie=' . $category_name);
 
       $c = curl_init (URL); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
          CURLOPT_SSL_VERIFYPEER => FALSE, // nu verificam certificatul digital
-         CURLOPT_CONNECTTIMEOUT => 10,    // timp de asteptare (in secunde) a stabilirii conexiunii
-         CURLOPT_TIMEOUT        => 10,    // timp de asteptare (in secunde) a raspunsului
+         CURLOPT_CONNECTTIMEOUT => 150,    // timp de asteptare (in secunde) a stabilirii conexiunii
+         CURLOPT_TIMEOUT        => 150,    // timp de asteptare (in secunde) a raspunsului
          CURLOPT_FAILONERROR    => TRUE,  // codurile 4XX vor conduce la eroare
          CURLOPT_FOLLOWLOCATION => FALSE  // nu se accepta redirectionari
        ];

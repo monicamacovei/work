@@ -2,7 +2,7 @@
 define ('SLASH', DIRECTORY_SEPARATOR);
 define ('DIRECTOR_SITE', dirname(__FILE__));
 
-require_once DIRECTOR_SITE.SLASH."config.php";
+require_once "config.php";
 
 
 class Database{

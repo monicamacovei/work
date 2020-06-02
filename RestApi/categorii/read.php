@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
  
-include_once "C:/xampp/htdocs/RestApi/DB/database.php";
+include_once "http://localhost/proiect-TW/RestApi/DB/database.php";
 //conectare la baza de date
 $database = new Database();
 $db = $database->getConnection(); 
