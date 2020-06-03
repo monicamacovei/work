@@ -89,13 +89,14 @@
                             $i=0;
                             $nr_marca=1;
                             if( isset( $_GET['marca'] ) ){
-                                $nr_marca=[$_GET['marca']];
+                                $nr_marca=$_GET['marca'];
                             }
+                            echo $marci->lista_nume[$nr_marca]['MARCA'];
                             $nr_marca=intval($nr_marca);
                             $host='http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                             $host = strstr($host, '?', true);
                             foreach($marci->lista_nume as $marca) { ?>
-                                <li <?php if($marci[$nr_marca]==$marca){?>class="active"<?php }?> data-tab="tab-1">
+                                <li <?php if($marci->lista_nume[$nr_marca]['MARCA']==$marca['MARCA']){?>class="active"<?php }?> data-tab="tab-1">
                                     <a href="<?php echo $host; ?>?marca=<?php echo $i;?>">
                                         <div class="hover-effect"></div>
                                         <div class="type"><?php echo $marca['MARCA']; ?></div>
@@ -105,7 +106,7 @@
                         </ul>
                         <div class="content tab-1 active">
                             <ul class="marca_list">
-                                <h2 class="marca_title">Marca <?php echo $marci[$nr_marca];?></h2>
+                                <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
                                 <div class="values">
                                     <span>320</span>
