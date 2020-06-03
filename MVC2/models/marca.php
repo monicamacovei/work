@@ -3,16 +3,29 @@
     class Marca
     {
      public $lista_nume;
+     public $anValoare;
      public function __construct()
      {
       $this->lista_nume=array();
-      $this->extract_val($this->apelApi());
+      $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca"));
 	 }
-     public function apelApi()
+     public function iaValoare($an, $marca)
      {
-      define ('URL', 'http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca');
-
-      $c = curl_init (URL); // initializam libcurl, indicand URL-ul serviciului
+        $this->extract_value($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?an=". $an . "&tip=valori&marca=".urlencode($marca)));
+        return $this->anValoare;
+     }
+     public function extract_value($data)
+     {
+        $array = json_decode(json_encode($data['records']),true);
+        $i=0;
+        foreach($array as $row){
+            $this->anValoare[$i]= $row;
+            $i++;
+        }
+	 }
+     public function apelApi($link)
+     {
+      $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
          CURLOPT_SSL_VERIFYPEER => FALSE, // nu verificam certificatul digital
          CURLOPT_CONNECTTIMEOUT => 20,    // timp de asteptare (in secunde) a stabilirii conexiunii
@@ -33,18 +46,12 @@
 	 }
      public function extract_val($data)
      {
-       $this->nr=$data['number_of_records'];
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
         foreach($array as $row){
         $this->lista_nume[$i]= $row;
         $i++;
         }
-	 }
-     public function SelectAllFrom()
-     {
-     
-      
 	 }
 	}
 ?>

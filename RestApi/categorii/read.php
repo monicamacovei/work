@@ -93,6 +93,40 @@ if(isset($_GET['an']) && isset($_GET['categorie']))
         }
     }
 }
+else if(isset($_GET['an']) && isset($_GET['tip']) && isset($_GET['marca'])){
+    //execut interogarea bazei de date
+      $marca = $_GET['marca'] ;
+      $an = $_GET['an'];
+      $tip = $_GET['tip'];
+    
+      if($tip=="valori"){
+          $query = "SELECT COUNT(*) FROM An".$an." WHERE MARCA LIKE '" . $marca ."'";
+          $stmt = $db->prepare($query);
+          $stmt->execute();     
+          $num = $stmt->rowCount();
+        
+          if($num>0){
+              $records_arr=array("message" => "Succes","number_of_records" => $num);
+              $records_arr["records"]=array();
+  
+              while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                  $record=array(
+                      $categorie => $row[$categorie],
+                      "nr_total" => $row["nr_total"]
+                  ); 
+                  array_push($records_arr["records"], $row);
+              }
+              http_response_code(200);
+              echo json_encode($records_arr);
+          }
+          else{
+              http_response_code(404);
+              echo json_encode(
+                  array("message" => "No Records.")
+              );
+          }
+      }
+  }
 else{
   http_response_code(400);
     echo json_encode(
