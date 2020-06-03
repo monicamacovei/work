@@ -10,7 +10,7 @@ $db = $database->getConnection();
 
 //preluare parametrii
   //execut interogarea bazei de date
-  $query = "SELECT ". $criterii . " ,SUM(TOTAL_VEHICULE) as \"nr_total\" FROM An" . $an . " GROUP BY " . $criterii;
+  $query = "SELECT SUM(TOTAL_VEHICULE) FROM An2019";
   $stmt = $db->prepare($query);
   $stmt->execute();     
   $num = $stmt->rowCount();
@@ -20,20 +20,14 @@ $db = $database->getConnection();
     $records_arr["records"]=array();
 
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-        $record=array(
-           $categorie => $row[$categorie],
-           "nr_total" => $row["nr_total"]
-        ); 
-        for($i=2;$i<=$nr_cr;$i++)
-        $record[$criterii_arr['categorie' . $i]]=$row[$criterii_arr['categorie' . $i]];
-        array_push($records_arr["records"], $record);
+        array_push($records_arr["records"], $row);
     }
     http_response_code(200);
     echo json_encode($records_arr);
-  }
+}
   else{
     http_response_code(404);
     echo json_encode(
-        array("message" => "No Records.")
+        array("message" => "0")
     );
   }

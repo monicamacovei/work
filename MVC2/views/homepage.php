@@ -84,8 +84,8 @@
                             <article>
                                 <div class="box-wrapper">
                                     <i class="fas fa-car-side"></i>
-                                    <div class="number">29304</div>
-                                    <div class="content">vehicule</div>
+                                    <div class="number"><?php echo intval($nrVehicule);?></div>
+                                    <div class="content">vehicule in ultimul an</div>
                                 </div>
                             </article>
                             <article>

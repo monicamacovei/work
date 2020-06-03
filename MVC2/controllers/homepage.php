@@ -1,5 +1,6 @@
 <?php
 include_once '../models/homepage.php';
-$marci = new Marca();
+$homepage = new Homepage();
+$nrVehicule = $homepage->nrTotalVehicule();
 include_once '../views/homepage.php';
 ?>

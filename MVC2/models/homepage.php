@@ -1,6 +1,6 @@
 <?php
   
-    class Marca
+    class Homepage
     {
      public $lista_nume;
      public $anValoare;
@@ -12,8 +12,9 @@
      
      public function nrTotalVehicule() {
          $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule.php");
-         $value = 1;
-         return $value;
+         $array = json_decode(json_encode($data['records']),true);
+         $value = $array;
+         return $value[0]["SUM(TOTAL_VEHICULE)"];
      }
 
      public function iaValoare($an, $marca)
