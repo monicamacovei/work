@@ -12,6 +12,7 @@
       $this->lista_sume=array();
       $this->extract_val($this->apelApi($year,$category_name));
       print_r($this->lista_nume);
+      print("lalalaa");
       print_r($this->lista_sume);
 	 }
      public function apelApi($year,$category_name)
@@ -21,8 +22,8 @@
       $c = curl_init (URL); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
          CURLOPT_SSL_VERIFYPEER => FALSE, // nu verificam certificatul digital
-         CURLOPT_CONNECTTIMEOUT => 150,    // timp de asteptare (in secunde) a stabilirii conexiunii
-         CURLOPT_TIMEOUT        => 150,    // timp de asteptare (in secunde) a raspunsului
+         CURLOPT_CONNECTTIMEOUT => 20,    // timp de asteptare (in secunde) a stabilirii conexiunii
+         CURLOPT_TIMEOUT        => 20,    // timp de asteptare (in secunde) a raspunsului
          CURLOPT_FAILONERROR    => TRUE,  // codurile 4XX vor conduce la eroare
          CURLOPT_FOLLOWLOCATION => FALSE  // nu se accepta redirectionari
        ];
@@ -45,8 +46,6 @@
        //print_r($data->records);
        $i=0;
         foreach($array as $row){
-        
-        
         $this->lista_nume[$i]= $row[$this->categorie];
         $this->lista_sume[$i]= $row["nr_total"];
         $i++;

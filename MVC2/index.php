@@ -4,7 +4,7 @@
  
 
 require_once "config.php";
-require_once "util" . SLASH . "autoloader.php";
+require_once "util/autoloader.php";
 $url = explode('/',$_GET['url']);
 print_r($url);
 

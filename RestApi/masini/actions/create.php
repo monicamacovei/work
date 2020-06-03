@@ -6,7 +6,7 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
  
-include_once 'RestApi/DB/database.php';
+include_once '../DB/database.php';
  
 $database = new Database();
 $db = $database->getConnection();
