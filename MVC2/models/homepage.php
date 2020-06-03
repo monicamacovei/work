@@ -8,7 +8,14 @@
      {
       $this->lista_nume=array();
       $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca"));
-	 }
+     }
+     
+     public function nrTotalVehicule() {
+         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule.php");
+         $value = 1;
+         return $value;
+     }
+
      public function iaValoare($an, $marca)
      {
         $this->extract_value($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?an=". $an . "&tip=valori&marca=".urlencode($marca)));
