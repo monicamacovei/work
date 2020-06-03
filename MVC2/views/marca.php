@@ -83,24 +83,29 @@
                     <h2 class="title">Detalii masini dupa marca</h2>
                     <article class="tab-content vertical-tab">
                         <ul class="tabs">
-                            <?php if(sizeof($marci) == 0) {
+                            <?php if(sizeof($marci->lista_nume) == 0) {
                                 echo 'Nu este nicio marca in baza de date';
                             }
                             $i=0;
+                            $nr_marca=1;
+                            if( isset( $_GET['marca'] ) ){
+                                $nr_marca=[$_GET['marca']];
+                            }
+                            $nr_marca=intval($nr_marca);
                             $host='http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
                             $host = strstr($host, '?', true);
-                            foreach($marci as $marca) { ?>
-                                <li <?php if($marci[$_GET['marca']]==$marca){?>class="active"<?php }?> data-tab="tab-1">
+                            foreach($marci->lista_nume as $marca) { ?>
+                                <li <?php if($marci[$nr_marca]==$marca){?>class="active"<?php }?> data-tab="tab-1">
                                     <a href="<?php echo $host; ?>?marca=<?php echo $i;?>">
                                         <div class="hover-effect"></div>
-                                        <div class="type"><?php echo $marca; ?></div>
+                                        <div class="type"><?php echo $marca['MARCA']; ?></div>
                                     </a>
                                 </li>
                             <?php $i++;}?>
                         </ul>
                         <div class="content tab-1 active">
                             <ul class="marca_list">
-                                <h2 class="marca_title">Marca <?php echo $marci[$_GET['marca']];?></h2>
+                                <h2 class="marca_title">Marca <?php echo $marci[$nr_marca];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
                                 <div class="values">
                                     <span>320</span>

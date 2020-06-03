@@ -1,20 +1,8 @@
 <?php
-  class ControllerCategorii{
-      private $model;
-      public function __construct($actiune,$parametrii)
-      {
-       $this->model = new ModelCategorii($parametrii["an"],$parametrii["categorie"]);
-       if ($actiune=="selectAll")
-       $this->selectAll();
-
-	  }
-      private function selectAll()
-      {
-       echo "<pre>";
-       print_r($this->model->SelectAllFrom());
-       echo "<pre>";
-	  }
-  }
+include_once '../models/ModelCategorii.php';
+$model = new ModelCategorii(2019,"marca");
+//include_once '../views/viewCategorii.php';
+print_r($model);
 
 
 ?>

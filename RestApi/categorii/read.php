@@ -2,14 +2,14 @@
 
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
- 
+
 include_once "../DB/database.php";
 //conectare la baza de date
 $database = new Database();
 $db = $database->getConnection(); 
 
 //preluare parametrii
- if(isset($_GET['an']) && isset($_GET['categorie']))
+if(isset($_GET['an']) && isset($_GET['categorie']))
 {
   $an =   $_GET['an'] ;
   $categorie =  $_GET['categorie'] ;
@@ -61,7 +61,39 @@ $db = $database->getConnection();
     );
   }
  }
- else{
+ else if(isset($_GET['categorie'])){
+  //execut interogarea bazei de date
+    $categorie =  $_GET['categorie'] ;
+
+    if($categorie=="marca"){
+        $query = "SELECT MARCA FROM An2019 UNION SELECT MARCA FROM An2018 UNION SELECT MARCA FROM An2017 UNION SELECT MARCA FROM An2016 UNION SELECT MARCA FROM An2015";
+        $stmt = $db->prepare($query);
+        $stmt->execute();     
+        $num = $stmt->rowCount();
+
+        if($num>0){
+            $records_arr=array("message" => "Succes","number_of_records" => $num);
+            $records_arr["records"]=array();
+
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+                $record=array(
+                    $categorie => $row[$categorie],
+                    "nr_total" => $row["nr_total"]
+                ); 
+                array_push($records_arr["records"], $row);
+            }
+            http_response_code(200);
+            echo json_encode($records_arr);
+        }
+        else{
+            http_response_code(404);
+            echo json_encode(
+                array("message" => "No Records.")
+            );
+        }
+    }
+}
+else{
   http_response_code(400);
     echo json_encode(
         array("message" => "Wrong number of parameters")

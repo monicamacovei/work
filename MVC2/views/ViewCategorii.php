@@ -1,5 +1,2 @@
 <?php
-echo 'lalala';
-class ViewCategorii{
-
-}
+print_r($model);

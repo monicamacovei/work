@@ -11,9 +11,6 @@
       $this->lista_nume=array();
       $this->lista_sume=array();
       $this->extract_val($this->apelApi($year,$category_name));
-      print_r($this->lista_nume);
-      print("lalalaa");
-      print_r($this->lista_sume);
 	 }
      public function apelApi($year,$category_name)
      {
