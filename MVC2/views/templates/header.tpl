@@ -7,17 +7,15 @@
     <meta name="Description" content="Instrument Web de vizualizare adecvata si de comparare multi-criteriala a datelor publice privind parcul auto din Romania pe ultimii 5 ani">
     <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="../css/style2.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-
+    <link rel="stylesheet" type="text/css" href="http://localhost//MVC2/views/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost//MVC2/views/css/style.css">
     <script src="https://kit.fontawesome.com/cc9534741b.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="creare_diagrame()">
+<body >
     <header>
         <div class="logo">
-            <img alt="logo" src="../img/logo.png" />
+            <img alt="logo" src="http://localhost//MVC2/views/img/logo.png" />
         </div>
         <div class="right-area">
             <div class="mobile_menu">
@@ -79,52 +77,3 @@
                 </ul>
             </nav>
         </aside>
-        <main class="gray-main">
-            <section>
-                
-                
-                    <div class="options">
-                        <button onclick="openAn('2015', this)"><span>2015</span></button>
-                        <button onclick="openAn('2016', this)"><span>2016</span></button>
-                        <button onclick="openAn('2017', this)"><span>2017</span></button>
-                        <button onclick="openAn('2018', this)"><span>2018</span></button>
-                        <button onclick="openAn('2019', this)" id="default"><span>2019</span></button>
-                        
-                    </div>
-                
-                    <div class="afisaj" id="afisaj">
-                        <div class="tabcontent" id="2015" style="display:none">
-                        <div class="axa-Y" id ="Ay2015"></div>
-                            <div class="chart" id="c2015"></div>
-                         <div class="axa-X" id ="Ax2015"></div>
-                        </div>
-                        <div class="tabcontent" id="2016" style="display:none">
-                        <div class="axa-Y" id ="Ay2016"></div>
-                            <div class="chart" id="c2016"></div>
-                         <div class="axa-X" id ="Ax2016"></div>
-                        </div>
-                        <div class="tabcontent" id="2017" style="display:none">
-                        <div class="axa-Y" id ="Ay2017"></div>
-                            <div class="chart" id="c2017"></div>
-                         <div class="axa-X" id ="Ax2017"></div>
-                        </div>
-                        <div class="tabcontent" id="2018" style="display:none">
-                        <div class="axa-Y" id ="Ay2018"></div>
-                            <div class="chart" id="c2018"></div>
-                         <div class="axa-X" id ="Ax2018"></div>
-                        </div>
-                        <div class="tabcontent" id="2019" style="display:none">
-                        <div class="axa-Y" id ="Ay2019"></div>
-                            <div class="chart" id="c2019"></div>
-                         <div class="axa-X" id ="Ax2019"></div>
-                        </div>
-                    </div>
-            </section>
-        </main>
-    </div>
-    <footer>
-    </footer>
-    <script src="../js/ColumnChart.js"></script>
-    <script src="../js/code.js"></script>
-</body>
-</html>
