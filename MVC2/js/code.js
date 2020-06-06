@@ -109,6 +109,7 @@ function dashboard_pie(masini, an) {
         listaValori2019.push(listaInterioara2019);
     }
     const dictionarValori2019 = Object.fromEntries(listaValori2019);
+    console.log(dictionarValori2019);
     dashboard_pie(dictionarValori2019, 2019);
 
     var listaValori2018 = [];

@@ -11,8 +11,8 @@
      {
      }
      
-     public function nrTotalVehicule() {
-         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule.php");
+     public function nrTotalVehicule($an) {
+         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule".$an.".php");
          $array = json_decode(json_encode($data['records']),true);
          $value = $array;
          return $value[0]["SUM(TOTAL_VEHICULE)"];

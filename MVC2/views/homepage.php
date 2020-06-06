@@ -115,30 +115,32 @@
                                 <div style="display:none;" class="titlu_masina_pie_2019">
                                     <?php foreach($marci2019 as $marca) {?>
                                         <span><?php echo $marca;?></span>
-                                        <span>Celelalte</span>
                                     <?php }?>
+                                    <span>Celelalte</span>
                                 </div>
                                 <div style="display:none;" class="numar_masina_pie_2019">
                                     <?php foreach($valori2019 as $valori) {?>
                                         <span><?php echo $valori;?></span>
-                                        <span><?php echo $restulValorilor;?></span>
                                     <?php }?>
+                                    <span><?php echo $restulValorilor;?></span>
                                 </div>
 
                                 <div style="display:none;" class="titlu_masina_pie_2018">
                                     <?php foreach($marci2018 as $marca) {?>
                                         <span><?php echo $marca;?></span>
                                     <?php }?>
+                                    <span>Celelalte</span>
                                 </div>
                                 <div style="display:none;" class="numar_masina_pie_2018">
                                     <?php foreach($valori2018 as $valori) {?>
                                         <span><?php echo $valori;?></span>
                                     <?php }?>
+                                    <span><?php echo $restulValorilor2018;?></span>
                                 </div>
                                 
                                 <div class="masini-menu-2019 masini-menu"></div>
                                 <svg width="200" height="200" class="chart">
-                                    <circle r="75" cx="100" cy="100" class="pie-2019"/>
+                                    <circle r="100" cx="100" cy="100" class="pie-2019"/>
                                 </svg>
                             </figure>
                         </article>
@@ -150,7 +152,7 @@
                                 
                                 <div class="masini-menu-2018 masini-menu"></div>
                                 <svg width="200" height="200" class="chart">
-                                    <circle r="75" cx="100" cy="100" class="pie-2018"/>
+                                    <circle r="100" cx="100" cy="100" class="pie-2018"/>
                                 </svg>
                             </figure>
                         </article>
