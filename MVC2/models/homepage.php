@@ -6,8 +6,6 @@
      public $anValoare;
      public function __construct()
      {
-      $this->lista_nume=array();
-      $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca"));
      }
      
      public function nrTotalVehicule() {
@@ -16,6 +14,18 @@
          $value = $array;
          return $value[0]["SUM(TOTAL_VEHICULE)"];
      }
+     public function nrTotalMarci() {
+         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalMarci.php");
+         $array = json_decode(json_encode($data['records']),true);
+         $value = $array;
+         return $value[0]["SUM(NR)"];
+     }
+     public function nrTotalCategorii() {
+        $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalCategorii.php");
+        $array = json_decode(json_encode($data['records']),true);
+        $value = $array;
+        return $value[0]["COUNT(*)"];
+    }
 
      public function iaValoare($an, $marca)
      {
@@ -51,15 +61,6 @@
        curl_close ($c);
        return $data;
 
-	 }
-     public function extract_val($data)
-     {
-       $array = json_decode(json_encode($data['records']),true);
-       $i=0;
-        foreach($array as $row){
-        $this->lista_nume[$i]= $row;
-        $i++;
-        }
 	 }
 	}
 ?>

@@ -91,15 +91,15 @@
                             <article>
                                 <div class="box-wrapper">
                                     <i class="fas fa-tags"></i>
-                                    <div class="number">128</div>
-                                    <div class="content">marci</div>
+                                    <div class="number"><?php echo intval($nrMarci);?></div>
+                                    <div class="content">marci in ultimul an</div>
                                 </div>
                             </article>
                             <article>
                                 <div class="box-wrapper">
                                     <i class="far fa-chart-bar"></i>
-                                    <div class="number">32</div>
-                                    <div class="content">categorii nationale</div>
+                                    <div class="number"><?php echo intval($nrCategorii);?></div>
+                                    <div class="content">categorii nationale in ultimul an</div>
                                 </div>
                             </article>
                         </div>
