@@ -93,8 +93,8 @@ function dashboard_pie(masini, an) {
     /* end - cod tabs pentru an*/
 
     var listaValori2019 = [];
-    var valoareTitlu2019 = document.querySelectorAll('.titlu_masina_pie span');
-    var valoareNumar2019 = document.querySelectorAll('.numar_masina_pie span');
+    var valoareTitlu2019 = document.querySelectorAll('.titlu_masina_pie_2019 span');
+    var valoareNumar2019 = document.querySelectorAll('.numar_masina_pie_2019 span');
     var suma2019 = 0;
     for (var a = 0; a < valoareTitlu2019.length; a++) {
         var numar_pie = parseInt(valoareNumar2019[a].innerHTML);
@@ -112,23 +112,23 @@ function dashboard_pie(masini, an) {
     dashboard_pie(dictionarValori2019, 2019);
 
     var listaValori2018 = [];
-    var valoareTitlu2018 = document.querySelectorAll('.titlu_masina_pie span');
-    var valoareNumar2018 = document.querySelectorAll('.numar_masina_pie span');
+    var valoareTitlu2018 = document.querySelectorAll('.titlu_masina_pie_2018 span');
+    var valoareNumar2018 = document.querySelectorAll('.numar_masina_pie_2018 span');
     var suma2018 = 0;
     for (var a = 0; a < valoareTitlu2018.length; a++) {
         var numar_pie = parseInt(valoareNumar2018[a].innerHTML);
-        suma2019 = suma2019 + numar_pie;
+        suma2018 = suma2018 + numar_pie;
     }
-    for (var a = 0; a < valoareTitlu2019.length; a++) {
-        var listaInterioara2019 = [];
-        var numar_pie = parseInt(valoareNumar2019[a].innerHTML);
-        numar_pie = (100*numar_pie)/suma2019;
-        listaInterioara2019.push(valoareTitlu2019[a].innerHTML);
-        listaInterioara2019.push(numar_pie);
-        listaValori2019.push(listaInterioara2019);
+    for (var a = 0; a < valoareTitlu2018.length; a++) {
+        var listaInterioara2018 = [];
+        var numar_pie = parseInt(valoareNumar2018[a].innerHTML);
+        numar_pie = (100*numar_pie)/suma2018;
+        listaInterioara2018.push(valoareTitlu2018[a].innerHTML);
+        listaInterioara2018.push(numar_pie);
+        listaValori2018.push(listaInterioara2018);
     }
-    const dictionarValori2019 = Object.fromEntries(listaValori2019);
-    dashboard_pie(masini, 2018);
+    const dictionarValori2018 = Object.fromEntries(listaValori2018);
+    dashboard_pie(dictionarValori2018, 2018);
  };
 
 

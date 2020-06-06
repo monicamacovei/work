@@ -113,33 +113,27 @@
                                     in 2019
                                 </figcaption>
                                 <div style="display:none;" class="titlu_masina_pie_2019">
-                                    <span>Dacia</span>
-                                    <span>Audi</span>
-                                    <span>Logan</span>
-                                    <span>Passat</span>
-                                    <span>Altele</span>
+                                    <?php foreach($marci2019 as $marca) {?>
+                                        <span><?php echo $marca;?></span>
+                                        <span>Celelalte</span>
+                                    <?php }?>
                                 </div>
                                 <div style="display:none;" class="numar_masina_pie_2019">
-                                    <span>55232</span>
-                                    <span>24324</span>
-                                    <span>10231</span>
-                                    <span>5902</span>
-                                    <span>102933</span>
+                                    <?php foreach($valori2019 as $valori) {?>
+                                        <span><?php echo $valori;?></span>
+                                        <span><?php echo $restulValorilor;?></span>
+                                    <?php }?>
                                 </div>
 
                                 <div style="display:none;" class="titlu_masina_pie_2018">
-                                    <span>Dacia</span>
-                                    <span>Audi</span>
-                                    <span>Logan</span>
-                                    <span>Passat</span>
-                                    <span>Altele</span>
+                                    <?php foreach($marci2018 as $marca) {?>
+                                        <span><?php echo $marca;?></span>
+                                    <?php }?>
                                 </div>
                                 <div style="display:none;" class="numar_masina_pie_2018">
-                                    <span>50232</span>
-                                    <span>20324</span>
-                                    <span>9231</span>
-                                    <span>4902</span>
-                                    <span>132933</span>
+                                    <?php foreach($valori2018 as $valori) {?>
+                                        <span><?php echo $valori;?></span>
+                                    <?php }?>
                                 </div>
                                 
                                 <div class="masini-menu-2019 masini-menu"></div>

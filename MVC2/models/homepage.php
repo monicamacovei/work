@@ -2,7 +2,10 @@
   
     class Homepage
     {
-     public $lista_nume;
+     public $marci_2019;
+     public $valori_2019;
+     public $marci_2018;
+     public $valori_2018;
      public $anValoare;
      public function __construct()
      {
@@ -26,22 +29,27 @@
         $value = $array;
         return $value[0]["COUNT(NR)"];
     }
-
-     public function iaValoare($an, $marca)
-     {
-        $this->extract_value($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?an=". $an . "&tip=valori&marca=".urlencode($marca)));
-        return $this->anValoare;
-     }
-     public function extract_value($data)
-     {
-        $array = json_decode(json_encode($data['records']),true);
-        $i=0;
+    public function informatiiPie($an) {
+       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/homepagepie/total".$an.".php");
+       $array = json_decode(json_encode($data['records']),true);
+       $i=0;
+       $marca=array();
+       $nrvehicule=array();
         foreach($array as $row){
-            $this->anValoare[$i]= $row;
-            $i++;
+          $marca[$i]= $row["MARCA"];
+          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+          $i++;
         }
-	 }
-     public function apelApi($link)
+        if($an == 2019) {
+            $this->marci_2019=$marca;
+            $this->valori_2019=$nrvehicule;
+        }
+        else {
+            $this->marci_2018=$marca;
+            $this->valori_2018=$nrvehicule;
+        }
+   } 
+    public function apelApi($link)
      {
       $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
