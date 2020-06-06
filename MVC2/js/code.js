@@ -32,6 +32,13 @@ function dashboard_pie(masini, an) {
         if(pie) {
             pie.style.strokeDasharray = result;
         }
+        if(an===2019){
+            document.getElementById("procentaj2019").innerHTML = number;
+        }
+        if(an===2018){
+            document.getElementById("procentaj2018").innerHTML = number;
+        }
+        console.log(number);
     }
 
     var setActiveClass = function(el) {
@@ -42,7 +49,7 @@ function dashboard_pie(masini, an) {
     }
 
     //setarile default
-    setPieChart('Dacia');
+    setPieChart('DACIA');
     if(buttons) {
         setActiveClass(buttons.children[0]);
     }
