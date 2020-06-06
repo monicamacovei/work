@@ -51,6 +51,7 @@ function dashboard_pie(masini, an) {
  /* end --- codul pentru pie 2018*/
 
  window.onload = function(){ 
+    alert("aaa");
      /*cod meniu*/
     var parent_menu = document.querySelector(".dropdown>a");
     parent_menu.onclick = function(e){
@@ -91,6 +92,20 @@ function dashboard_pie(masini, an) {
         }
     }
     /* end - cod tabs pentru an*/
+
+    var listaValori = [][];
+    var valoareTitlu = document.querySelectorAll('.titlu_masina_pie span');
+    var valoareNumar = document.querySelectorAll('.numar_masina_pie span');
+
+    for (var a = 0; a < valoareTitlu.length; a++) {
+        var listaInterioara = [];
+        listaInterioara.push(parseInt(valoareTitlu[a].innerHTML));
+        listaInterioara.push(parseInt(valoareNumar[a].innerHTML));
+        listaValori.push(parseInt(listaInterioara));
+    }
+    console.log(listaValori);
+    console.log("aaa");
+
     var masini = {
         Dacia: 60,
         Mercedes : 5,

@@ -91,24 +91,43 @@ function dashboard_pie(masini, an) {
         }
     }
     /* end - cod tabs pentru an*/
-    var masini = {
-        Dacia: 60,
-        Mercedes : 5,
-        Volvo: 9,
-        Tesla: 1,
-        Seat: 15,
-        Fiat: 12
-        };
-    dashboard_pie(masini, 2019);
 
-    masini = {
-        Dacia: 19,
-        Mercedes : 2,
-        Volvo: 7,
-        Tesla: 1,
-        Seat: 11,
-        Fiat: 7
-        };
+    var listaValori2019 = [];
+    var valoareTitlu2019 = document.querySelectorAll('.titlu_masina_pie span');
+    var valoareNumar2019 = document.querySelectorAll('.numar_masina_pie span');
+    var suma2019 = 0;
+    for (var a = 0; a < valoareTitlu2019.length; a++) {
+        var numar_pie = parseInt(valoareNumar2019[a].innerHTML);
+        suma2019 = suma2019 + numar_pie;
+    }
+    for (var a = 0; a < valoareTitlu2019.length; a++) {
+        var listaInterioara2019 = [];
+        var numar_pie = parseInt(valoareNumar2019[a].innerHTML);
+        numar_pie = (100*numar_pie)/suma2019;
+        listaInterioara2019.push(valoareTitlu2019[a].innerHTML);
+        listaInterioara2019.push(numar_pie);
+        listaValori2019.push(listaInterioara2019);
+    }
+    const dictionarValori2019 = Object.fromEntries(listaValori2019);
+    dashboard_pie(dictionarValori2019, 2019);
+
+    var listaValori2018 = [];
+    var valoareTitlu2018 = document.querySelectorAll('.titlu_masina_pie span');
+    var valoareNumar2018 = document.querySelectorAll('.numar_masina_pie span');
+    var suma2018 = 0;
+    for (var a = 0; a < valoareTitlu2018.length; a++) {
+        var numar_pie = parseInt(valoareNumar2018[a].innerHTML);
+        suma2019 = suma2019 + numar_pie;
+    }
+    for (var a = 0; a < valoareTitlu2019.length; a++) {
+        var listaInterioara2019 = [];
+        var numar_pie = parseInt(valoareNumar2019[a].innerHTML);
+        numar_pie = (100*numar_pie)/suma2019;
+        listaInterioara2019.push(valoareTitlu2019[a].innerHTML);
+        listaInterioara2019.push(numar_pie);
+        listaValori2019.push(listaInterioara2019);
+    }
+    const dictionarValori2019 = Object.fromEntries(listaValori2019);
     dashboard_pie(masini, 2018);
  };
 
