@@ -10,7 +10,7 @@ $db = $database->getConnection();
 
 //preluare parametrii
   //execut interogarea bazei de date
-  $query = "SELECT COUNT(*) FROM An2019 GROUP BY CATEGORIE_NATIONALA";
+  $query = "SELECT COUNT(NR) FROM (SELECT COUNT(*) as NR FROM An2019 GROUP BY CATEGORIE_NATIONALA) as numar";
   $stmt = $db->prepare($query);
   $stmt->execute();     
   $num = $stmt->rowCount();

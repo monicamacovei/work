@@ -18,13 +18,13 @@
          $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalMarci.php");
          $array = json_decode(json_encode($data['records']),true);
          $value = $array;
-         return $value[0]["SUM(NR)"];
+         return $value[0]["COUNT(NR)"];
      }
      public function nrTotalCategorii() {
         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalCategorii.php");
         $array = json_decode(json_encode($data['records']),true);
         $value = $array;
-        return $value[0]["COUNT(*)"];
+        return $value[0]["COUNT(NR)"];
     }
 
      public function iaValoare($an, $marca)
