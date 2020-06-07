@@ -558,6 +558,10 @@ ul.tabs li a {
     height: 100%;
 }
 /*end css fix*/
+iframe {
+    width: 100%;
+    border: unset;
+}
 @media screen and (max-width:1200px){
     article.tab-content{
         width:600px;

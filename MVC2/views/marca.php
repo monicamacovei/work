@@ -102,21 +102,7 @@
                             <ul class="marca_list">
                                 <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
-                                <div class="values">
-                                    <span><?php echo $valoare2015;?></span>
-                                    <span><?php echo $valoare2016;?></span>
-                                    <span><?php echo $valoare2017;?></span>
-                                    <span><?php echo $valoare2018;?></span>
-                                    <span><?php echo $valoare2019;?></span>
-                                </div>
-                                <div class="chart-marca chart"></div>
-                                <div class="chart-year">
-                                    <div>2015</div>
-                                    <div>2016</div>
-                                    <div>2017</div>
-                                    <div>2018</div>
-                                    <div>2019</div>
-                                </div>
+                                <iframe height="370" src="http://localhost/proiect-TW/grafic-servicii/grafic.php?val2015=<?php echo $valoare2015;?>&val2016=<?php echo $valoare2016;?>&val2017=<?php echo $valoare2017;?>&val2018=<?php echo $valoare2018;?>&val2019=<?php echo $valoare2019;?>"></iframe>
                                 <br/>
                                 <?php for($year = 2015; $year<=2019;$year++) {?>
                                     <h3 class="small_title">Detalii <?php echo $year;?></h3>

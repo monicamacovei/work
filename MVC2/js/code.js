@@ -174,44 +174,27 @@ var chart = {
     
     this.measurements.reverse();
   },
-  /**
-   * Get Element
-   * Take the selector  being passed, determine if 
-   * the selector is a class (".") or an id ("#"), and get the element
-   * @param  {String} element - the element selector
-   */
-  /**
-   * Create Chart
-   *  - calc the max value
-   *  - calc the points for the polygon
-   *  - create a chart <svg> 
-   *  	- set width, height, and viewbox attributes on <svg>
-   *  - create a <polygon>
-   *  	- set points on <polygon>	
-   *  - calc the vertical measurements
-   * @param  {array} values - the values to plot on the chart
-   */
   createChart : function(element, values){
     element = element.split('.').join(""); //sterg punctul de la clasa
     this.element = document.getElementsByClassName(element)[0];
     if(this.element) {
         this.values = values;
 
-        // Do some calculations
+        // Calcule initiale
         this.calcMaxValue();
         this.calcPoints();
         this.calcMeasure();
         
-        // Clear any existing
+        // Reseteaza
         this.element.innerHTML = "";
         
-        // Create the <svg>
+        // Creeaza SVG-ul
         this.chart = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         this.chart.setAttribute("width", "100%");
         this.chart.setAttribute("height", "100%");
         this.chart.setAttribute("viewBox", "0 0 " + chart.width + " " + chart.height);
 
-        // Create the <polygon>
+        //Creeaza <polygon>
         this.polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
         this.polygon.setAttribute("points", this.points);
         this.polygon.setAttribute("class", "line");
@@ -228,40 +211,30 @@ var chart = {
 
 
         this.element.appendChild(measurements);
-        // Append the <svg> to the target <div>
+        // Adauga svg la div
         this.element.appendChild(this.chart);
-        // Append the polygon to the target <svg>
+        // Adauga polygon la <svg>
         this.chart.appendChild(this.polygon);
         }
     }
   },
-    /**
-     * Calc Points
-     * Calculate all the points for the polygon
-     */
+    
     calcPoints : function(){
         this.points = [];
         if(this.values.length > 1){
-        // First point is bottom left hand side (max value is the bottom of graph)
         var points = "0," + chart.height + " ";
-        // Loop through each value
         for(x=0; x < this.values.length; x++){
-            // Calculate the perecentage of this value/the max value
+            // procentajul e valoarea / valoarea maxima
             var perc  = this.values[x] / this.maxValue;
-            // Steps is a percentage (100) / the total amount of values
+            // procentajul 100 / numarul de valori
             var steps = 100 / ( this.values.length - 1 );
-            // Create the point, limit points to 2 decimal points, 
-            // Y co-ord is calculated by the taking the chart height, 
-            // then subtracting (chart height * the percentage of this point)
-            // Remember the & co-ord is measured from the top not the bottom like a traditional graph
             var point = (steps * (x )).toFixed(2) + "," + (this.height - (this.height * perc)).toFixed(2) + " ";
-            // Add this point
+            // adauga punctul
             points += point;
         }
-        // Add the final point (bottom right)
         points += "100," + this.height;
         this.points = points;
-        
+        console.log(points);
         
         }
         // output the values for display
@@ -309,5 +282,4 @@ var categorieComunitara = document.querySelectorAll('.active .catcom-valori span
 for (var a = 0; a < categorieComunitara.length; a++) {
     listaValoriCatCom.push(parseInt(categorieComunitara[a].innerHTML));
 }
-console.log(listaValoriCatCom);
 chart.createChart('.chart-catcom',listaValoriCatCom);  
