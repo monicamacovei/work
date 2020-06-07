@@ -3,7 +3,7 @@
     class AnPage
     {
      public $categorii_nationale;
-     public $categorii_comunitara;
+     public $categorii_comunitare;
      public $valori_catnat;
      public $valori_catcom;
      public $anValoare;
@@ -36,11 +36,11 @@
       $i=0;
       $nrvehicule=array();
        foreach($array as $row){
-         $categorie_comunitara[$i]= $row["CATEGORIE_NATIONALA"];
+         $categorie_comunitara[$i]= $row["CATEGORIE_COMUNITARA"];
          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
          $i++;
        }
-       $this->categorii_comunitara=$categorie_comunitara;
+       $this->categorii_comunitare=$categorie_comunitara;
        $this->valori_catcom=$nrvehicule;
   } 
     public function apelApi($link)

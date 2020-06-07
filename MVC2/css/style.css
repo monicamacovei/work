@@ -507,11 +507,11 @@ padding-left: 40px;
 /*end - dupa marca - tabs*/
 
 /* css fix pentru an page*/
-.chart-an {
+.chart-categorii {
     position: relative;
     margin-top:50px;
 }
-.marci-showlist {
+.categorii-showlist {
     padding-left: 100px;
     margin-top: 10px;
     display: flex;
@@ -519,12 +519,12 @@ padding-left: 40px;
     padding-right: 40px;
 }
 
-.chart-an svg {
+.chart-categorii svg {
     padding-left: 100px;
     width: calc(100% - 130px);
 }
 
-.chart-an .chartMeasurements {
+.chart-categorii .chartMeasurements {
     top: 0;
     bottom: 0;
     height: 100%;

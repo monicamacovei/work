@@ -80,7 +80,7 @@
             </aside>
             <main class="gray-main">
                 <section>
-                    <h2 class="title">Procentajul de masini dupa an</h2>
+                    <h2 class="title">Statistici dupa an</h2>
                     <article class="tab-content">
                         <ul class="tabs">
                             <?php for($tab_number=0;$tab_number<5;$tab_number++){?>
@@ -92,9 +92,8 @@
                                 </li>
                             <?php $year_number++;}?>
                         </ul>
-                        <?php $year_number = 2015; for($tab_number=0;$tab_number<5;$tab_number++){?>
-                        <div class="content tab-<?php echo $tab_number;?> <?php if($an_link == $year_number){?>active<?php }?>">
-                            <p class="numar_total">Numar total de masini in <?php echo $year_number;?>: <?php echo $nrVehicule;?></p>
+                        <div class="content tab-<?php echo $tab_number;?> active">
+                            <p class="numar_total">Numar total de masini in <?php echo $an_link;?>: <?php echo $nrVehicule;?></p>
                             <div class="chart-wrapper">
                                 <div style="display:none" class="an-valori">
                                     <?php foreach($nrValoriCatNat as $valoare) {?>
@@ -102,8 +101,8 @@
                                     <?php }?>
                                     <span><?php echo $restulValorilorCatNat;?></span>
                                 </div>
-                                <div class="chart-an"></div>
-                                <div class="marci-showlist">
+                                <div class="chart-an chart-categorii"></div>
+                                <div class="marci-showlist categorii-showlist">
                                     <?php foreach($numeCategorieNationala as $categorie_nationala) {?>
                                         <span><?php echo $categorie_nationala;?></span>
                                     <?php }?>
@@ -117,8 +116,8 @@
                                     <?php }?>
                                     <span><?php echo $restulValorilorCatCom;?></span>
                                 </div>
-                                <div class="chart-catcom"></div>
-                                <div class="catcom-showlist">
+                                <div class="chart-catcom chart-categorii"></div>
+                                <div class="catcom-showlist categorii-showlist">
                                     <?php foreach($numeCategorieComunitara as $categorie_comunitara) {?>
                                         <span><?php echo $categorie_comunitara;?></span>
                                     <?php }?>
@@ -126,7 +125,6 @@
                                 </div>
                             </div>
                         </div>
-                        <?php $year_number++;}?>
                     </article>
                 </section>
             </main>

@@ -6,19 +6,21 @@ if( isset( $_GET['an'] ) ){
 }
 $year_number = 2015;
 $anpage = new AnPage();
-$nrVehicule = $anpage->nrTotalVehicule($year_number);
+$nrVehicule = $anpage->nrTotalVehicule($an_link);
 
-$anpage->nrValoriCategoriiNationale($year_number);
+$anpage->nrValoriCategoriiNationale($an_link);
 $nrValoriCatNat = $anpage->valori_catnat;
 $numeCategorieNationala = $anpage->categorii_nationale;
+$suma = 0;
 foreach($nrValoriCatNat as $valoare){
     $suma = $suma + $valoare;
 }
 $restulValorilorCatNat = $nrVehicule - $suma;
 
-$anpage->nrValoriCategoriiComunitare($year_number);
+$anpage->nrValoriCategoriiComunitare($an_link);
 $nrValoriCatCom = $anpage->valori_catcom;
-$numeCategorieNationala = $anpage->categorii_nationale;
+$numeCategorieComunitara = $anpage->categorii_comunitare;
+$suma = 0;
 foreach($nrValoriCatCom as $valoare){
     $suma = $suma + $valoare;
 }
