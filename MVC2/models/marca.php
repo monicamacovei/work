@@ -37,6 +37,20 @@
         $dateCategorii = ["categorie" => $categorie, "numar" => $nrvehicule];
         return $dateCategorii;
    }
+   public function getCategoriiComunitare($an, $marca) {
+     $data = $this->apelApi("http://localhost/proiect-TW/RestApi/marcaDateCategorii/CategoriiComunitare.php?an=".$an."&marca=".$marca);
+     $array = json_decode(json_encode($data['records']),true);
+     $i=0;
+     $categorie=array();
+     $nrvehicule=array();
+      foreach($array as $row){
+        $categorie[$i]= $row["CATEGORIE_COMUNITARA"];
+        $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+        $i++;
+      }
+       $dateCategorii = ["categorie" => $categorie, "numar" => $nrvehicule];
+       return $dateCategorii;
+  }
      public function apelApi($link)
      {
       $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului

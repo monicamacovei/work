@@ -20,9 +20,13 @@ $categoriiNationale =
     "2016" => $marci->getCategoriiNationale(2016,$marca_activa),
     "2015" => $marci->getCategoriiNationale(2015,$marca_activa),
 ];
-//$valoriCategoriiNationale = $marci->getValoriCategoriiNationale($marca_activa);
 
-//$categoriiComunitare = $marci->getCategoriiComunitare($marca_activa);
-//$valoriCategoriiComunitare = $marci->getValoriCategoriiComunitare($marca_activa);
+$categoriiComunitare =  
+    ["2019" => $marci->getCategoriiComunitare(2019,$marca_activa),
+    "2018" => $marci->getCategoriiComunitare(2018,$marca_activa),
+    "2017" => $marci->getCategoriiComunitare(2017,$marca_activa),
+    "2016" => $marci->getCategoriiComunitare(2016,$marca_activa),
+    "2015" => $marci->getCategoriiComunitare(2015,$marca_activa),
+];
 include_once '../views/marca.php';
 ?>

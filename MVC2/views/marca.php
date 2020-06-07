@@ -128,9 +128,11 @@
                                         </li>
                                         <?php }?>
                                         <h3 class="categorii_predominante">Top 5 categorii comunitare predominante:</h3>
+                                        <?php for($i=0 ; $i< count($categoriiComunitare[$year]['numar']) ; $i++){ ?>
                                         <li>
-                                            <span>2938</span>> masini din categoria comunitara "M1"
+                                            <span><?php echo $categoriiComunitare[$year]['numar'][$i];?></span>> masini din categoria comunitara "<?php echo $categoriiComunitare[$year]['categorie'][$i];?>"
                                         </li>
+                                        <?php }?>
                                     </ul>
                                 <?php }?>
                             </ul>
