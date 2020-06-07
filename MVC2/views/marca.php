@@ -99,21 +99,23 @@
                             <?php $i++;}?>
                         </ul>
                         <div class="content tab-1 active">
-                            <ul class="marca_list">
+                            <div class="marca_list">
                                 <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
                                 <iframe height="370" src="http://localhost/proiect-TW/grafic-servicii/grafic.php?val2015=<?php echo $valoare2015;?>&val2016=<?php echo $valoare2016;?>&val2017=<?php echo $valoare2017;?>&val2018=<?php echo $valoare2018;?>&val2019=<?php echo $valoare2019;?>"></iframe>
                                 <br/>
                                 <?php for($year = 2015; $year<=2019;$year++) {?>
                                     <h3 class="small_title">Detalii <?php echo $year;?></h3>
+                                    <h4 class="categorii_predominante">Top 5 categorii nationale predominante:</h4>
                                     <ul class="marca-year-detail">
-                                        <h3 class="categorii_predominante">Top 5 categorii nationale predominante:</h3>
                                         <?php for($i=0 ; $i< count($categoriiNationale[$year]['numar']) ; $i++){ ?>
                                         <li>
                                             <span><?php echo $categoriiNationale[$year]['numar'][$i];?></span>> masini din categoria nationala "<?php echo $categoriiNationale[$year]['categorie'][$i];?>"
                                         </li>
                                         <?php }?>
-                                        <h3 class="categorii_predominante">Top 5 categorii comunitare predominante:</h3>
+                                    </ul>
+                                    <h4 class="categorii_predominante">Top 5 categorii comunitare predominante:</h4>
+                                    <ul class="marca-year-detail">
                                         <?php for($i=0 ; $i< count($categoriiComunitare[$year]['numar']) ; $i++){ ?>
                                         <li>
                                             <span><?php echo $categoriiComunitare[$year]['numar'][$i];?></span>> masini din categoria comunitara "<?php echo $categoriiComunitare[$year]['categorie'][$i];?>"
@@ -121,7 +123,7 @@
                                         <?php }?>
                                     </ul>
                                 <?php }?>
-                            </ul>
+                            </div>
                         </div>
                         <div class="content tab-2">
                         </div>

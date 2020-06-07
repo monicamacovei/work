@@ -80,26 +80,27 @@
             </aside>
             <main>
                 <section class="dashboard-boxes">
+                        <h2 class="title">Valori totale din 2019:</h2>
                         <div class="three-columns">
                             <article>
                                 <div class="box-wrapper">
                                     <i class="fas fa-car-side"></i>
-                                    <div class="number"><?php echo intval($nrVehicule);?></div>
-                                    <div class="content">vehicule in ultimul an</div>
+                                    <h2 class="number"><?php echo intval($nrVehicule);?></h2>
+                                    <div class="content">vehicule</div>
                                 </div>
                             </article>
                             <article>
                                 <div class="box-wrapper">
                                     <i class="fas fa-tags"></i>
-                                    <div class="number"><?php echo intval($nrMarci);?></div>
-                                    <div class="content">marci in ultimul an</div>
+                                    <h2 class="number"><?php echo intval($nrMarci);?></h2>
+                                    <div class="content">marci</div>
                                 </div>
                             </article>
                             <article>
                                 <div class="box-wrapper">
                                     <i class="far fa-chart-bar"></i>
-                                    <div class="number"><?php echo intval($nrCategorii);?></div>
-                                    <div class="content">categorii nationale in ultimul an</div>
+                                    <h2 class="number"><?php echo intval($nrCategorii);?></h2>
+                                    <div class="content">categorii nationale</div>
                                 </div>
                             </article>
                         </div>
@@ -109,9 +110,9 @@
                     <div class="two-columns">
                         <article>
                             <figure>
-                                <figcaption>
+                                <h2>
                                     in 2019
-                                </figcaption>
+                                </h2>
                                 <div style="display:none;" class="titlu_masina_pie_2019">
                                     <?php foreach($marci2019 as $marca) {?>
                                         <span><?php echo $marca;?></span>
@@ -147,9 +148,9 @@
                         </article>
                         <article>
                             <figure>
-                                <figcaption>
+                                <h2>
                                     in 2018
-                                </figcaption>
+                                </h2>
                                 
                                 <div class="masini-menu-2018 masini-menu"></div>
                                 <svg width="200" height="200" class="chart">

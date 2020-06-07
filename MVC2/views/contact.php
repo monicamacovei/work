@@ -84,7 +84,9 @@
                     <h2 class="title">Contacteaza-ne</h2>
                 </section>
                 <section class="contact-box">
+                    <h3>Informatii despre cum ne poti contacta</h3>
                     <article>
+                        <h4>Date de contact:</h4>
                         <p>Numar de telefon mobil: <a href="tel:075828433">075828433</a></p>
                         <p>Numar de telefon fix: <a href="tel:021332142">(021) 333 21 42</a></p>
                         <p>E-mail: <a href="mailto:apax@contact.com">contact@apax.com</a></p>
@@ -92,7 +94,7 @@
                         <p>Cod Postal: <span>70043</span></p>
                     </article>
                     <article>
-                        <p>Orar de lucru: </p>
+                        <h4>Orar de lucru: </h4>
                         <ul>
                             <li>Luni: <span>09:00-17:00</span></li>
                             <li>Marti: <span>09:00-17:00</span></li>
