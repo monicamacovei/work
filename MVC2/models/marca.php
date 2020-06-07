@@ -22,7 +22,21 @@
             $this->anValoare[$i]= $row;
             $i++;
         }
-	 }
+    }
+    public function getCategoriiNationale($an, $marca) {
+      $data = $this->apelApi("http://localhost/proiect-TW/RestApi/marcaDateCategorii/CategoriiNationale.php?an=".$an."&marca=".$marca);
+      $array = json_decode(json_encode($data['records']),true);
+      $i=0;
+      $categorie=array();
+      $nrvehicule=array();
+       foreach($array as $row){
+         $categorie[$i]= $row["CATEGORIE_NATIONALA"];
+         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+         $i++;
+       }
+        $dateCategorii = ["categorie" => $categorie, "numar" => $nrvehicule];
+        return $dateCategorii;
+   }
      public function apelApi($link)
      {
       $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului

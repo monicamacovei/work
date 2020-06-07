@@ -122,18 +122,14 @@
                                     <h3 class="small_title">Detalii <?php echo $year;?></h3>
                                     <ul class="marca-year-detail">
                                         <h3 class="categorii_predominante">Top 5 categorii nationale predominante:</h3>
+                                        <?php for($i=0 ; $i< count($categoriiNationale[$year]['numar']) ; $i++){ ?>
                                         <li>
-                                            <span>2938</span>> masini din categoria nationala "Autobuz"
+                                            <span><?php echo $categoriiNationale[$year]['numar'][$i];?></span>> masini din categoria nationala "<?php echo $categoriiNationale[$year]['categorie'][$i];?>"
                                         </li>
-                                        <li>
-                                            <span>2938</span>> masini din categoria nationala "Autobuz"
-                                        </li>
+                                        <?php }?>
                                         <h3 class="categorii_predominante">Top 5 categorii comunitare predominante:</h3>
                                         <li>
                                             <span>2938</span>> masini din categoria comunitara "M1"
-                                        </li>
-                                        <li>
-                                            <span>2938</span>> masini din categoria comunitara "M2"
                                         </li>
                                     </ul>
                                 <?php }?>
