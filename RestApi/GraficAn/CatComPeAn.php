@@ -11,7 +11,7 @@ $db = $database->getConnection();
 if(isset($_GET['an'])){
   //execut interogarea bazei de date
   $an = $_GET['an'];
-  $query = "SELECT MARCA, SUM(TOTAL_VEHICULE) FROM An".$an." GROUP BY MARCA ORDER BY SUM(TOTAL_VEHICULE) DESC LIMIT 4";
+  $query = "SELECT CATEGORIE_COMUNITARA, SUM(TOTAL_VEHICULE) FROM An".$an." GROUP BY CATEGORIE_COMUNITARA ORDER BY SUM(TOTAL_VEHICULE) DESC LIMIT 4";
   $stmt = $db->prepare($query);
   $stmt->execute();     
   $num = $stmt->rowCount();

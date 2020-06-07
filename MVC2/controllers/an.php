@@ -7,12 +7,21 @@ if( isset( $_GET['an'] ) ){
 $year_number = 2015;
 $anpage = new AnPage();
 $nrVehicule = $anpage->nrTotalVehicule($year_number);
-$anpage->nrValoriVehicule($year_number);
-$nrValori = $anpage->valori;
-$numeMarca = $anpage->marci;
-foreach($nrValori as $valoare){
+
+$anpage->nrValoriCategoriiNationale($year_number);
+$nrValoriCatNat = $anpage->valori_catnat;
+$numeCategorieNationala = $anpage->categorii_nationale;
+foreach($nrValoriCatNat as $valoare){
     $suma = $suma + $valoare;
 }
-$restulValorilor = $nrVehicule - $suma;
+$restulValorilorCatNat = $nrVehicule - $suma;
+
+$anpage->nrValoriCategoriiComunitare($year_number);
+$nrValoriCatCom = $anpage->valori_catcom;
+$numeCategorieNationala = $anpage->categorii_nationale;
+foreach($nrValoriCatCom as $valoare){
+    $suma = $suma + $valoare;
+}
+$restulValorilorCatCom = $nrVehicule - $suma;
 include_once '../views/an.php';
 ?>

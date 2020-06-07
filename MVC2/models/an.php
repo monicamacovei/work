@@ -2,8 +2,10 @@
   
     class AnPage
     {
-     public $marci;
-     public $valori;
+     public $categorii_nationale;
+     public $categorii_comunitara;
+     public $valori_catnat;
+     public $valori_catcom;
      public $anValoare;
      public function __construct()
      {
@@ -15,20 +17,32 @@
          $value = $array;
          return $value[0]["SUM(TOTAL_VEHICULE)"];
      }
-    public function nrValoriVehicule($an) {
-       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/VehiculePeAn.php?an=".$an);
+    public function nrValoriCategoriiNationale($an) {
+       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/CatNatPeAn.php?an=".$an);
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
-       $marca=array();
        $nrvehicule=array();
         foreach($array as $row){
-          $marca[$i]= $row["MARCA"];
+          $categorie_nationala[$i]= $row["CATEGORIE_NATIONALA"];
           $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
           $i++;
         }
-        $this->marci=$marca;
-        $this->valori=$nrvehicule;
+        $this->categorii_nationale=$categorie_nationala;
+        $this->valori_catnat=$nrvehicule;
    } 
+   public function nrValoriCategoriiComunitare($an) {
+      $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/CatComPeAn.php?an=".$an);
+      $array = json_decode(json_encode($data['records']),true);
+      $i=0;
+      $nrvehicule=array();
+       foreach($array as $row){
+         $categorie_comunitara[$i]= $row["CATEGORIE_NATIONALA"];
+         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+         $i++;
+       }
+       $this->categorii_comunitara=$categorie_comunitara;
+       $this->valori_catcom=$nrvehicule;
+  } 
     public function apelApi($link)
      {
       $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului

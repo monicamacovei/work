@@ -97,17 +97,32 @@
                             <p class="numar_total">Numar total de masini in <?php echo $year_number;?>: <?php echo $nrVehicule;?></p>
                             <div class="chart-wrapper">
                                 <div style="display:none" class="an-valori">
-                                    <span><?php echo $restulValorilor;?></span>
-                                    <?php foreach($nrValori as $valoare) {?>
+                                    <?php foreach($nrValoriCatNat as $valoare) {?>
                                         <span><?php echo $valoare;?></span>
                                     <?php }?>
+                                    <span><?php echo $restulValorilorCatNat;?></span>
                                 </div>
                                 <div class="chart-an"></div>
                                 <div class="marci-showlist">
-                                    <span>Celelalte</span>
-                                    <?php foreach($numeMarca as $marca) {?>
-                                        <span><?php echo $marca;?></span>
+                                    <?php foreach($numeCategorieNationala as $categorie_nationala) {?>
+                                        <span><?php echo $categorie_nationala;?></span>
                                     <?php }?>
+                                    <span>Celelalte</span>
+                                </div>
+                            </div>
+                            <div class="chart-wrapper">
+                                <div style="display:none" class="catcom-valori">
+                                    <?php foreach($nrValoriCatCom as $valoare) {?>
+                                        <span><?php echo $valoare;?></span>
+                                    <?php }?>
+                                    <span><?php echo $restulValorilorCatCom;?></span>
+                                </div>
+                                <div class="chart-catcom"></div>
+                                <div class="catcom-showlist">
+                                    <?php foreach($numeCategorieComunitara as $categorie_comunitara) {?>
+                                        <span><?php echo $categorie_comunitara;?></span>
+                                    <?php }?>
+                                    <span>Celelalte</span>
                                 </div>
                             </div>
                         </div>

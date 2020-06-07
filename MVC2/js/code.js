@@ -302,3 +302,13 @@ for (var a = 0; a < valoareAn.length; a++) {
     listaValoriAn.push(parseInt(valoareAn[a].innerHTML));
 }
 chart.createChart('.chart-an',listaValoriAn);  
+
+
+var listaValoriCatCom = [];
+var categorieComunitara = document.querySelectorAll('.active .an-valori span');
+
+for (var a = 0; a < categorieComunitara.length; a++) {
+    console.log(a);
+    listaValoriCatCom.push(parseInt(categorieComunitara[a].innerHTML));
+}
+chart.createChart('.chart-an',listaValoriCatCom);  
