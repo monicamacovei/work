@@ -286,13 +286,6 @@ var chart = {
 var values = [];
 
 
-
-chart.createChart('.chart-2015',[5,10,15,30,1,3,5,20]);  
-chart.createChart('.chart-2016',[9,12,2,13,44,2,83,3]);  
-chart.createChart('.chart-2017',[15,29,3,55,20,492,33,1]);  
-chart.createChart('.chart-2018',[1,2,3,4,99,5,84,23]);  
-chart.createChart('.chart-2019',[5,10,15,30,1,3,5,20]);
-
 var listaValori = [];
 var valoare = document.querySelectorAll('.values span');
 
@@ -301,3 +294,11 @@ for (var a = 0; a < valoare.length; a++) {
 }
 chart.createChart('.chart-marca',listaValori);  
 
+var listaValoriAn = [];
+var valoareAn = document.querySelectorAll('.active .an-valori span');
+
+for (var a = 0; a < valoareAn.length; a++) {
+    console.log(a);
+    listaValoriAn.push(parseInt(valoareAn[a].innerHTML));
+}
+chart.createChart('.chart-an',listaValoriAn);  

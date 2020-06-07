@@ -505,6 +505,23 @@ padding-left: 40px;
     margin-top:20px;
 }
 /*end - dupa marca - tabs*/
+
+/* css fix pentru an page*/
+.chart-an {
+    position: relative;
+}
+
+.chart-an svg {
+    padding-left: 100px;
+    width: calc(100% - 130px);
+}
+
+.chart-an .chartMeasurements {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+}
+/*end css fix*/
 @media screen and (max-width:1200px){
     article.tab-content{
         width:600px;

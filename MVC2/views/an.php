@@ -94,15 +94,15 @@
                         </ul>
                         <?php $year_number = 2015; for($tab_number=0;$tab_number<5;$tab_number++){?>
                         <div class="content tab-<?php echo $tab_number;?> <?php if($an_link == $year_number){?>active<?php }?>">
-                            <p class="numar_total">Numar total de masini in <?php echo $year_number;?>: <?php echo $nrVehicule[$year_number];?></p>
+                            <p class="numar_total">Numar total de masini in <?php echo $year_number;?>: <?php echo $nrVehicule;?></p>
                             <div class="chart-wrapper">
-                                <div style="display:none" class="values">
-                                    <span>5</span>
-                                    <span>42</span>
-                                    <span>254</span>
-                                    <span>23423</span>
+                                <div style="display:none" class="an-valori">
+                                    <span><?php echo $restulValorilor;?></span>
+                                    <?php foreach($nrValori as $valoare) {?>
+                                        <span><?php echo $valoare;?></span>
+                                    <?php }?>
                                 </div>
-                                <div class="chart-<?php echo $year_number?>"></div>
+                                <div class="chart-an"></div>
                             </div>
                         </div>
                         <?php $year_number++;}?>

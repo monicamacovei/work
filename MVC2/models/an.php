@@ -2,10 +2,8 @@
   
     class AnPage
     {
-     public $marci_2019;
-     public $valori_2019;
-     public $marci_2018;
-     public $valori_2018;
+     public $marci;
+     public $valori;
      public $anValoare;
      public function __construct()
      {
@@ -17,20 +15,8 @@
          $value = $array;
          return $value[0]["SUM(TOTAL_VEHICULE)"];
      }
-     public function nrTotalMarci() {
-         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalMarci.php");
-         $array = json_decode(json_encode($data['records']),true);
-         $value = $array;
-         return $value[0]["COUNT(NR)"];
-     }
-     public function nrTotalCategorii() {
-        $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalCategorii.php");
-        $array = json_decode(json_encode($data['records']),true);
-        $value = $array;
-        return $value[0]["COUNT(NR)"];
-    }
-    public function informatiiPie($an) {
-       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/homepagepie/total".$an.".php");
+    public function nrValoriVehicule($an) {
+       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/VehiculePeAn.php?an=".$an);
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
        $marca=array();
@@ -40,14 +26,8 @@
           $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
           $i++;
         }
-        if($an == 2019) {
-            $this->marci_2019=$marca;
-            $this->valori_2019=$nrvehicule;
-        }
-        else {
-            $this->marci_2018=$marca;
-            $this->valori_2018=$nrvehicule;
-        }
+        $this->marci=$marca;
+        $this->valori=$nrvehicule;
    } 
     public function apelApi($link)
      {
