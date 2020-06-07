@@ -103,6 +103,12 @@
                                     <?php }?>
                                 </div>
                                 <div class="chart-an"></div>
+                                <div class="marci-showlist">
+                                    <span>Celelalte</span>
+                                    <?php foreach($numeMarca as $marca) {?>
+                                        <span><?php echo $marca;?></span>
+                                    <?php }?>
+                                </div>
                             </div>
                         </div>
                         <?php $year_number++;}?>

@@ -509,6 +509,14 @@ padding-left: 40px;
 /* css fix pentru an page*/
 .chart-an {
     position: relative;
+    margin-top:50px;
+}
+.marci-showlist {
+    padding-left: 100px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 40px;
 }
 
 .chart-an svg {
