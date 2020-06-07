@@ -142,7 +142,7 @@
                                 <svg width="200" height="200" class="chart">
                                     <circle r="100" cx="100" cy="100" class="pie-2019"/>
                                 </svg>
-                                <span id="procentaj2019"></span>%
+                                <div class="procentaj"><span id="procentaj2019"></span>%</div>
                             </figure>
                         </article>
                         <article>
@@ -155,7 +155,7 @@
                                 <svg width="200" height="200" class="chart">
                                     <circle r="100" cx="100" cy="100" class="pie-2018"/>
                                 </svg>
-                                <span id="procentaj2018"></span>%
+                                <div class="procentaj"><span id="procentaj2018"></span>%</div>
                             </figure>
                         </article>
                     </div>
