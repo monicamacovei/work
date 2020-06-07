@@ -208,7 +208,7 @@ body {
   border-radius: 50%;
   display: block;
 }
-.procentaj-masini figcaption {
+.procentaj-masini .titlu_an {
     font-family: 'Quicksand';
     text-transform: uppercase;
     font-weight: 800;

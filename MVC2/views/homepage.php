@@ -110,7 +110,7 @@
                     <div class="two-columns">
                         <article>
                             <figure>
-                                <h2>
+                                <h2 class="titlu_an">
                                     in 2019
                                 </h2>
                                 <div style="display:none;" class="titlu_masina_pie_2019">
@@ -148,7 +148,7 @@
                         </article>
                         <article>
                             <figure>
-                                <h2>
+                                <h2 class="titlu_an">
                                     in 2018
                                 </h2>
                                 
