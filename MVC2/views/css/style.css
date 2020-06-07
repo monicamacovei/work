@@ -500,11 +500,6 @@ padding-left: 40px;
 }
 
 /*end - dupa marca - tabs*/
-.procentaj{
-    text-align: center;
-    width: 100%;
-    display: block;
-}
 @media screen and (max-width:1200px){
     article.tab-content{
         width:600px;

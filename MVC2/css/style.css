@@ -498,7 +498,12 @@ padding-left: 40px;
     width: 70%;
     padding-left: 40px;
 }
-
+.procentaj{
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top:20px;
+}
 /*end - dupa marca - tabs*/
 @media screen and (max-width:1200px){
     article.tab-content{
