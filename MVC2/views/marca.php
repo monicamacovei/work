@@ -118,39 +118,25 @@
                                     <div>2019</div>
                                 </div>
                                 <br/>
-                                <br/>
-
-                                <div>
-                                <?php
-                                if (sizeof($vehicule) == 0) {
-                                    echo 'Nu am gasit vehicule';
-                                }
-                                foreach ($vehicule as $nrVehicul) {
-                                    echo "<tr>";
-                                    echo "<td>" . $nrVehicul['nume'] . "</td>";
-                                    echo "</tr>";
-                                }
-
-                                ?>
-                                </div>
-                                <h3 class="small_title">Detalii 2015</h3>
-                                <ul class="marca-year-detail">
-                                    <li>
-                                        <span>2938</span>> masini din categoria "Autobuz" dintre care <span>30%</span> sunt pe motorina si <span>70%</span> pe benzina
-                                    </li>
-                                    <li>
-                                        <span>55</span>> masini din categoria "Automobil Mixt" dintre care <span>15%</span> sunt pe motorina si <span>85%</span> pe benzina
-                                    </li>
-                                </ul>
-                                <h3 class="small_title">Detalii 2016</h3>
-                                <ul class="marca-year-detail">
-                                    <li>
-                                        <span>4534</span>> masini din categoria "Autobuz" dintre care <span>35%</span> sunt pe motorina si <span>65%</span> pe benzina
-                                    </li>
-                                    <li>
-                                        <span>74</span>> masini din categoria "Automobil Mixt" dintre care <span>15%</span> sunt pe motorina si <span>85%</span> pe benzina
-                                    </li>
-                                </ul>
+                                <?php for($year = 2015; $year<=2019;$year++) {?>
+                                    <h3 class="small_title">Detalii <?php echo $year;?></h3>
+                                    <ul class="marca-year-detail">
+                                        <h3 class="categorii_predominante">Top 5 categorii nationale predominante:</h3>
+                                        <li>
+                                            <span>2938</span>> masini din categoria nationala "Autobuz"
+                                        </li>
+                                        <li>
+                                            <span>2938</span>> masini din categoria nationala "Autobuz"
+                                        </li>
+                                        <h3 class="categorii_predominante">Top 5 categorii comunitare predominante:</h3>
+                                        <li>
+                                            <span>2938</span>> masini din categoria comunitara "M1"
+                                        </li>
+                                        <li>
+                                            <span>2938</span>> masini din categoria comunitara "M2"
+                                        </li>
+                                    </ul>
+                                <?php }?>
                             </ul>
                         </div>
                         <div class="content tab-2">
