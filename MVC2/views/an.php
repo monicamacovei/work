@@ -83,47 +83,29 @@
                     <h2 class="title">Procentajul de masini dupa an</h2>
                     <article class="tab-content">
                         <ul class="tabs">
-                            <li data-tab="tab-1" class="active">
-                                <div class="hover-effect"></div>
-                                <div class="year">2015</div>
-                            </li>
-                            <li data-tab="tab-2">
-                                <div class="hover-effect"></div>
-                                <div class="year">2016</div>
-                            </li>
-                            <li data-tab="tab-3">
-                                <div class="hover-effect"></div>
-                                <div class="year">2017</div>
-                            </li>
-                            <li data-tab="tab-4">
-                                <div class="hover-effect"></div>
-                                <div class="year">2018</div>
-                            </li>
-                            <li data-tab="tab-5">
-                                <div class="hover-effect"></div>
-                                <div class="year">2019</div>
-                            </li>
+                            <?php for($tab_number=0;$tab_number<5;$tab_number++){?>
+                                <li data-tab="tab-<?php echo $tab_number;?>" class="<?php if($an_link == $year_number){?>active<?php }?>">
+                                    <div class="hover-effect"></div>
+                                    <a href="?an=<?php echo $year_number;?>">
+                                        <div class="year"><?php echo $year_number;?></div>
+                                    </a>
+                                </li>
+                            <?php $year_number++;}?>
                         </ul>
-                        <div class="content tab-1 active">
-                            <div class="values"></div>
-                            <div class="chart-2015"></div>
+                        <?php $year_number = 2015; for($tab_number=0;$tab_number<5;$tab_number++){?>
+                        <div class="content tab-<?php echo $tab_number;?> <?php if($an_link == $year_number){?>active<?php }?>">
+                            <p class="numar_total">Numar total de masini in <?php echo $year_number;?>: <?php echo $nrVehicule[$year_number];?></p>
+                            <div class="chart-wrapper">
+                                <div style="display:none" class="values">
+                                    <span>5</span>
+                                    <span>42</span>
+                                    <span>254</span>
+                                    <span>23423</span>
+                                </div>
+                                <div class="chart-<?php echo $year_number?>"></div>
+                            </div>
                         </div>
-                        <div class="content tab-2">
-                            <div class="values"></div>
-                            <div class="chart-2016"></div>
-                        </div>
-                        <div class="content tab-3">
-                            <div class="values"></div>
-                            <div class="chart-2017"></div>
-                        </div>
-                        <div class="content tab-4">
-                            <div class="values"></div>
-                            <div class="chart-2018"></div>
-                        </div>
-                        <div class="content tab-5">
-                            <div class="values"></div>
-                            <div class="chart-2019"></div>
-                        </div>
+                        <?php $year_number++;}?>
                     </article>
                 </section>
             </main>

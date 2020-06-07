@@ -32,12 +32,20 @@ function dashboard_pie(masini, an) {
         if(pie) {
             pie.style.strokeDasharray = result;
         }
-        number = number.toFixed(2);
+        if(number){
+            number = number.toFixed(2);
+        }
         if(an===2019){
-            document.getElementById("procentaj2019").innerHTML = number;
+            var procentaj = document.getElementById("procentaj2019");
+            if(procentaj && number) {
+                procentaj.innerHTML = number;
+            }
         }
         if(an===2018){
-            document.getElementById("procentaj2018").innerHTML = number;
+            var procentaj = document.getElementById("procentaj2018");
+            if(procentaj && number) {
+                procentaj.innerHTML = number;
+            }
         }
     }
 
@@ -116,7 +124,6 @@ function dashboard_pie(masini, an) {
         listaValori2019.push(listaInterioara2019);
     }
     const dictionarValori2019 = Object.fromEntries(listaValori2019);
-    console.log(dictionarValori2019);
     dashboard_pie(dictionarValori2019, 2019);
 
     var listaValori2018 = [];
