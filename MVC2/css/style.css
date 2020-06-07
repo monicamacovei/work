@@ -52,7 +52,7 @@ aside > h2 {
     text-transform: uppercase;
     font-family: 'Stardos Stencil', cursive;
 }
-section.dashboard-boxes .title {
+.dashboard-boxes .title {
     margin-bottom: 50px;
 }
 nav ul {
@@ -70,7 +70,7 @@ nav ul li a {
     color: #a2a2d1;
     text-decoration: unset;
 }
-i.fas.fa-caret-down {
+.fa-caret-down {
     margin-left: 20px;
 }
 nav ul ul a {
@@ -107,7 +107,7 @@ body {
     flex-shrink: 1;
     flex-basis: auto;
 }
-.dropdown ul.hide-submenu {
+.dropdown .hide-submenu {
     max-height: 1px;
 }
 
@@ -137,7 +137,7 @@ body {
     padding-top: 30px;
     padding-bottom: 30px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px -7px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px -7px rgba(0,0,0,0.75);
 }
 
 .box-wrapper>i {
@@ -175,12 +175,11 @@ body {
 
 .mobile_menu {
     align-self: center;
-    display: flex;
     flex-direction: row;
     align-items: center;
     display:none;
 }
-p.menu-label {
+.menu-label {
     color: #fff;
     text-transform: uppercase;
     font-family: 'Quicksand';
@@ -285,12 +284,9 @@ p.menu-label {
 .procentaj-masini figure {
     background: #efeff5;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px -7px rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px -7px rgba(0,0,0,0.75);
     border-top: 11px solid #21214e;
-    padding-top: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 30px;
+    padding: 30px 15px 30px 15px;
 }
 
 /*end -- dashboard procentaj masini*/
@@ -327,32 +323,24 @@ p.menu-label {
 .contact-us .title:after {
     background-color: #fff;
 }
-section.contact-box {
+.contact-box {
     width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    -webkit-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.59);
-    -moz-box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.59);
-    box-shadow: 0px 0px 12px -1px rgba(0,0,0,0.59);
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-top: -90px;
+    box-shadow: 0 0 12px -1px rgba(0,0,0,0.59);
+    padding:20px;
     z-index: 2;
     position: relative;
     background-color: #fff;
     background: #23244e;
     color: #fff;
     font-family: 'Quicksand';
-    margin-bottom: 40px;
+    margin: -90px auto 40px auto;
 }
-section.contact-box a {
+.contact-box a {
     color: #82ffff;
     text-decoration: none;
 }
 
-section.contact-box a:hover {
+.contact-box a:hover {
     text-decoration: underline;
 }
 /*end-contact us page*/
@@ -386,10 +374,7 @@ ul.tabs>li {
     background: linear-gradient(90deg, transparent 70%, rgba(255, 255, 255, 0.2) 100%);
 }
 article.tab-content .content {
-    padding-bottom: 30px;
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 30px 20px 30px 20px;
     position: relative;
     border-bottom:8px solid #23234e;
     background-color: #fff;
@@ -461,16 +446,16 @@ li.active {
 
 /*dupa marca - tabs*/
 .marca_list .values{
-    display: none !important;
+    display: none;
 }
-article.tab-content.vertical-tab {
+.vertical-tab {
     width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-article.tab-content.vertical-tab .tabs {
+.vertical-tab .tabs {
     display: block;
     flex-basis: 25%;
     background: linear-gradient(180deg, #e5eaf1 0%, #d2cfe9 100%);
@@ -481,28 +466,28 @@ article.tab-content.vertical-tab .tabs {
 .box-wrapper .content {
     display: block;
 }
-article.tab-content.vertical-tab .tabs li {
+.vertical-tab .tabs li {
     display: block;
     flex-basis: unset;
 }
-article.tab-content.vertical-tab .tabs li.active {
+.vertical-tab .tabs li.active {
     height: unset;
     border: none;
     border-radius: unset;
     top:0;
 }
 
-article.tab-content.vertical-tab .content {
+.vertical-tab .content {
     flex-basis: 72%;
     border-radius: 0;
     border-bottom: unset;
     border-top: 8px solid #23244e;
 }
-ul.marca_list .chart {
+.marca_list .chart {
     width: 70%;
 }
 
-ul.marca_list .chart svg {
+.marca_list .chart svg {
 padding-left: 40px;
 }
 .chart-year {
@@ -547,8 +532,8 @@ padding-left: 40px;
 }
 ul.tabs li a {
     display: block;
-    padding-top: 22px !important;
-    padding-bottom: 22px !important;
+    padding-top: 22px;
+    padding-bottom: 22px;
     text-decoration:unset;
 }
 
@@ -587,7 +572,7 @@ iframe {
         display: none;
     }
     
-    aside nav.show-menu {
+    aside .show-menu {
         display: block;
     }
     .wrapper {
