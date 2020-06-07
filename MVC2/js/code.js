@@ -32,13 +32,13 @@ function dashboard_pie(masini, an) {
         if(pie) {
             pie.style.strokeDasharray = result;
         }
+        number = number.toFixed(2);
         if(an===2019){
             document.getElementById("procentaj2019").innerHTML = number;
         }
         if(an===2018){
             document.getElementById("procentaj2018").innerHTML = number;
         }
-        console.log(number);
     }
 
     var setActiveClass = function(el) {
