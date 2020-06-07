@@ -94,6 +94,7 @@
                         </ul>
                         <div class="content tab-<?php echo $tab_number;?> active">
                             <p class="numar_total">Numar total de masini in <?php echo $an_link;?>: <?php echo $nrVehicule;?></p>
+                            
                             <div class="chart-wrapper">
                                 <div style="display:none" class="an-valori">
                                     <?php foreach($nrValoriCatNat as $valoare) {?>
@@ -109,6 +110,7 @@
                                     <span>Celelalte</span>
                                 </div>
                             </div>
+                            <h3 class="titlu_grafic">Statistici despre Categoriile Nationale</h3>
                             <div class="chart-wrapper">
                                 <div style="display:none" class="catcom-valori">
                                     <?php foreach($nrValoriCatCom as $valoare) {?>
@@ -124,6 +126,7 @@
                                     <span>Celelalte</span>
                                 </div>
                             </div>
+                            <h3 class="titlu_grafic">Statistici despre Categoriile Comunitare</h3>
                         </div>
                     </article>
                 </section>

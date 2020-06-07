@@ -518,6 +518,15 @@ padding-left: 40px;
     justify-content: space-between;
     padding-right: 40px;
 }
+.titlu_grafic {
+    font-family: 'Quicksand';
+    margin-top: 30px;
+    display: block;
+    text-align: center;
+}
+.numar_total{
+    text-align: center;
+}
 
 .chart-categorii svg {
     padding-left: 100px;
