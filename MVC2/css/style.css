@@ -221,9 +221,11 @@ p.menu-label {
 .procentaj-masini {
     padding-top: 40px;
 }
+
 .masini-menu div:last-of-type {
     margin-right: 0;
 }
+
 .masini-menu div {
     display: inline-block;
     padding: 10px 20px;
@@ -232,12 +234,24 @@ p.menu-label {
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 10px;
+    cursor:pointer;
+    transition: color .4s ease, background-color .4s ease;
+}
+.vertical-tab .tabs {
+    max-height: 400px;
+    overflow-y: scroll;
+    border-radius: 0 0 0 30px;
+}
+.masini-menu div:hover {
+    background: #22224e;
+    color: #fff;
 }
   
 .masini-menu div.active {
     background-color: #22224e;
     color: white;
   }
+
 .procentaj-masini .two-columns {
     display: flex;
     flex-direction: row;
@@ -365,9 +379,8 @@ ul.tabs {
 ul.tabs>li {
     display: inline-block;
     flex-basis: calc(100% / 5);
-    padding-top: 25px;
-    padding-bottom: 25px;
-    height:23px;
+    padding-top: 0;
+    padding-bottom: 0;
     overflow: hidden;
     position: relative;
     background: linear-gradient(90deg, transparent 70%, rgba(255, 255, 255, 0.2) 100%);
@@ -386,7 +399,7 @@ article.tab-content .content {
     background-color: #efeff5;
 }
 ul.tabs>li.active {
-    height: 35px;
+    height: 65px;
     position: relative;
     top: -9px;
     background: #fff;
@@ -531,6 +544,12 @@ padding-left: 40px;
 .chart-categorii svg {
     padding-left: 100px;
     width: calc(100% - 130px);
+}
+ul.tabs li a {
+    display: block;
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
+    text-decoration:unset;
 }
 
 .chart-categorii .chartMeasurements {
