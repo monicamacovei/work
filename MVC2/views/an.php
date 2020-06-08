@@ -129,7 +129,7 @@
                                 </div>
                             </div>
                             <h3 class="titlu_grafic">Statistici despre Categoriile Comunitare</h3>
-                            <a class="save" href="" download="graph.svg">Save</a>
+                            <a class="save" href="" download="graph.svg">Salveaza</a>
                         </div>
                     </article>
                 </section>
