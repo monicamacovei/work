@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Scholarly HTML</title>
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+  </head>
+  <body prefix="schema: http://schema.org">
+    <header>
+      <div class="banner">
+        <img src="img/logo.png" width="227" height="50" alt="APAX logo">
+        <div class="status">Proiect TW</div>
+      </div>
+      <h1>APAX - Ghid de utilizare</h1>
+    </header>
+    <div role="contentinfo">
+      <dl>
+        <dt>Autori</dt>
+        <dd>
+          Macovei Monica-Ioana
+          &amp;
+          Luca Nicoleta
+        </dd>
+      </dl>
+    </div>
+    <section typeof="sa:Abstract" id="abstract" role="doc-abstract">
+      <h2>Abstract</h2>
+      <p>
+        APAX este un website care permite vizualizarea a mai multor statistici 
+        pe baza datelor publice privind parcul auto din România pe ultimii 5 ani. 
+        Statisticile oferite de APAX sunt categorizate pe an, categorie națională, județ și 
+        marcă. Acestea pot fi vizualizate printr-un grafic separat, pentru fiecare categorie. 
+        De asemenea, pentru a intra în contact cu APAX, este făcută o pagină separată 
+        denumită "Contact". Datele pot fi descărcate în trei moduri diferite: CSV, SVG și WebP.
+      </p>
+    </section>
+    <section id="introducere" role="doc-introduction">
+      <!-- review? -->
+      <h2>Introducere</h2>
+      <p>
+        În cazul în care o persoană caută surse de vizualizare a datelor despre mașini,
+        formatul public din fișierele de CSV este dificil de înțeles și este greu de comparat 
+        diferite valori. Astfel, APAX vine în ajutorul lor prin a folosi toate datele publice 
+        și a le introduce în diferite grafice care ușurează vizualizarea și compararea valorilor.
+      </p>
+      <p>
+        Scopurile principale ale aplicației web sunt:
+      </p>
+      <ul>
+        <li>Oferă accesibilitate și ușurință în înțelegerea conținutului.</li>
+        <li>Funcționează pe toate browserele.</li>
+        <li>
+          Funcționează pe orice dimensiune a ecranului.
+        </li>
+        <li>Oferă statistici pe baza unor date reale, verificate.</li>
+      </ul>
+    </section>
+    <section id="tehnologii">
+      <!-- review? -->
+      <h2>Tehnologii</h2>
+      <p>
+        Tehnologii folosite:
+      </p>
+      <ul>
+        <li>Prototip: HTML & CSS & JavaScript.</li>
+        <li>Backend: PHP.</li>
+        <li>Baza de date: MySQL.</li>
+        <li>API: Google Maps.</li>
+      </ul>
+    </div>
+  </section>
+  <section id="structure">
+    <!-- review? -->
+    <h2>Arhitectura aplicatiei</h2>
+      <section id="diagrama_arhitecturala">
+        <!-- review? -->
+        <h3>Diagrama arhitecturala</h3>
+        <p>
+          Disclosure information is a list of disclosure actions described in a simple triples
+          structure.
+        </p>
+        <img src="diagrame/diagrama-arhitecturala.png" alt="Diagrama arhitecturala"> 
+      </section>
+      <section id="functionalitati">
+        <!-- review? -->
+        <h3>Funcționalități</h3>
+        <p>
+          Vizitatorul poate vedea:
+        </p>
+        <ul>
+          <li>Total vehicule, mărci și categorii naționale pe 2019 în Dashboard.</li>
+          <li>Grafic cu numărul total de vehicule în 2018 și 2019 în Dashboard.</li>
+          <li>Harta României pe județe în pagină "După județ".</li>
+          <li>Toate mărcile în pagină "După marca".</li>
+          <li>Număr de mașini pe an în pagină "După marca".</li>
+          <li>Top 5 categorii naționale și comunitare predominante în fiecare an 
+            după marca în pagină "După marca".</li>
+          <li>Numărul total de mașini în fiecare an în pagină "După an".</li>
+          <li>Top 4 categorii naționale și comunitare și numărul lor comparativ cu a 
+            celorlaltora adunate, în fiecare an, în pagină "După an".</li>
+          <li>Datele de contact ale dețînătorilor APAX in pagină "Contact".</li>
+        </ul>
+      </section>
+      <section id="apiuri">
+        <!-- review? -->
+        <h3>API-uri</h3>
+        <p>
+          Pagina "după județ" a avut nevoie de API pentru a afișa harta, 
+          folosind API-ul de la Google Maps.
+        </p>
+      </section>
+      <section id="schema_baza_de_date">
+        <!-- review? -->
+        <h3>Schema baza de date</h3>
+        <img src="diagrame/schema_bd.png" alt="Schema baza de date"> 
+      </section>
+    </section>
+    <section id="references"><h2><span> </span>Referinte</h2><dl>
+      <dt id="ref-HTML">Pie</dt><dd property="schema:citation" typeof="schema:WebPage" resource="https://css-tricks.com/how-to-make-charts-with-svg/
+    ">
+        <cite property="schema:name"><a href="https://css-tricks.com/how-to-make-charts-with-svg/
+    ">Pie</a></cite>.
+      </dd><dt id="ref-WAI-ARIA">Chart</dt><dd property="schema:citation" typeof="schema:WebPage" resource="https://codepen.io/alanmenhennet/pen/WxrXww ">
+        <cite property="schema:name"><a href="https://codepen.io/alanmenhennet/pen/WxrXww ">Chart</a></cite>.
+      </dd></dl>
+    </section>
+  </body>
+</html>

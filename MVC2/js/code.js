@@ -149,7 +149,6 @@ function dashboard_pie(masini, an) {
 
  /*cod pentru pagina cu an*/
 
-console.clear();
 var chart = {
   element      : "",
   chart        : "",
