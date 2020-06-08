@@ -5,6 +5,7 @@
     <meta name="Author" content="Macovei Monica-Ioana">
     <meta name="Author" content="Luca Nicoleta">
     <meta name="Description" content="Instrument Web de vizualizare adecvata si de comparare multi-criteriala a datelor publice privind parcul auto din Romania pe ultimii 5 ani">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
 
@@ -20,6 +21,12 @@
             <img alt="logo" src="http://localhost/proiect-TW/MVC2/img/logo.png" />
         </div>
         <div class="right-area">
+            <div class="marquee">
+                <div aria-hidden="true">
+                    <span>Aplicatie de vizionat date despre parcul auto 2015-2019</span>
+                    <span>Aplicatie de vizionat date despre parcul auto 2015-2019</span>
+                </div>
+            </div>
             <div class="mobile_menu">
                 <p class="menu-label">Menu</p>
                 <i class="fas fa-bars"></i>
