@@ -11,33 +11,33 @@
      {
      }
      
-     public function nrTotalVehicule($an) {
+     public function nrTotalVehicule($an) { //numarul total de vehicule in functie de anul dat
          $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule.php?an=".$an);
          $array = json_decode(json_encode($data['records']),true);
          $value = $array;
-         return $value[0]["SUM(TOTAL_VEHICULE)"];
+         return $value[0]["SUM(TOTAL_VEHICULE)"]; 
      }
-    public function nrValoriCategoriiNationale($an) {
+    public function nrValoriCategoriiNationale($an) { //numarul total de categorii nationale in functie de anul dat
        $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/CatNatPeAn.php?an=".$an);
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
        $nrvehicule=array();
-        foreach($array as $row){
-          $categorie_nationala[$i]= $row["CATEGORIE_NATIONALA"];
-          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
-          $i++;
+        foreach($array as $row){ //pentru fiecare element din lista trimisa de API
+          $categorie_nationala[$i]= $row["CATEGORIE_NATIONALA"]; //iau titlul categoriei
+          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"]; //iau numarul de vehicule din categorie
+          $i++; 
         }
-        $this->categorii_nationale=$categorie_nationala;
-        $this->valori_catnat=$nrvehicule;
+        $this->categorii_nationale=$categorie_nationala; //pun lista cu titluri in variabila "categorii_nationale" a clasei 
+        $this->valori_catnat=$nrvehicule; //pun lista cu valori in variabila "valori_catnat" a clasei
    } 
-   public function nrValoriCategoriiComunitare($an) {
+   public function nrValoriCategoriiComunitare($an) { //numarul total de categorii comunitare in functie de anul dat
       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/GraficAn/CatComPeAn.php?an=".$an);
       $array = json_decode(json_encode($data['records']),true);
       $i=0;
       $nrvehicule=array();
-       foreach($array as $row){
-         $categorie_comunitara[$i]= $row["CATEGORIE_COMUNITARA"];
-         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+       foreach($array as $row){//pentru fiecare element din lista trimisa de API
+         $categorie_comunitara[$i]= $row["CATEGORIE_COMUNITARA"]; //iau titlul categoriei
+         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];//iau numarul de vehicule din categorie
          $i++;
        }
        $this->categorii_comunitare=$categorie_comunitara;

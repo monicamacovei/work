@@ -11,33 +11,30 @@
      {
      }
      
-     public function nrTotalVehicule($an) {
+     public function nrTotalVehicule($an) { //numarul total de vehicule pe an
          $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalVehicule.php?an=".$an);
          $array = json_decode(json_encode($data['records']),true);
-         $value = $array;
-         return $value[0]["SUM(TOTAL_VEHICULE)"];
+         return $array[0]["SUM(TOTAL_VEHICULE)"];
      }
-     public function nrTotalMarci() {
+     public function nrTotalMarci() { //numarul total de marci
          $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalMarci.php");
          $array = json_decode(json_encode($data['records']),true);
-         $value = $array;
-         return $value[0]["COUNT(NR)"];
+         return $array[0]["COUNT(NR)"];
      }
-     public function nrTotalCategorii() {
+     public function nrTotalCategorii() {//numarul total de categorii
         $data = $this->apelApi("http://localhost/proiect-TW/RestApi/totalvalues/totalCategorii.php");
         $array = json_decode(json_encode($data['records']),true);
-        $value = $array;
-        return $value[0]["COUNT(NR)"];
+        return $array[0]["COUNT(NR)"];
     }
-    public function informatiiPie($an) {
+    public function informatiiPie($an) {//titlul si valorile marcilor dupa an
        $data = $this->apelApi("http://localhost/proiect-TW/RestApi/homepagepie/total".$an.".php");
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
        $marca=array();
        $nrvehicule=array();
-        foreach($array as $row){
-          $marca[$i]= $row["MARCA"];
-          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+        foreach($array as $row){//pentru fiecare element din lista trimisa de API
+          $marca[$i]= $row["MARCA"]; //titlul marcii
+          $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"]; //numarul de vehicule
           $i++;
         }
         if($an == 2019) {

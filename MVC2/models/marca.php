@@ -9,7 +9,7 @@
       $this->lista_nume=array();
       $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca"));
 	 }
-     public function iaValoare($an, $marca)
+     public function iaValoare($an, $marca) //ia valoare pentru graficul dupa an
      {
         $this->extract_value($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?an=". $an . "&tip=valori&marca=".urlencode($marca)));
         return $this->anValoare;
@@ -18,34 +18,34 @@
      {
         $array = json_decode(json_encode($data['records']),true);
         $i=0;
-        foreach($array as $row){
-            $this->anValoare[$i]= $row;
+        foreach($array as $row){//pentru fiecare element din lista trimisa de API
+            $this->anValoare[$i]= $row; //pune in lista anValoare fiecare valoare a numarului de vehicule din an
             $i++;
         }
     }
-    public function getCategoriiNationale($an, $marca) {
+    public function getCategoriiNationale($an, $marca) { //ia categoriile nationale pe ultimii 5 ani
       $data = $this->apelApi("http://localhost/proiect-TW/RestApi/marcaDateCategorii/CategoriiNationale.php?an=".$an."&marca=".$marca);
       $array = json_decode(json_encode($data['records']),true);
       $i=0;
       $categorie=array();
       $nrvehicule=array();
-       foreach($array as $row){
-         $categorie[$i]= $row["CATEGORIE_NATIONALA"];
-         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+       foreach($array as $row){//pentru fiecare element din lista trimisa de API
+         $categorie[$i]= $row["CATEGORIE_NATIONALA"]; //lista "categorie" va contine titlul tuturor categoriilor nationale din top 4 pe ultimii 5 ani
+         $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];//lista "nrvehicule" va contine numarul de vehicule al tuturor categoriilor nationale din top 4 pe ultimii 5 ani
          $i++;
        }
         $dateCategorii = ["categorie" => $categorie, "numar" => $nrvehicule];
         return $dateCategorii;
    }
-   public function getCategoriiComunitare($an, $marca) {
+   public function getCategoriiComunitare($an, $marca) {//ia categoriile comunitare pe ultimii 5 ani
      $data = $this->apelApi("http://localhost/proiect-TW/RestApi/marcaDateCategorii/CategoriiComunitare.php?an=".$an."&marca=".$marca);
      $array = json_decode(json_encode($data['records']),true);
      $i=0;
      $categorie=array();
      $nrvehicule=array();
-      foreach($array as $row){
-        $categorie[$i]= $row["CATEGORIE_COMUNITARA"];
-        $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];
+      foreach($array as $row){//pentru fiecare element din lista trimisa de API
+        $categorie[$i]= $row["CATEGORIE_COMUNITARA"];//lista "categorie" va contine titlul tuturor categoriilor comunitare din top 4 pe ultimii 5 ani
+        $nrvehicule[$i]= $row["SUM(TOTAL_VEHICULE)"];//lista "nrvehicule" va contine numarul de vehicule al tuturor categoriilor comunitare din top 4 pe ultimii 5 ani
         $i++;
       }
        $dateCategorii = ["categorie" => $categorie, "numar" => $nrvehicule];
@@ -77,7 +77,7 @@
        $array = json_decode(json_encode($data['records']),true);
        $i=0;
         foreach($array as $row){
-        $this->lista_nume[$i]= $row;
+        $this->lista_nume[$i]= $row; //pune in lista_nume titlul tuturor marcilor
         $i++;
         }
 	 }
