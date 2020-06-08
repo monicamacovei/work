@@ -101,43 +101,47 @@
                         </ul>
                         <div class="content tab-1 active">
                             <div class="marca_list">
-                                <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
-                                <h3 class="small_title">Numar de masini pe an</h3>
-                                <?php
-                                $params = array(
-                                    '2015' => $valoare2015,
-                                    '2016' => $valoare2016,
-                                    '2017' => $valoare2017,
-                                    '2018' => $valoare2018,
-                                    '2019' => $valoare2019
-                                );
+                                <?php if(strlen($marci->lista_nume[$nr_marca]['MARCA']) <=1) {?>
+                                <h2> Nu exista marca</h2>
+                                <?php }else{?>
+                                    <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
+                                    <h3 class="small_title">Numar de masini pe an</h3>
+                                    <?php
+                                    $params = array(
+                                        '2015' => $valoare2015,
+                                        '2016' => $valoare2016,
+                                        '2017' => $valoare2017,
+                                        '2018' => $valoare2018,
+                                        '2019' => $valoare2019
+                                    );
 
-                                ?>
-                                <iframe height="370"
-                                src="http://localhost/proiect-TW/grafic-servicii/grafic.php?<?php echo http_build_query($params);?>"></iframe>
-                                <br/>
-                                <?php for($year = 2015; $year<=2019;$year++) {?>
-                                    <h3 class="small_title">Detalii <?php echo $year;?></h3>
-                                    <h4 class="categorii_predominante">Top 5 categorii nationale predominante:</h4>
-                                    <?php if(count($categoriiNationale[$year]['numar']) == 0){?>
-                                    <p>Nu exista date din anul <?php echo $year;?></p>
-                                    <?php } else {?>
-                                    <ul class="marca-year-detail">
-                                        <?php for($i=0 ; $i< count($categoriiNationale[$year]['numar']) ; $i++){ ?>
-                                        <li>
-                                            <span><?php echo $categoriiNationale[$year]['numar'][$i];?></span>> masini din categoria nationala "<?php echo $categoriiNationale[$year]['categorie'][$i];?>"
-                                        </li>
-                                        <?php }?>
-                                    </ul>
-                                    <h4 class="categorii_predominante">Top 5 categorii comunitare predominante:</h4>
-                                    <ul class="marca-year-detail">
-                                        <?php for($i=0 ; $i< count($categoriiComunitare[$year]['numar']) ; $i++){ ?>
-                                        <li>
-                                            <span><?php echo $categoriiComunitare[$year]['numar'][$i];?></span>> masini din categoria comunitara "<?php echo $categoriiComunitare[$year]['categorie'][$i];?>"
-                                        </li>
-                                        <?php }?>
-                                    </ul>
-                                        <?php }?>
+                                    ?>
+                                    <iframe height="370"
+                                    src="http://localhost/proiect-TW/grafic-servicii/grafic.php?<?php echo http_build_query($params);?>"></iframe>
+                                    <br/>
+                                    <?php for($year = 2015; $year<=2019;$year++) {?>
+                                        <h3 class="small_title">Detalii <?php echo $year;?></h3>
+                                        <h4 class="categorii_predominante">Top 5 categorii nationale predominante:</h4>
+                                        <?php if(count($categoriiNationale[$year]['numar']) == 0){?>
+                                        <p>Nu exista date din anul <?php echo $year;?></p>
+                                        <?php } else {?>
+                                        <ul class="marca-year-detail">
+                                            <?php for($i=0 ; $i< count($categoriiNationale[$year]['numar']) ; $i++){ ?>
+                                            <li>
+                                                <span><?php echo $categoriiNationale[$year]['numar'][$i];?></span>> masini din categoria nationala "<?php echo $categoriiNationale[$year]['categorie'][$i];?>"
+                                            </li>
+                                            <?php }?>
+                                        </ul>
+                                        <h4 class="categorii_predominante">Top 5 categorii comunitare predominante:</h4>
+                                        <ul class="marca-year-detail">
+                                            <?php for($i=0 ; $i< count($categoriiComunitare[$year]['numar']) ; $i++){ ?>
+                                            <li>
+                                                <span><?php echo $categoriiComunitare[$year]['numar'][$i];?></span>> masini din categoria comunitara "<?php echo $categoriiComunitare[$year]['categorie'][$i];?>"
+                                            </li>
+                                            <?php }?>
+                                        </ul>
+                                            <?php }?>
+                                    <?php }?>
                                 <?php }?>
                             </div>
                         </div>

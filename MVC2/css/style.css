@@ -452,6 +452,9 @@ li.active {
 .marca_list .values{
     display: none;
 }
+.vertical-tab .tabs li:first-child {
+    display: none;
+}
 .vertical-tab {
     width: 90%;
     display: flex;
