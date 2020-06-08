@@ -551,12 +551,16 @@ iframe {
     width: 100%;
     border: unset;
 }
+
 @media screen and (max-width:1200px){
     article.tab-content{
         width:600px;
     }
 }
 @media screen and (max-width:980px){
+    .marquee{
+        display:none;
+    }
     .categorii-showlist span {
         writing-mode: vertical-rl;
     }
@@ -644,4 +648,32 @@ iframe {
 .vertical-tab .content iframe {
     height: 250px !important;
 }
+}
+
+@media screen and (min-width:980px){
+    .marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding-top: 30px;
+}
+
+.marquee div {
+  width: 200%;
+  position: absolute;
+  animation: marquee 50s linear infinite;
+}
+
+.marquee span {
+  float: left;
+  width: 50%;
+  color: #fff;
+  font-family: 'Quicksand';
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}
+
 }

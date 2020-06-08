@@ -152,7 +152,7 @@ function dashboard_pie(masini, an) {
 
  /***** invtat de pe https://codepen.io/alanmenhennet/pen/WxrXww ******/
 
- console.clear();
+console.clear();
 var chart = {
   element      : "",
   chart        : "",
@@ -295,9 +295,30 @@ chart.createChart('.chart-an',listaValoriAn);
 
 var listaValoriCatCom = [];
 var categorieComunitara = document.querySelectorAll('.active .catcom-valori span');
-
 for (var a = 0; a < categorieComunitara.length; a++) {
     listaValoriCatCom.push(parseInt(categorieComunitara[a].innerHTML));
 }
-console.log(listaValoriCatCom);
 chart.createChart('.chart-catcom',listaValoriCatCom);
+
+
+/*adauga banner in header*/
+function addBanner() {
+    const div = document.createElement('div');
+  
+    div.className = 'marquee';
+  
+    div.innerHTML = `
+        <div aria-hidden="true">
+        <span>Aplicatie de vizionat date despre parcul auto 2015-2019</span>
+        <span>Aplicatie de vizionat date despre parcul auto 2015-2019</span>
+        </div>
+    `;
+    var header_area = document.querySelector('.right-area');
+    header_area.appendChild(div);
+}
+window.onload = function() {
+    var viewportWidth = window.innerWidth;
+    if (viewportWidth > 980) {
+        addBanner();
+    }
+}
