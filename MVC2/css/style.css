@@ -557,6 +557,9 @@ iframe {
     }
 }
 @media screen and (max-width:980px){
+    .categorii-showlist span {
+        writing-mode: vertical-rl;
+    }
     .mobile_menu{
         display:block;
     }
@@ -619,4 +622,26 @@ iframe {
     .three-columns article{
         margin-bottom: 30px;
     }
+}
+@media screen and (max-width:680px){
+    .vertical-tab .tabs {
+    display:block;
+}
+
+.vertical-tab {
+    display: block;
+}
+
+.vertical-tab .tabs {
+    width: 100%;
+    border-radius: unset;
+}
+.vertical-tab .content iframe {
+    height: 200px !important;
+}
+}
+@media screen and (max-width:1150px){
+.vertical-tab .content iframe {
+    height: 250px !important;
+}
 }

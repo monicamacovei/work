@@ -6,10 +6,10 @@
 
 .chartMeasurements {
     position: absolute;
-    top: 30px;
+    top: 0px;
     left: 7px;
     width: 100%;
-    height: calc(100% - 60px);
+    height: 100%;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
