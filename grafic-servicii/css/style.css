@@ -29,3 +29,14 @@
     padding-left: 70px;
     position: relative;
 }
+a{
+    background: #23234e;
+    color: #fff;
+    border-radius: 5px;
+    display: block;
+    width: 70px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    text-decoration: unset;
+}
