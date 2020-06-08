@@ -92,7 +92,7 @@
                             $host = strstr($host, '?', true);
                             foreach($marci->lista_nume as $marca) { ?>
                                 <li <?php if($marci->lista_nume[$nr_marca]['MARCA']==$marca['MARCA']){?>class="active"<?php }?> data-tab="tab-1">
-                                    <a href="<?php echo $host; ?>?marca=<?php echo $i;?>">
+                            <a href="<?php echo $host; ?>?marca=<?php echo $i; if(isset($_GET['tip']) && $_GET['tip']=='all') {?>&tip=all<?php }?>">
                                         <div class="hover-effect"></div>
                                         <div class="type"><?php echo $marca['MARCA']; ?></div>
                                     </a>
