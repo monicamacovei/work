@@ -1,5 +1,4 @@
 /* codul pentru pie dashboard */
-/*invatat de pe https://css-tricks.com/how-to-make-charts-with-svg/ */
 function dashboard_pie(masini, an) {
     var pie = document.querySelector('.pie-' + an);
     var buttons = document.querySelector('.masini-menu-' + an);
@@ -149,8 +148,6 @@ function dashboard_pie(masini, an) {
 
 
  /*cod pentru pagina cu an*/
-
- /***** invtat de pe https://codepen.io/alanmenhennet/pen/WxrXww ******/
 
 console.clear();
 var chart = {
