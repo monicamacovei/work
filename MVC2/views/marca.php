@@ -5,7 +5,6 @@
         <meta name="Author" content="Macovei Monica-Ioana">
         <meta name="Author" content="Luca Nicoleta">
         <meta name="Description" content="Instrument Web de vizualizare adecvata si de comparare multi-criteriala a datelor publice privind parcul auto din Romania pe ultimii 5 ani">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
 
@@ -103,7 +102,18 @@
                             <div class="marca_list">
                                 <h2 class="marca_title">Marca <?php echo $marci->lista_nume[$nr_marca]['MARCA'];?></h2>
                                 <h3 class="small_title">Numar de masini pe an</h3>
-                                <iframe height="370" src="http://localhost/proiect-TW/grafic-servicii/grafic.php?val2015=<?php echo $valoare2015;?>&val2016=<?php echo $valoare2016;?>&val2017=<?php echo $valoare2017;?>&val2018=<?php echo $valoare2018;?>&val2019=<?php echo $valoare2019;?>"></iframe>
+                                <?php
+                                $params = array(
+                                    '2015' => $valoare2015,
+                                    '2016' => $valoare2016,
+                                    '2017' => $valoare2017,
+                                    '2018' => $valoare2018,
+                                    '2019' => $valoare2019
+                                );
+
+                                ?>
+                                <iframe height="370"
+                                src="http://localhost/proiect-TW/grafic-servicii/grafic.php?<?php echo http_build_query($params);?>"></iframe>
                                 <br/>
                                 <?php for($year = 2015; $year<=2019;$year++) {?>
                                     <h3 class="small_title">Detalii <?php echo $year;?></h3>

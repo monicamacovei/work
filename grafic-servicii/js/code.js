@@ -10,18 +10,23 @@ var chart = {
   width        : 100,
   height       : 50,
   maxValue     : 0,
+  minValue   : 9999999,
   values       : [],
   points       : [],
   vSteps       : 5,
   measurements : [],
   
   calcMeasure : function(){
-    this.measurements = [];
-      for(x=0; x < this.vSteps; x++){
-        var measurement = Math.ceil((this.maxValue / this.vSteps) * (x +1));
-        this.measurements.push(measurement);
+      this.measurements = new Set();
+      this.measurements.add(this.minValue);
+      for(x=0; x < this.vSteps-1; x++){
+          var measurement = Math.ceil(((this.maxValue-this.minValue) / this.vSteps) * (x +1));
+          console.log(measurement+this.minValue);
+          this.measurements.add(measurement+this.minValue);
       }
-    
+
+      this.measurements.add(this.maxValue);
+      this.measurements = Array.from(this.measurements);
     this.measurements.reverse();
   },
   createChart : function(element, values){
@@ -31,7 +36,7 @@ var chart = {
         this.values = values;
 
         // Calcule initiale
-        this.calcMaxValue();
+        this.calcMaxAndMinValue();
         this.calcPoints();
         this.calcMeasure();
         
@@ -52,6 +57,7 @@ var chart = {
         if(this.values.length > 1){
         var measurements = document.createElement("div");
         measurements.setAttribute("class", "chartMeasurements");
+            console.log(measurements);
         for(x=0; x < this.measurements.length; x++){
             var measurement = document.createElement("div");
             measurement.setAttribute("class", "chartMeasurement");
@@ -65,6 +71,8 @@ var chart = {
         this.element.appendChild(this.chart);
         // Adauga polygon la <svg>
         this.chart.appendChild(this.polygon);
+        // Seteaza link pentru butonul de salvare
+            document.getElementsByTagName("a")[0].href='data:image/svg+xml;charset=utf-8,'+document.getElementsByTagName("svg")[0].outerHTML
         }
     }
   },
@@ -75,7 +83,7 @@ var chart = {
         var points = "0," + chart.height + " ";
         for(x=0; x < this.values.length; x++){
             // procentajul e valoarea / valoarea maxima
-            var perc  = this.values[x] / this.maxValue;
+            var perc  = (this.values[x]-this.minValue) / (this.maxValue-this.minValue);
             // procentajul 100 / numarul de valori
             var steps = 100 / ( this.values.length - 1 );
             var point = (steps * (x )).toFixed(2) + "," + (this.height - (this.height * perc)).toFixed(2) + " ";
@@ -94,15 +102,24 @@ var chart = {
      * Find the highest value in the array, and then
      * add 10% to it so the graph doesn't touch the top of the chart
      */
-    calcMaxValue : function(){
+    calcMaxAndMinValue : function(){
         this.maxValue = 0;
+        this.minValue = 999999999999;
         for(x=0; x < this.values.length; x++){
             if(this.values[x] > this.maxValue){
                 this.maxValue = this.values[x];
             }
+            if(this.values[x] < this.minValue){
+                this.minValue = this.values[x];
+            }
         }
         // Round up to next integer
+        this.minValue = Math.floor(this.minValue);
         this.maxValue = Math.ceil(this.maxValue);
+        if(this.minValue >= 1)
+            {
+              //  this.minValue -= 1;
+            }
     }
 }
 
@@ -133,4 +150,4 @@ for (var a = 0; a < categorieComunitara.length; a++) {
     listaValoriCatCom.push(parseInt(categorieComunitara[a].innerHTML));
 }
 console.log(listaValoriCatCom);
-chart.createChart('.chart-catcom',listaValoriCatCom);  
+chart.createChart('.chart-catcom',listaValoriCatCom);

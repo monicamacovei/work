@@ -9,20 +9,16 @@
 
     <body>
         <div class="values">
-            <span><?php echo $_GET["val2015"];?></span>
-            <span><?php echo $_GET["val2016"];?></span>
-            <span><?php echo $_GET["val2017"];?></span>
-            <span><?php echo $_GET["val2018"];?></span>
-            <span><?php echo $_GET["val2019"];?></span>
+            <?php foreach($_GET as $value) { ?>
+            <span><?php echo $value?></span>
+            <?php } ?>
         </div>
         <div class="chart-marca chart"></div>
         <div class="chart-year">
-            <div>2015</div>
-            <div>2016</div>
-            <div>2017</div>
-            <div>2018</div>
-            <div>2019</div>
-        </div>
+            <?php foreach(array_keys($_GET) as $key) { ?>
+            <div><?php echo $key?></div>
+            <?php } ?>
+        </div><a href="" download="graph.svg">Save</a>
         <script src="js/code.js"></script>
     </body>
 </html>
