@@ -45,7 +45,7 @@
                         </a>
                         <ul>
                             <li>
-                                <a href="harta.php">
+                                <a href="http://localhost/proiect-TW/MVC2/index.php?url=ControllerCategorii/judet">
                                     <i class="fas fa-globe-europe"></i>
                                     <span>Dupa judet</span>
                                 </a>

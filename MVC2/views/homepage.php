@@ -45,7 +45,7 @@
                             </a>
                             <ul>
                                 <li>
-                                    <a href="harta.php">
+                                    <a href="../index.php?url=ControllerCategorii/judet">
                                         <i class="fas fa-globe-europe"></i>
                                         <span>Dupa judet</span>
                                     </a>
@@ -63,7 +63,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Categorii_nationale.php">
+                                    <a href="../index.php?url=ControllerCategorii/categorie_nationala">
                                         <i class="fas fa-truck-pickup"></i>
                                         <span>Dupa categorie nationala</span>
                                     </a>

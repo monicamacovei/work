@@ -43,38 +43,38 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="homepage.php">
+                        <a href="controllers/homepage.php">
                             <i class="fas fa-home"></i> 
                             <span>Dashboard</span>
                         </a>
                     </li>
                     <li class="dropdown">
-                        <a href="automobile_categorizate.php">
+                        <a href="#">
                             <i class="far fa-chart-bar"></i>
                             <span>Automobile categorizate</span>
                             <i class="fas fa-caret-down"></i>
                         </a>
                         <ul>
                             <li>
-                                <a class="active" href="harta.php">
+                                <a class="active" href="index.php?url=ControllerCategorii/judet">
                                     <i class="fas fa-globe-europe"></i>
                                     <span>Dupa judet</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="an.php">
+                                <a href="controllers/an.php">
                                     <i class="far fa-calendar-alt"></i>
                                     <span>Dupa an</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="marca.php">
+                                <a href="controllers/marca.php">
                                     <i class="fas fa-tag"></i>
                                     <span>Dupa marca</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="Categorii_nationale.php">
+                                <a href="index.php?url=ControllerCategorii/categorie_nationala">
                                     <i class="fas fa-truck-pickup"></i>
                                     <span>Dupa categorie nationala</span>
                                 </a>
@@ -82,7 +82,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.php">
+                        <a href="controllers/contact.php">
                             <i class="fas fa-envelope-open-text"></i>
                             <span>Contact</span>
                         </a>
