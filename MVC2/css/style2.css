@@ -1,16 +1,20 @@
+:root {
+    --culoare_predominanta: #23234e;
+    --a_doua_culoare: #a2a2d1;
+}
 #infobox {
     text-align: center;
     color: #23234e;
     background-color: white;
     border: 2px solid #23234e;
-    width:50%;
-    margin:auto;
-    font-weight:bold;
-    font-size:150%;
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+    font-size: 150%;
 }
 
 .tooltiptext {
-    display:none;
+    display: none;
     width: 120px;
     background-color: black;
     color: #fff;
@@ -21,75 +25,77 @@
     position: absolute;
     z-index: 1;
 }
-    .tooltiptext:focus{
-        visibility:visible;
-    }
-    /* Show the tooltip text when you mouse over the tooltip container */
-    .options {
-        width: 100%;
-        height: 20%;
-        padding-top: 0;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-content: space-around;
-        flex-wrap: wrap;
-    }
-    /*sursa de inspiratie pentru butoane:https://codepen.io/comehope/pen/qYMoPo*/
-    button {
-            font-size: 40px;
-            font-family: sans-serif;
-            color: #23234e;
-            background-color: white;
-            border: 2px solid #23234e;
-            letter-spacing: 0.1em;
-            width: 5em;
-            height: 1.5em;
-            line-height: 1.5em;
-            position: relative;
-            overflow: hidden;
-            margin: 0.5em;
-            cursor: pointer;
-        }
 
-    .options button span {
-                color: white;
-                mix-blend-mode: difference;
+    .tooltiptext:focus {
+        visibility: visible;
     }
+/* Show the tooltip text when you mouse over the tooltip container */
+.options {
+    width: 100%;
+    height: 20%;
+    padding-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+/*sursa de inspiratie pentru butoane:https://codepen.io/comehope/pen/qYMoPo*/
+button {
+    font-size: 40px;
+    font-family: sans-serif;
+    color: #23234e;
+    background-color: white;
+    border: 2px solid #23234e;
+    letter-spacing: 0.1em;
+    width: 5em;
+    height: 1.5em;
+    line-height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    margin: 0.5em;
+    cursor: pointer;
+}
 
-            .options button::before {
-                content: '';
-                position: absolute;
-                width: 1.5em;
-                height: inherit;
-                background-color: #23234e;
-                border-radius: 50%;
-                color: #23234e;
-                top: 0;
-                left: -0.75em;
-                transition: 0.5s ease-out;
-            }
+.options button span {
+    color: white;
+    mix-blend-mode: difference;
+}
 
-            .options button:focus::before {
-                transform: scale(7);
-            }
-        
+.options button::before {
+    content: '';
+    position: absolute;
+    width: 1.5em;
+    height: inherit;
+    background-color: #23234e;
+    border-radius: 50%;
+    color: #23234e;
+    top: 0;
+    left: -0.75em;
+    transition: 0.5s ease-out;
+}
+
+.options button:focus::before {
+    transform: scale(7);
+}
+
 
 .afisaj {
     margin: 0 auto;
     padding: 3%;
-    
 }
+
 .tabcontent {
     border: 2px solid #23234e;
     background-color: aliceblue;
-    display:flex;
-    flex-direction:row;
-    align-content:space-between;
-    flex-wrap:wrap;
-    padding:3%;
-    padding-left:0;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding: 3%;
+    padding-left: 0;
 }
+
 .chartcontainer {
     border: 2px solid #23234e;
     background-color: aliceblue;
@@ -99,8 +105,8 @@
     flex-wrap: wrap;
     padding: 3%;
     padding-left: 0;
-
 }
+
 .chart {
     background: repeating-linear-gradient(to top,grey, white 1px, white 109px, #23234e 2px);
     display: flex;
@@ -112,26 +118,27 @@
     height: 80%;
     border-bottom: 2px solid #23234e;
 }
+
 .axa-Y {
     height: 550px;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     border-right: 2px solid #23234e;
-    align-items:flex-end;
-    padding-bottom:0;
+    align-items: flex-end;
+    padding-bottom: 0;
     width: 7%;
     flex-wrap: wrap;
     justify-content: flex-end;
 }
+
 .lab {
-    height:100px;
-    
-   border-top: 2px solid #23234e;
+    height: 100px;
+    border-top: 2px solid #23234e;
     color: #23234e;
-    font-size:150%;
-    padding-left:0;
-    padding-top:10%;
-    text-align:end;
+    font-size: 150%;
+    padding-left: 0;
+    padding-top: 10%;
+    text-align: end;
 }
 
 .axa-X {
@@ -142,20 +149,20 @@
     justify-content: space-around;
     align-content: center;
     border-top: 2px solid #23234e;
-    align-self:flex-end;
-    padding-left:7%;
+    align-self: flex-end;
+    padding-left: 7%;
     width: 90%;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.labelX {
-    
-    align-self:flex-end;
-    display: table;
-    height:100%;
-    padding-top:1%;
 
+.labelX {
+    align-self: flex-end;
+    display: table;
+    height: 100%;
+    padding-top: 1%;
 }
+
 .tx {
     transform: rotate(-45deg);
     color: #23234e;
@@ -169,15 +176,16 @@
     padding: 50% 0;
     height: 0;
 }
-h1{
-    text-align:center;
-    color:white;
-  
+
+h1 {
+    text-align: center;
+    color: white;
 }
-.down{
-    margin:auto;
-    width:30%;
-    position:relative;
+
+.down {
+    margin: auto;
+    width: 30%;
+    position: relative;
 }
 /*Map*/
 .slider {
@@ -200,84 +208,86 @@ h1{
     width: 99%;
     height: 98%;
 }
-.scene::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
 
-.scene::-webkit-scrollbar-thumb {
-    background: black;
-    border-radius: 10px;
-}
-
-.scene::-webkit-scrollbar-track {
-    background: transparent;
-}
-     label {
-         width:7%;
-         height:100%;
-        writing-mode: vertical-rl;
-        text-orientation: upright;
-        text-align:center;
-        border-color:white;
-        border-width:3px;
-        border:2px solid var(--a_doua_culoare);
-        background-color: white;
-        color: var(--culoare_predominanta);
-        font-size:xx-large;
-        padding-right:2%;
-        margin:auto;
-        font-weight:bold;
+    .scene::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
     }
+
+    .scene::-webkit-scrollbar-thumb {
+        background: black;
+        border-radius: 10px;
+    }
+
+    .scene::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+label {
+    width: 7%;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    text-align: center;
+    border-color: white;
+    border-width: 3px;
+    border: 2px solid var(--a_doua_culoare);
+    background-color: white;
+    color: var(--culoare_predominanta);
+    font-size: xx-large;
+    padding-right: 2%;
+    margin: auto;
+    font-weight: bold;
+}
+
 #years {
     width: 100%;
     height: 20%;
     padding-top: 0;
-    margin:auto;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
 }
+
 .year {
-    
-   
     color: white;
     background-color: var(--a_doua_culoare);
-    
-
-    height:40%;
-    font-weight:bold;
-    width:15%;
-  border-right: solid;
+    height: 40%;
+    font-weight: bold;
+    width: 15%;
+    border-right: solid;
     border-top-right-radius: 0%;
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 50%;
-    border-top-left-radius: 50%;  
-font-size: xx-large;
-font-weight:bold;
+    border-top-left-radius: 50%;
+    font-size: xx-large;
+    font-weight: bold;
     vertical-align: middle;
     text-align: center;
-    border:2px solid white;
+    border: 2px solid white;
     align-content: center;
 }
-a{
- text-decoration:none;
-}
-.year:hover {
-   
-    transition: transform 0.5s;
-    transform-origin: top right;
-    background-color:var(--culoare_predominanta);
-      border-width:5px;
-    border-color: var(--a_doua_culoare);
-    color:  var(--a_doua_culoare);
-}
-#scena{overflow: hidden;
-    width:90%;
-    height:100%;
-    margin:auto;
-    background-color:var(--culoare_predominanta);
+
+a {
+    text-decoration: none;
 }
 
+.year:hover {
+    transition: transform 0.5s;
+    transform-origin: top right;
+    background-color: var(--culoare_predominanta);
+    border-width: 5px;
+    border-color: var(--a_doua_culoare);
+    color: var(--a_doua_culoare);
+}
+
+#scena {
+    overflow: hidden;
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    background-color: var(--culoare_predominanta);
+}

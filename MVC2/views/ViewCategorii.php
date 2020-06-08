@@ -24,24 +24,10 @@ class ViewCategorii{
             $lista_sume=$this->lista_sume;
             $nr = $this->nr;
             $header=DIRECTOR_SITE.SLASH.'views'.SLASH. 'templates' . SLASH . 'header.tpl';
-            $harta= DIRECTOR_SITE.SLASH.'views'.SLASH. 'templates' . SLASH . 'harta2015.tpl';
-            /*for($i=2015;$i<2020;$i++)
-            {ob_start();
-            $an=$i;
- 
-            include($harta);
-            $output = ob_get_contents();
-            file_put_contents($i.".html",$output);
-            
-            ob_end_clean();}*/
             ob_start();
-           
- 
-            include($header);
+            
             include($this->sablon);
             $output = ob_get_contents();
-            //file_put_contents($i.".html",$output);
-            file_put_contents("act.html",$output);
             ob_end_clean();
             return $output;
         }
@@ -64,35 +50,22 @@ class ViewCategorii{
             $header=DIRECTOR_SITE.SLASH.'views'.SLASH. 'templates' . SLASH . 'header.tpl';
             $harta= DIRECTOR_SITE.SLASH.'views'.SLASH. 'templates' . SLASH . 'harta.tpl';
             ob_start();
-            
             $template=ob_get_contents();
-            file_put_contents("cv.html",$template);
             ob_end_clean();
             for($i=2015;$i<2020;$i++)
             {
-            ob_start();
-            include($template);
-            $an=$i;
-           
-            include($harta);
-            
- 
-            
-            $output = ob_get_contents();
-            file_put_contents($i.".html",$template.$output);
-            ob_end_clean();
+              ob_start();
+              echo $template;
+              $an=$i;
+              include($harta);
+              $output = ob_get_contents();
+              file_put_contents($i.".html",$template.$output);
+              ob_end_clean();
             
             }
             
             $output = file_get_contents($header);
             $output=$output.file_get_contents($this->sablon);
-            //file_put_contents($i.".html",$output);
-            file_put_contents("act.html",$output);
-            
             return $output;
-           
-            
-            
-            
         }
 }?>

@@ -58,7 +58,7 @@ function loadDoc(nume_fisier, an) {
                         w = Math.ceil((procentaj * 550) / 100);
                     if(an==2)
                     console.log(w + "suma" + sume[an][i] + " " + procentaj+" "+max);
-                        //s3 = s3 + "<div class=\"circle\" style=\"height: 22px;border-radius:50%; background - color: rgb(' . $r . ', ' . $g . ', ' . $b . '); width: 22px\" ></div>";
+                     
                     s = s + "<div class=\"bar\" id=\"" + i + "\" onclick=\"hoverme(this)\" style=\"height:" + w + "px;background-color:rgb(" + r + "," + g + "," + b + ");width:25px\" ><span class=\"tooltiptext\" id=\"tool" + i + "\" >"+nume[i]+"</span></div>";
                     
                 }

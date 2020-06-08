@@ -8,8 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Stardos+Stencil:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="http://localhost//MVC2/views/css/style2.css">
-    <link rel="stylesheet" type="text/css" href="http://localhost//MVC2/views/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/proiect-TW/MVC2/css/style2.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/proiect-TW/MVC2/css/style.css">
 
     <script src="https://kit.fontawesome.com/cc9534741b.js" crossorigin="anonymous"></script>
 </head>
@@ -17,7 +17,7 @@
 <body onload="creare_diagrame()">
     <header>
         <div class="logo">
-            <img alt="logo" src="../img/logo.png" />
+            <img alt="logo" src="http://localhost/proiect-TW/MVC2/img/logo.png" />
         </div>
         <div class="right-area">
             <div class="mobile_menu">

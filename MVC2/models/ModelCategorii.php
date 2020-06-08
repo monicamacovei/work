@@ -20,7 +20,7 @@
 	 }
      public function apelApi($year,$category_name)
      {
-      $c = curl_init ('http://localhost/RestApi/categorii/read.php?an=' . $year. '&categorie=' . $category_name); // initializam libcurl, indicand URL-ul serviciului
+      $c = curl_init ('http://localhost/proiect-TW/RestApi/categorii/read.php?an=' . $year. '&categorie=' . $category_name); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
          CURLOPT_SSL_VERIFYPEER => FALSE, // nu verificam certificatul digital
          CURLOPT_CONNECTTIMEOUT => 20,    // timp de asteptare (in secunde) a stabilirii conexiunii
@@ -43,7 +43,6 @@
      {
        $this->nr[$year]=$data['number_of_records'];
        $array = json_decode(json_encode($data['records']),true);
-       //print_r($data);
        $i=0;
        $ynume=array();
        $ysume=array();

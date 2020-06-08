@@ -10,7 +10,7 @@ html, body {
   padding: 0;
 }
 </style>
-<body >
+<body>
 <div id="map" class="map2015">
 <?php print_r(lista_nume);?></div>         
  <script >
@@ -26,14 +26,14 @@ html, body {
         echo $lista_sume[$an][$nr[$an]-1].'];';
         echo 'var valori_totale='.array_sum($lista_sume[$an]).';';
         
-        //echo 'sume.push(suma);';
+        
         
         ?>
  
     
       
  </script>
-   <script src="http://localhost//MVC2/views/js/harta.js"></script>    
+   <script src="http://localhost//proiect-TW/MVC2/js/harta.js"></script>    
  
 
         <script async defer
