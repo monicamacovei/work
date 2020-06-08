@@ -2,6 +2,9 @@
     --culoare_predominanta: #23234e;
     --a_doua_culoare: #a2a2d1;
 }
+main {
+    overflow-x: scroll;
+}
 #infobox {
     text-align: center;
     color: #23234e;
@@ -290,4 +293,11 @@ a {
     height: 100%;
     margin: auto;
     background-color: var(--culoare_predominanta);
+}
+
+@media screen and (max-width:980px){
+    .down {
+    font-size: 20px;
+    width: 150px;
+}
 }
