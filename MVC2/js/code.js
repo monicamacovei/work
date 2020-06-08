@@ -317,9 +317,7 @@ function addBanner() {
     var header_area = document.querySelector('.right-area');
     header_area.appendChild(div);
 }
-window.onload = function() {
-    var viewportWidth = window.innerWidth;
-    if (viewportWidth > 980) {
-        addBanner();
-    }
+var viewportWidth = window.innerWidth;
+if (viewportWidth > 980) {
+    addBanner();
 }
