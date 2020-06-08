@@ -33,10 +33,11 @@ a{
     background: #23234e;
     color: #fff;
     border-radius: 5px;
-    display: block;
-    width: 70px;
+    width: 140px;
     padding-top: 5px;
     padding-bottom: 5px;
     text-align: center;
     text-decoration: unset;
+    display: inline-block;
+
 }

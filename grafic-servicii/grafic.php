@@ -18,7 +18,9 @@
             <?php foreach(array_keys($_GET) as $key) { ?>
             <div><?php echo $key?></div>
             <?php } ?>
-        </div><a href="" download="graph.svg">Salvează</a>
+        </div>
+        <a href="" download="graph.svg">Salvează (SVG)</a>
+        <a href="" download="graph.svg">Salvează (WebP)</a>
         <script src="js/code.js"></script>
     </body>
 </html>

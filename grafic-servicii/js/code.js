@@ -151,3 +151,38 @@ for (var a = 0; a < categorieComunitara.length; a++) {
 }
 console.log(listaValoriCatCom);
 chart.createChart('.chart-catcom',listaValoriCatCom);
+
+const svg = document.getElementsByTagName('svg')[0].outerHTML;
+console.log(svg);
+svgToPng(svg,(imgData)=>{
+    const pngImage = document.createElement('img');
+    document.body.appendChild(pngImage);
+    pngImage.src=imgData;
+});
+ function svgToPng(svg, callback) {
+    const url = getSvgUrl(svg);
+    svgUrlToPng(url, (imgData) => {
+        callback(imgData);
+        URL.revokeObjectURL(url);
+    });
+}
+function getSvgUrl(svg) {
+    return  URL.createObjectURL(new Blob([svg], { type: 'image/svg+xml' }));
+}
+function svgUrlToPng(svgUrl, callback) {
+    const svgImage = document.createElement('img');
+  console.log(svgImage);
+     svgImage.style.position = 'absolute';
+     svgImage.style.top = '-9999px';
+    document.body.appendChild(svgImage);
+    svgImage.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = svgImage.clientWidth;
+        canvas.height = svgImage.clientHeight;
+        const canvasCtx = canvas.getContext('2d');
+        canvasCtx.drawImage(svgImage, 0, 0);
+        const imgData = canvas.toDataURL('image/webp');
+        document.getElementsByTagName("a")[1].href=imgData;
+    };
+    svgImage.src = svgUrl;
+ }
