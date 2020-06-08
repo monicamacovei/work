@@ -167,7 +167,6 @@ var chart = {
       this.measurements.add(this.minValue);
       for(x=0; x < this.vSteps-1; x++){
           var measurement = Math.ceil(((this.maxValue-this.minValue) / this.vSteps) * (x +1));
-          console.log(measurement+this.minValue);
           this.measurements.add(measurement+this.minValue);
       }
 
@@ -203,7 +202,6 @@ var chart = {
         if(this.values.length > 1){
         var measurements = document.createElement("div");
         measurements.setAttribute("class", "chartMeasurements");
-            console.log(measurements);
         for(x=0; x < this.measurements.length; x++){
             var measurement = document.createElement("div");
             measurement.setAttribute("class", "chartMeasurement");
@@ -243,7 +241,6 @@ var chart = {
         }
         points += "100," + this.height;
         this.points = points;
-        console.log(points);
         
         }
         // output the values for display

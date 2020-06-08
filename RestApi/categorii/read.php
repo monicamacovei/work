@@ -61,12 +61,17 @@ if(isset($_GET['an']) && isset($_GET['categorie']))
     );
   }
  }
- else if(isset($_GET['categorie'])){
+ else if(isset($_GET['categorie']) && isset($_GET['tip'])){
   //execut interogarea bazei de date
     $categorie =  $_GET['categorie'] ;
 
     if($categorie=="marca"){
+        $tip = $_GET['tip'];
+        if($tip=="all"){
         $query = "SELECT MARCA FROM An2019 UNION SELECT MARCA FROM An2018 UNION SELECT MARCA FROM An2017 UNION SELECT MARCA FROM An2016 UNION SELECT MARCA FROM An2015";
+        } else{
+            $query = "SELECT MARCA FROM An2019 UNION SELECT MARCA FROM An2018 UNION SELECT MARCA FROM An2017 UNION SELECT MARCA FROM An2016 UNION SELECT MARCA FROM An2015 LIMIT 4";
+        }
         $stmt = $db->prepare($query);
         $stmt->execute();     
         $num = $stmt->rowCount();

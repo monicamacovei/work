@@ -98,6 +98,14 @@
                                     </a>
                                 </li>
                             <?php $i++;}?>
+                            <?php if(!isset($_GET['tip']) || $_GET['tip'] != 'all') {?>
+                                <li>
+                                    <a href="<?php echo $host; ?>?tip=all<?php if(isset($_GET['marca'])){?>&marca=<?php echo $_GET['marca'];?><?php }?>">
+                                        <div class="hover-effect"></div>
+                                        <div class="type">Afiseaza toate marcile</div>
+                                    </a>
+                                </li>
+                            <?php }?>
                         </ul>
                         <div class="content tab-1 active">
                             <div class="marca_list">

@@ -4,10 +4,10 @@
     {
      public $lista_nume;
      public $anValoare;
-     public function __construct()
+     public function __construct($tip)
      {
       $this->lista_nume=array();
-      $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca"));
+      $this->extract_val($this->apelApi("http://localhost/proiect-TW/RestApi/categorii/read.php?categorie=marca&tip=".$tip));
 	 }
      public function iaValoare($an, $marca) //ia valoare pentru graficul dupa an
      {
