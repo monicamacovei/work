@@ -513,6 +513,19 @@ padding-left: 40px;
     position: relative;
     margin-top:50px;
 }
+.save {
+    background: #23234e;
+    color: #fff;
+    border-radius: 5px;
+    display: block;
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: unset;
+}
 .categorii-showlist {
     padding-left: 100px;
     margin-top: 10px;

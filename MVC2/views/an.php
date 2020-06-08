@@ -112,6 +112,7 @@
                                 </div>
                             </div>
                             <h3 class="titlu_grafic">Statistici despre Categoriile Nationale</h3>
+                            <a class="save" href="" download="graph.svg">Save</a>
                             <div class="chart-wrapper">
                                 <div style="display:none" class="catcom-valori">
                                     <?php foreach($nrValoriCatCom as $valoare) {?>
@@ -128,6 +129,7 @@
                                 </div>
                             </div>
                             <h3 class="titlu_grafic">Statistici despre Categoriile Comunitare</h3>
+                            <a class="save" href="" download="graph.svg">Save</a>
                         </div>
                     </article>
                 </section>

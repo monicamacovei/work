@@ -218,7 +218,12 @@ var chart = {
         // Adauga polygon la <svg>
         this.chart.appendChild(this.polygon);
         // Seteaza link pentru butonul de salvare
-            document.getElementsByTagName("a")[0].href='data:image/svg+xml;charset=utf-8,'+document.getElementsByTagName("svg")[0].outerHTML
+        setTimeout(function() {
+        if(document.querySelectorAll(".save")){
+            document.querySelectorAll(".save")[0].href='data:image/svg+xml;charset=utf-8,'+document.getElementsByTagName("svg")[0].outerHTML;
+            document.querySelectorAll(".save")[1].href='data:image/svg+xml;charset=utf-8,'+document.getElementsByTagName("svg")[1].outerHTML;
+        }
+        }, 500);
         }
     }
   },
