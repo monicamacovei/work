@@ -25,8 +25,9 @@ class ViewCategorii{
             
             ob_start();
             $header=DIRECTOR_SITE.SLASH.'views'.SLASH. 'templates' . SLASH . 'header.tpl';
-            include($header);
-            include($this->sablon);          
+            /*include($header);
+            include($this->sablon);  */
+            include('C:\xampp\htdocs\work2\MVC2\views\Categorii_nationale.tpl');
             $output = ob_get_contents();
             
             
