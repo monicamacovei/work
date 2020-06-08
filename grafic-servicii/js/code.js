@@ -48,6 +48,7 @@ var chart = {
         this.chart.setAttribute("width", "100%");
         this.chart.setAttribute("height", "100%");
         this.chart.setAttribute("viewBox", "0 0 " + chart.width + " " + chart.height);
+      this.chart.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
         //Creeaza <polygon>
         this.polygon = document.createElementNS('http://www.w3.org/2000/svg','polygon');
@@ -151,6 +152,7 @@ for (var a = 0; a < categorieComunitara.length; a++) {
 }
 console.log(listaValoriCatCom);
 chart.createChart('.chart-catcom',listaValoriCatCom);
+
 
 const svg = document.getElementsByTagName('svg')[0].outerHTML;
 console.log(svg);
