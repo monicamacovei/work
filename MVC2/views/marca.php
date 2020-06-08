@@ -119,6 +119,9 @@
                                 <?php for($year = 2015; $year<=2019;$year++) {?>
                                     <h3 class="small_title">Detalii <?php echo $year;?></h3>
                                     <h4 class="categorii_predominante">Top 5 categorii nationale predominante:</h4>
+                                    <?php if(count($categoriiNationale[$year]['numar']) == 0){?>
+                                    <p>Nu exista date din anul <?php echo $year;?></p>
+                                    <?php } else {?>
                                     <ul class="marca-year-detail">
                                         <?php for($i=0 ; $i< count($categoriiNationale[$year]['numar']) ; $i++){ ?>
                                         <li>
@@ -134,6 +137,7 @@
                                         </li>
                                         <?php }?>
                                     </ul>
+                                        <?php }?>
                                 <?php }?>
                             </div>
                         </div>
