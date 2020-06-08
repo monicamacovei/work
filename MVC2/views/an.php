@@ -94,42 +94,46 @@
                             <?php $year_number++;}?>
                         </ul>
                         <div class="content tab-<?php echo $tab_number;?> active">
-                            <p class="numar_total">Numar total de masini in <?php echo $an_link;?>: <?php echo $nrVehicule;?></p>
-                            
-                            <div class="chart-wrapper">
-                                <div style="display:none" class="an-valori">
-                                    <?php foreach($nrValoriCatNat as $valoare) {?>
-                                        <span><?php echo $valoare;?></span>
-                                    <?php }?>
-                                    <span><?php echo $restulValorilorCatNat;?></span>
+                            <?php if(count($nrVehicule)==0){?>
+                            <h2>Nu exista date despre acest an</h2>
+                            <?php } else{?>
+                                <h2 class="numar_total">Numar total de masini in <?php echo $an_link;?>: <?php echo $nrVehicule;?></h2>
+                                
+                                <div class="chart-wrapper">
+                                    <div style="display:none" class="an-valori">
+                                        <?php foreach($nrValoriCatNat as $valoare) {?>
+                                            <span><?php echo $valoare;?></span>
+                                        <?php }?>
+                                        <span><?php echo $restulValorilorCatNat;?></span>
+                                    </div>
+                                    <div class="chart-an chart-categorii"></div>
+                                    <div class="marci-showlist categorii-showlist">
+                                        <?php foreach($numeCategorieNationala as $categorie_nationala) {?>
+                                            <span><?php echo $categorie_nationala;?></span>
+                                        <?php }?>
+                                        <span>Celelalte</span>
+                                    </div>
                                 </div>
-                                <div class="chart-an chart-categorii"></div>
-                                <div class="marci-showlist categorii-showlist">
-                                    <?php foreach($numeCategorieNationala as $categorie_nationala) {?>
-                                        <span><?php echo $categorie_nationala;?></span>
-                                    <?php }?>
-                                    <span>Celelalte</span>
+                                <h3 class="titlu_grafic">Statistici despre Categoriile Nationale</h3>
+                                <a class="save" href="" download="graph.svg">Save</a>
+                                <div class="chart-wrapper">
+                                    <div style="display:none" class="catcom-valori">
+                                        <?php foreach($nrValoriCatCom as $valoare) {?>
+                                            <span><?php echo $valoare;?></span>
+                                        <?php }?>
+                                        <span><?php echo $restulValorilorCatCom;?></span>
+                                    </div>
+                                    <div class="chart-catcom chart-categorii"></div>
+                                    <div class="catcom-showlist categorii-showlist">
+                                        <?php foreach($numeCategorieComunitara as $categorie_comunitara) {?>
+                                            <span><?php echo $categorie_comunitara;?></span>
+                                        <?php }?>
+                                        <span>Celelalte</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <h3 class="titlu_grafic">Statistici despre Categoriile Nationale</h3>
-                            <a class="save" href="" download="graph.svg">Save</a>
-                            <div class="chart-wrapper">
-                                <div style="display:none" class="catcom-valori">
-                                    <?php foreach($nrValoriCatCom as $valoare) {?>
-                                        <span><?php echo $valoare;?></span>
-                                    <?php }?>
-                                    <span><?php echo $restulValorilorCatCom;?></span>
-                                </div>
-                                <div class="chart-catcom chart-categorii"></div>
-                                <div class="catcom-showlist categorii-showlist">
-                                    <?php foreach($numeCategorieComunitara as $categorie_comunitara) {?>
-                                        <span><?php echo $categorie_comunitara;?></span>
-                                    <?php }?>
-                                    <span>Celelalte</span>
-                                </div>
-                            </div>
-                            <h3 class="titlu_grafic">Statistici despre Categoriile Comunitare</h3>
-                            <a class="save" href="" download="graph.svg">Salveaza</a>
+                                <h3 class="titlu_grafic">Statistici despre Categoriile Comunitare</h3>
+                                <a class="save" href="" download="graph.svg">Salveaza</a>
+                            <?php }?>
                         </div>
                     </article>
                 </section>
