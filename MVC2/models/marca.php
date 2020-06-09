@@ -56,8 +56,8 @@
       $c = curl_init ($link); // initializam libcurl, indicand URL-ul serviciului
       $opt = [ CURLOPT_RETURNTRANSFER => TRUE,  // datele vor fi disponibile ca sir de caractere
          CURLOPT_SSL_VERIFYPEER => FALSE, // nu verificam certificatul digital
-         CURLOPT_CONNECTTIMEOUT => 20,    // timp de asteptare (in secunde) a stabilirii conexiunii
-         CURLOPT_TIMEOUT        => 20,    // timp de asteptare (in secunde) a raspunsului
+         CURLOPT_CONNECTTIMEOUT => 100,    // timp de asteptare (in secunde) a stabilirii conexiunii
+         CURLOPT_TIMEOUT        => 100,    // timp de asteptare (in secunde) a raspunsului
          CURLOPT_FAILONERROR    => TRUE,  // codurile 4XX vor conduce la eroare
          CURLOPT_FOLLOWLOCATION => FALSE  // nu se accepta redirectionari
        ];
