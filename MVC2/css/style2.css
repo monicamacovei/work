@@ -291,10 +291,20 @@ a {
     margin: auto;
     background-color: #23234e;
 }
+.year {font-size: 17px;}
 
 @media screen and (max-width:980px) {
     .down {
         font-size: 20px;
         width: 150px;
+    }
+    .axa-Y {
+        width: 30%;
+    }
+    
+    .axa-X {width: 69%;}
+    
+    .chart {
+        width: 69%;
     }
 }

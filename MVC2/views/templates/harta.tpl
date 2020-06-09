@@ -34,7 +34,8 @@ html, body {
     
       
  </script>
-   <script src="http://localhost//proiect-TW/MVC2/js/harta.js"></script>    
+   <script src="http://localhost//proiect-TW/MVC2/js/harta.js"></script>  
+    
  
 
         <script async defer

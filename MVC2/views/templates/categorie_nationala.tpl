@@ -165,5 +165,6 @@
         </script>
     <script src="http://localhost/proiect-TW/MVC2/js/ColumnChart.js"></script>
     
+    
 </body>
 </html>

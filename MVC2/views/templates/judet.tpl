@@ -38,7 +38,7 @@
 
         
         </footer>
-        
+        <script src="http://localhost//proiect-TW/MVC2/js/code.js"></script>   
        
     </body>
 </html>
