@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -67,7 +67,7 @@
         <li>Prototip: HTML & CSS & JavaScript.</li>
         <li>Backend: PHP.</li>
         <li>Baza de date: MySQL.</li>
-        <li>API: Google Maps.</li>
+        <li>API: Google Maps & Mapbox Geocoding.</li>
       </ul>
     </div>
   </section>
@@ -92,7 +92,7 @@
         <ul>
           <li>Total vehicule, mărci și categorii naționale pe 2019 în Dashboard.</li>
           <li>Grafic cu numărul total de vehicule în 2018 și 2019 în Dashboard.</li>
-          <li>Harta României pe județe în pagină "După județ".</li>
+          <li>Harta României cu o vizualizare grafica a numarului pe judete din 2015 pana in 2019 în pagină "După județ".</li>
           <li>Toate mărcile în pagină "După marca".</li>
           <li>Număr de mașini pe an în pagină "După marca".</li>
           <li>Top 5 categorii naționale și comunitare predominante în fiecare an 
@@ -100,16 +100,42 @@
           <li>Numărul total de mașini în fiecare an în pagină "După an".</li>
           <li>Top 4 categorii naționale și comunitare și numărul lor comparativ cu a 
             celorlaltora adunate, în fiecare an, în pagină "După an".</li>
-          <li>Datele de contact ale dețînătorilor APAX in pagină "Contact".</li>
+          <li>Datele de contact ale deținătorilor APAX in pagină "Contact".</li>
         </ul>
       </section>
       <section id="apiuri">
-        <!-- review? -->
-        <h3>API-uri</h3>
-        <p>
-          Pagina "după județ" a avut nevoie de API pentru a afișa harta, 
-          folosind API-ul de la Google Maps.
-        </p>
+          <!-- review? -->
+          <h3>API-uri</h3>
+          <p>
+              Pagina "după județ" a pus la dispozitie o vizualizare cartografica a datelor pe judete
+              si pentru acest lucru a facut apel la doua Api-uri specializate pe servicii
+              cartografice:Mapbox Geocoding si Google Maps.
+          </p>
+          <ul>
+              <li>
+                  Mapbox Geocoding:.      https://api.mapbox.com/geocoding/v5/mapbox.places/
+                  <p>
+                      
+                      Prin intermediul AJAX, pentru fiecare judet in parte  am trimis request-uri
+                      tip GET serviciului Mapbox Geocoding ,cereri in care precizam ca parametru denumirea judetului si primeam ca raspuns un json cu mai multe
+                      informatii geografice exacte,din care extrageam coordonatele geografice(latitudinea si longitudinea).
+                      Aceste date aveau sa-mi fie de ajutor pentru lucrul cu cel de-al doilea api.
+                  </p>
+
+              </li>
+              <li>
+                  Google Maps Api:       https://maps.googleapis.com/maps/api/js?
+                  <p>
+                     
+                      Am utilizat Google Maps Api pentru afisarea si personalizarea hartii.Folosind coordonatele
+                      primite de celalalt api, afisez pentru fiecare judet un Marker,la apasarea caruia va aparea un popup cu numarul total de autoturisme din acel judet.
+                      In plus pe suprafata fiecarui judet am desenat un cerc cu raza proportionala numarului de autovehicule,pentru o viziune comparativa a datelor pe judete.
+                  </p>
+              </li>
+              
+          </ul>
+          
+          </p>
       </section>
       <section id="schema_baza_de_date">
         <!-- review? -->
@@ -120,22 +146,38 @@
     <section id="references">
       <h2>Referinte</h2>
       <dl>
-        <dt id="ref-Pie">Pie</dt>
+          <dt id="ref-Pie">Pie</dt>
           <dd typeof="schema:WebPage" resource="https://css-tricks.com/how-to-make-charts-with-svg/">
-            <cite property="schema:name"><a href="https://css-tricks.com/how-to-make-charts-with-svg/">Pie</a></cite>.
+              <cite property="schema:name"><a href="https://css-tricks.com/how-to-make-charts-with-svg/">Pie</a></cite>.
           </dd>
-        <dt id="ref-Chart">Chart</dt>
-        <dd typeof="schema:WebPage" resource="https://codepen.io/alanmenhennet/pen/WxrXww ">
-          <cite property="schema:name"><a href="https://codepen.io/alanmenhennet/pen/WxrXww ">Chart</a></cite>.
-        </dd>
-        <dt id="ref-Font-awesome">Font Awesome</dt>
-        <dd typeof="schema:WebPage" resource="https://fontawesome.com/v4.7.0/icons/">
-          <cite property="schema:name"><a href="https://fontawesome.com/v4.7.0/icons/">Font Awesome</a></cite>.
-        </dd>
-        <dt id="ref-Font-awesome">Export WebP</dt>
-        <dd typeof="schema:WebPage" resource="https://stackoverflow.com/questions/3975499/convert-svg-to-image-jpeg-png-etc-in-the-browser?fbclid=IwAR10y829SBGSmw9T6Rw0MJKkBt62O0ZPRxe2_6YPOULl4WxysErqcx-a4rA">
-          <cite property="schema:name"><a href="https://stackoverflow.com/questions/3975499/convert-svg-to-image-jpeg-png-etc-in-the-browser?fbclid=IwAR10y829SBGSmw9T6Rw0MJKkBt62O0ZPRxe2_6YPOULl4WxysErqcx-a4rA">Export WebP</a></cite>.
-        </dd>
+          <dt id="ref-Chart">Chart</dt>
+          <dd typeof="schema:WebPage" resource="https://codepen.io/alanmenhennet/pen/WxrXww ">
+              <cite property="schema:name"><a href="https://codepen.io/alanmenhennet/pen/WxrXww ">Chart</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Font Awesome</dt>
+          <dd typeof="schema:WebPage" resource="https://fontawesome.com/v4.7.0/icons/">
+              <cite property="schema:name"><a href="https://fontawesome.com/v4.7.0/icons/">Font Awesome</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Export WebP</dt>
+          <dd typeof="schema:WebPage" resource="https://stackoverflow.com/questions/3975499/convert-svg-to-image-jpeg-png-etc-in-the-browser?fbclid=IwAR10y829SBGSmw9T6Rw0MJKkBt62O0ZPRxe2_6YPOULl4WxysErqcx-a4rA">
+              <cite property="schema:name"><a href="https://stackoverflow.com/questions/3975499/convert-svg-to-image-jpeg-png-etc-in-the-browser?fbclid=IwAR10y829SBGSmw9T6Rw0MJKkBt62O0ZPRxe2_6YPOULl4WxysErqcx-a4rA">Export WebP</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Design Butoane din "Dupa categorie"</dt>
+          <dd typeof="schema:WebPage" resource="https://codepen.io/comehope/pen/qYMoPo">
+              <cite property="schema:name"><a href="https://codepen.io/comehope/pen/qYMoPo">Design Butoane</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Slider-ul ce contine harta din "Dupa judet"</dt>
+          <dd typeof="schema:WebPage" resource="https://css-tricks.com/css-only-carousel/">
+              <cite property="schema:name"><a href="https://css-tricks.com/css-only-carousel/">Slider Map</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Desenare cercuri pe harta din "Dupa judet"</dt>
+          <dd typeof="schema:WebPage" resource="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">
+              <cite property="schema:name"><a href="https://developers.google.com/maps/documentation/javascript/examples/circle-simple">Circle on map</a></cite>.
+          </dd>
+          <dt id="ref-Font-awesome">Export Csv</dt>
+          <dd typeof="schema:WebPage" resource="http://jsfiddle.net/rooseve/7bUG8/">
+              <cite property="schema:name"><a href="http://jsfiddle.net/rooseve/7bUG8/">Export CSV</a></cite>.
+          </dd>
       </dl>
     </section>
   </body>
