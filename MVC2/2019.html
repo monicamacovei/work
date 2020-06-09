@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="en-us">
 <style>
 #map{
   height: 100%;

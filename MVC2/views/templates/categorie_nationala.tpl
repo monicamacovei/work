@@ -99,7 +99,7 @@
                         <button onclick="openAn('2019', this)" id="default"><span>2019</span></button>
                         
                     </div>
-                    <div id="infobox">
+                    <div id="infobox" class="infobox">
                     </div>
                 
                     <div class="afisaj" id="afisaj">
@@ -128,14 +128,19 @@
                             <div class="chart" id="c2019"></div>
                          <div class="axa-X" id ="Ax2019"></div>
                         </div>
+                    </div>
                     
-                    </div>
                     <button class="down" onclick="Download()"><span>Download</span></button>
-                    </div>
-                    </div>                       
+                                         
                     
 
-                    <script >
+                    
+        </section>
+       </main>
+    </div>
+    <footer>
+    </footer>
+    <script >
  <?php
         echo 'var nr=[];';
         echo 'var nume=[';
@@ -156,13 +161,8 @@
         }
         
         
-        ?></script>
-            </section>
-        </main>
-    </div>
-    <footer>
-    </footer>
-    
+        ?>
+        </script>
     <script src="http://localhost/proiect-TW/MVC2/js/ColumnChart.js"></script>
     
 </body>
