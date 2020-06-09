@@ -121,6 +121,24 @@
                       informatii geografice exacte,din care extrageam coordonatele geografice(latitudinea si longitudinea).
                       Aceste date aveau sa-mi fie de ajutor pentru lucrul cu cel de-al doilea api.
                   </p>
+                  <p>
+                      -->Am ilustrat mai jos efectuarea unei cereri la acest Api:
+                      <br/>
+                      var xhttp = new XMLHttpRequest();<br />
+                      xhttp.onreadystatechange = function () {<br />
+                      if (xhttp.readyState === 4) {<br />
+
+                      if (xhttp.status === 200 || xhttp.status == 0) {<br />
+                      //parsez jsonul primit ca raspuns<br />
+                      var jsonResponse = JSON.parse(xhttp.responseText);<br />
+                      long.push(jsonResponse["features"][0]["geometry"]["coordinates"][0]);<br />
+                      lat.push(jsonResponse["features"][0]["geometry"]["coordinates"][1]);<br />
+                      }
+                      }};<br />
+                      //efectuez requestul de tip GET la url-ul dat ca parametru<br />
+                      xhttp.open("GET", url, false);<br />
+                      xhttp.send(null);<br />
+                  </p>
 
               </li>
               <li>
@@ -130,6 +148,43 @@
                       Am utilizat Google Maps Api pentru afisarea si personalizarea hartii.Folosind coordonatele
                       primite de celalalt api, afisez pentru fiecare judet un Marker,la apasarea caruia va aparea un popup cu numarul total de autoturisme din acel judet.
                       In plus pe suprafata fiecarui judet am desenat un cerc cu raza proportionala numarului de autovehicule,pentru o viziune comparativa a datelor pe judete.
+                  </p>
+                  <p>
+                      Mai jos am prezentat modalitatile prin care am lucrat cu acest api:
+                      <br />
+                      -->Pentru initializarea unei harti:
+                      <br />
+                      map = new google.maps.Map(document.getElementById('map'), <br />
+                      {
+                      zoom: 6.5,<br />
+                      center: { lat: 45.9442858, lng: 25.0094303 },<br />
+                      icon: {
+                      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                      },<br />
+                      mapTypeId: 'terrain'
+                      });<br />
+                         <br />
+                      -->Pentru adaugarea unui marker pe harta:
+                      <br />
+                      var marker = new google.maps.Marker({<br />
+                      map: map,<br />
+                      icon: {
+                      url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                      },<br />
+                      position: { lat: lat[i], lng: long[i] }
+                      });<br /><br />
+                      -->Pentru desenarea unui cerc:
+                      <br/>
+                      Circle = new google.maps.Circle({<br />
+                      strokeColor: '#FF0000',<br />
+                      strokeOpacity: 0.8,<br />
+                      strokeWeight: 2,<br />
+                      fillColor: 'blue',<br />
+                      fillOpacity: 0.35,<br />
+                      map: map,<br />
+                      center: { lat: lat[i], lng: long[i] },<br />
+                      radius: sume[i] / 17 
+                      });<br />
                   </p>
               </li>
               
